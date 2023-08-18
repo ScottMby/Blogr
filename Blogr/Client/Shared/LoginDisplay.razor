@@ -1,11 +1,13 @@
 ﻿@using Microsoft.AspNetCore.Components.Authorization
 @using Microsoft.AspNetCore.Components.WebAssembly.Authentication
 @inject NavigationManager Navigation
+@inject HttpClient Http
 
 <AuthorizeView>
     <Authorized>
-        <a href="authentication/profile">Hello, @context.User.Identity?.Name!</a>
-        <button class="nav-link btn btn-link" @onclick="BeginLogOut">Log out</button>
+        <a href="authentication/profile"><img src="@context.User.FindFirst("u_Photo")?.Value" alt="avatar"/></a>
+        @*The below line allows the user to sign out*@
+        @*<button class="nav-link btn btn-link" @onclick="BeginLogOut">Log out</button>*@
     </Authorized>
     <NotAuthorized>
         <a href="authentication/register">Register</a>
@@ -18,4 +20,5 @@
     {
         Navigation.NavigateToLogout("authentication/logout");
     }
+
 }
