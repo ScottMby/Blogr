@@ -208,6 +208,22 @@
           "Microsoft.AspNetCore.App"
         ]
       },
+      "Microsoft.AspNetCore.Authentication.Google/7.0.10": {
+        "type": "package",
+        "compile": {
+          "lib/net7.0/Microsoft.AspNetCore.Authentication.Google.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net7.0/Microsoft.AspNetCore.Authentication.Google.dll": {
+            "related": ".xml"
+          }
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
+      },
       "Microsoft.AspNetCore.Authentication.JwtBearer/7.0.10": {
         "type": "package",
         "dependencies": {
@@ -2091,6 +2107,21 @@
         "lib/net7.0/Microsoft.AspNetCore.ApiAuthorization.IdentityServer.xml",
         "microsoft.aspnetcore.apiauthorization.identityserver.7.0.10.nupkg.sha512",
         "microsoft.aspnetcore.apiauthorization.identityserver.nuspec"
+      ]
+    },
+    "Microsoft.AspNetCore.Authentication.Google/7.0.10": {
+      "sha512": "HwB4AjAzp+wn5fglKUr0FB6uIDTXrBX3m0UiLSpVzZZJQOAYOwJfC6eVcSlGXc+NysQQ4fhR2+L0BDx0zI1NzQ==",
+      "type": "package",
+      "path": "microsoft.aspnetcore.authentication.google/7.0.10",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/net7.0/Microsoft.AspNetCore.Authentication.Google.dll",
+        "lib/net7.0/Microsoft.AspNetCore.Authentication.Google.xml",
+        "microsoft.aspnetcore.authentication.google.7.0.10.nupkg.sha512",
+        "microsoft.aspnetcore.authentication.google.nuspec"
       ]
     },
     "Microsoft.AspNetCore.Authentication.JwtBearer/7.0.10": {
@@ -5145,6 +5176,7 @@
       "Blogr.Client >= 1.0.0",
       "Blogr.Shared >= 1.0.0",
       "Microsoft.AspNetCore.ApiAuthorization.IdentityServer >= 7.0.10",
+      "Microsoft.AspNetCore.Authentication.Google >= 7.0.10",
       "Microsoft.AspNetCore.Components.WebAssembly.Server >= 7.0.10",
       "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore >= 7.0.10",
       "Microsoft.AspNetCore.Identity.EntityFrameworkCore >= 7.0.10",
@@ -5206,6 +5238,10 @@
         "targetAlias": "net7.0",
         "dependencies": {
           "Microsoft.AspNetCore.ApiAuthorization.IdentityServer": {
+            "target": "Package",
+            "version": "[7.0.10, )"
+          },
+          "Microsoft.AspNetCore.Authentication.Google": {
             "target": "Package",
             "version": "[7.0.10, )"
           },

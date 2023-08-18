@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "00FfgdjDaM12Pif2URBphpIjrnDRLvbIzAX9tHdvwdcRC8gi/67qk1IUfBzV6CEfGR3Cd9RqIGDknQjsT7iV5g==",
+  "dgSpecHash": "nkpFyj6BaU8t71g4AqrLIXCiLVAFNIvErKa2jWgCtt2tP2t92AhGmS/T2pG0qDT7bEeBK6WiKXF7j19beAKhWQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\Scott\\Documents\\GitHub\\Blogr\\Blogr\\Server\\Blogr.Server.csproj",
   "expectedPackageFiles": [
@@ -15,6 +15,7 @@
     "C:\\Users\\Scott\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\Scott\\.nuget\\packages\\identitymodel\\6.0.0\\identitymodel.6.0.0.nupkg.sha512",
     "C:\\Users\\Scott\\.nuget\\packages\\microsoft.aspnetcore.apiauthorization.identityserver\\7.0.10\\microsoft.aspnetcore.apiauthorization.identityserver.7.0.10.nupkg.sha512",
+    "C:\\Users\\Scott\\.nuget\\packages\\microsoft.aspnetcore.authentication.google\\7.0.10\\microsoft.aspnetcore.authentication.google.7.0.10.nupkg.sha512",
     "C:\\Users\\Scott\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\7.0.10\\microsoft.aspnetcore.authentication.jwtbearer.7.0.10.nupkg.sha512",
     "C:\\Users\\Scott\\.nuget\\packages\\microsoft.aspnetcore.authentication.openidconnect\\6.0.0\\microsoft.aspnetcore.authentication.openidconnect.6.0.0.nupkg.sha512",
     "C:\\Users\\Scott\\.nuget\\packages\\microsoft.aspnetcore.authorization\\7.0.10\\microsoft.aspnetcore.authorization.7.0.10.nupkg.sha512",

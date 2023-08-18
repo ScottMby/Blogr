@@ -11,6 +11,7 @@
           "Blogr.Client": "1.0.0",
           "Blogr.Shared": "1.0.0",
           "Microsoft.AspNetCore.ApiAuthorization.IdentityServer": "7.0.10",
+          "Microsoft.AspNetCore.Authentication.Google": "7.0.10",
           "Microsoft.AspNetCore.Components.WebAssembly.Server": "7.0.10",
           "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore": "7.0.10",
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "7.0.10",
@@ -159,6 +160,14 @@
         },
         "runtime": {
           "lib/net7.0/Microsoft.AspNetCore.ApiAuthorization.IdentityServer.dll": {
+            "assemblyVersion": "7.0.10.0",
+            "fileVersion": "7.0.1023.36439"
+          }
+        }
+      },
+      "Microsoft.AspNetCore.Authentication.Google/7.0.10": {
+        "runtime": {
+          "lib/net7.0/Microsoft.AspNetCore.Authentication.Google.dll": {
             "assemblyVersion": "7.0.10.0",
             "fileVersion": "7.0.1023.36439"
           }
@@ -1137,6 +1146,13 @@
       "sha512": "sha512-1rEFbDX2HHhzdrd0bYTO1qBKZcvBtulTo/1l79WPwkyHJJSRcpwv6ImDE7lFSfr/q2IUym+xwn7WsVJKALaaWw==",
       "path": "microsoft.aspnetcore.apiauthorization.identityserver/7.0.10",
       "hashPath": "microsoft.aspnetcore.apiauthorization.identityserver.7.0.10.nupkg.sha512"
+    },
+    "Microsoft.AspNetCore.Authentication.Google/7.0.10": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-HwB4AjAzp+wn5fglKUr0FB6uIDTXrBX3m0UiLSpVzZZJQOAYOwJfC6eVcSlGXc+NysQQ4fhR2+L0BDx0zI1NzQ==",
+      "path": "microsoft.aspnetcore.authentication.google/7.0.10",
+      "hashPath": "microsoft.aspnetcore.authentication.google.7.0.10.nupkg.sha512"
     },
     "Microsoft.AspNetCore.Authentication.JwtBearer/7.0.10": {
       "type": "package",

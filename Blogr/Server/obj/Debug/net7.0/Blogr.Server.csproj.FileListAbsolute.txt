@@ -118,3 +118,4 @@ C:\Users\Scott\Documents\GitHub\Blogr\Blogr\Server\obj\Debug\net7.0\refint\Blogr
 C:\Users\Scott\Documents\GitHub\Blogr\Blogr\Server\obj\Debug\net7.0\Blogr.Server.pdb
 C:\Users\Scott\Documents\GitHub\Blogr\Blogr\Server\obj\Debug\net7.0\Blogr.Server.genruntimeconfig.cache
 C:\Users\Scott\Documents\GitHub\Blogr\Blogr\Server\obj\Debug\net7.0\ref\Blogr.Server.dll
+C:\Users\Scott\Documents\GitHub\Blogr\Blogr\Server\bin\Debug\net7.0\Microsoft.AspNetCore.Authentication.Google.dll
