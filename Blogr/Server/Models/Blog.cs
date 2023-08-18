@@ -6,18 +6,19 @@ namespace Blogr.Data
     public class Blog
     {
         [Key]
-        private int b_ID { get; set; }
+        public int b_ID { get; set; }
 
-        private string b_Title { get; set; } = null!;
+        public string b_Title { get; set; } = null!;
 
-        [Key]
-        private ApplicationUser b_user { get; set; } = null!;
+        public ApplicationUser b_User { get; set; } = null!;
 
-        private DateTime b_CreationDate { get; set; }
+        public DateTime b_CreationDate { get; set; }
 
-        private DateTime b_UpdatedDate { get; set; }
+        public DateTime b_UpdatedDate { get; set; }
 
-        private string b_Content { get; set; } = null!;
+        public string b_Content { get; set; } = null!;
+
+        public ICollection<Image> b_Images { get; set; } = null!;
 
     }
 }

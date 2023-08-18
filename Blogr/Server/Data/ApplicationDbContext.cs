@@ -1,4 +1,5 @@
-﻿using Blogr.Server.Models;
+﻿using Blogr.Data;
+using Blogr.Server.Models;
 using Duende.IdentityServer.EntityFramework.Options;
 using Microsoft.AspNetCore.ApiAuthorization.IdentityServer;
 using Microsoft.EntityFrameworkCore;
@@ -8,6 +9,10 @@ namespace Blogr.Server.Data
 {
     public class ApplicationDbContext : ApiAuthorizationDbContext<ApplicationUser>
     {
+        //Uses EF to create a table called blogs
+        public DbSet<Blog> Blogs { get; set; } = null!;
+        public DbSet<Image> Images { get; set; } = null!;
+
         public ApplicationDbContext(
             DbContextOptions options,
             IOptions<OperationalStoreOptions> operationalStoreOptions) : base(options, operationalStoreOptions)
