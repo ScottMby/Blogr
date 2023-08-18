@@ -1,0 +1,11 @@
+C:\Users\Scott\Documents\GitHub\Blogr\Blogr\Shared\bin\Debug\net7.0\Blogr.Shared.deps.json
+C:\Users\Scott\Documents\GitHub\Blogr\Blogr\Shared\bin\Debug\net7.0\Blogr.Shared.dll
+C:\Users\Scott\Documents\GitHub\Blogr\Blogr\Shared\bin\Debug\net7.0\Blogr.Shared.pdb
+C:\Users\Scott\Documents\GitHub\Blogr\Blogr\Shared\obj\Debug\net7.0\Blogr.Shared.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Scott\Documents\GitHub\Blogr\Blogr\Shared\obj\Debug\net7.0\Blogr.Shared.AssemblyInfoInputs.cache
+C:\Users\Scott\Documents\GitHub\Blogr\Blogr\Shared\obj\Debug\net7.0\Blogr.Shared.AssemblyInfo.cs
+C:\Users\Scott\Documents\GitHub\Blogr\Blogr\Shared\obj\Debug\net7.0\Blogr.Shared.csproj.CoreCompileInputs.cache
+C:\Users\Scott\Documents\GitHub\Blogr\Blogr\Shared\obj\Debug\net7.0\Blogr.Shared.dll
+C:\Users\Scott\Documents\GitHub\Blogr\Blogr\Shared\obj\Debug\net7.0\refint\Blogr.Shared.dll
+C:\Users\Scott\Documents\GitHub\Blogr\Blogr\Shared\obj\Debug\net7.0\Blogr.Shared.pdb
+C:\Users\Scott\Documents\GitHub\Blogr\Blogr\Shared\obj\Debug\net7.0\ref\Blogr.Shared.dll
