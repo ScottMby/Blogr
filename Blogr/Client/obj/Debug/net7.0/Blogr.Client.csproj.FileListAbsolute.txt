@@ -846,3 +846,11 @@ C:\Users\Scott\Documents\GitHub\Blogr\Blogr\Client\obj\Debug\net7.0\Blogr.Client
 C:\Users\Scott\Documents\GitHub\Blogr\Blogr\Client\obj\Debug\net7.0\refint\Blogr.Client.dll
 C:\Users\Scott\Documents\GitHub\Blogr\Blogr\Client\obj\Debug\net7.0\Blogr.Client.pdb
 C:\Users\Scott\Documents\GitHub\Blogr\Blogr\Client\obj\Debug\net7.0\ref\Blogr.Client.dll
+C:\Users\Scott\Documents\GitHub\Blogr\Blogr\Client\bin\Debug\net7.0\wwwroot\_framework\DocumentFormat.OpenXml.dll
+C:\Users\Scott\Documents\GitHub\Blogr\Blogr\Client\bin\Debug\net7.0\wwwroot\_framework\System.IO.Packaging.dll
+C:\Users\Scott\Documents\GitHub\Blogr\Blogr\Client\bin\Debug\net7.0\wwwroot\_framework\DocumentFormat.OpenXml.dll.gz
+C:\Users\Scott\Documents\GitHub\Blogr\Blogr\Client\bin\Debug\net7.0\wwwroot\_framework\System.IO.Packaging.dll.gz
+C:\Users\Scott\Documents\GitHub\Blogr\Blogr\Client\bin\Debug\net7.0\DocumentFormat.OpenXml.dll
+C:\Users\Scott\Documents\GitHub\Blogr\Blogr\Client\bin\Debug\net7.0\System.IO.Packaging.dll
+C:\Users\Scott\Documents\GitHub\Blogr\Blogr\Client\obj\Debug\net7.0\build-gz\PBtI8Zz0.gz
+C:\Users\Scott\Documents\GitHub\Blogr\Blogr\Client\obj\Debug\net7.0\build-gz\V+eIT7Fj.gz

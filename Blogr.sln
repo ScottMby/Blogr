@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.7.34003.232
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blogr.Server", "Blogr\Server\Blogr.Server.csproj", "{C95595A5-65F4-4475-8454-EEC4DEE1BC8B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Blogr.Server", "Blogr\Server\Blogr.Server.csproj", "{C95595A5-65F4-4475-8454-EEC4DEE1BC8B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blogr.Client", "Blogr\Client\Blogr.Client.csproj", "{59026216-2B0D-4D10-8D2D-0C0D8AFC674E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Blogr.Client", "Blogr\Client\Blogr.Client.csproj", "{59026216-2B0D-4D10-8D2D-0C0D8AFC674E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blogr.Shared", "Blogr\Shared\Blogr.Shared.csproj", "{A55BDD75-FC3D-4829-A26C-F9F68AD064C8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Blogr.Shared", "Blogr\Shared\Blogr.Shared.csproj", "{A55BDD75-FC3D-4829-A26C-F9F68AD064C8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

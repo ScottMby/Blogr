@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "JaSCPTNQsi6mW7SZbf7lWn4wYuUGIx+dDiIF/PxNHdX1luQJo1IX5DcTJ+yk285sxK++GwMtU1S3MqIRb6FoJQ==",
+  "dgSpecHash": "PeH/LEFt8oa0z1AcE7Sx7I+dMsnmmwnQwlarQKmUR08R7N84PXdjD3IN9LdHMrzfhn4Am+vDu15ehQBlRfuDpw==",
   "success": true,
   "projectFilePath": "C:\\Users\\Scott\\Documents\\GitHub\\Blogr\\Blogr\\Client\\Blogr.Client.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\Scott\\.nuget\\packages\\documentformat.openxml\\2.20.0\\documentformat.openxml.2.20.0.nupkg.sha512",
     "C:\\Users\\Scott\\.nuget\\packages\\microsoft.aspnetcore.authorization\\7.0.10\\microsoft.aspnetcore.authorization.7.0.10.nupkg.sha512",
     "C:\\Users\\Scott\\.nuget\\packages\\microsoft.aspnetcore.components\\7.0.10\\microsoft.aspnetcore.components.7.0.10.nupkg.sha512",
     "C:\\Users\\Scott\\.nuget\\packages\\microsoft.aspnetcore.components.analyzers\\7.0.10\\microsoft.aspnetcore.components.analyzers.7.0.10.nupkg.sha512",
@@ -31,6 +32,7 @@
     "C:\\Users\\Scott\\.nuget\\packages\\microsoft.extensions.primitives\\7.0.0\\microsoft.extensions.primitives.7.0.0.nupkg.sha512",
     "C:\\Users\\Scott\\.nuget\\packages\\microsoft.jsinterop\\7.0.10\\microsoft.jsinterop.7.0.10.nupkg.sha512",
     "C:\\Users\\Scott\\.nuget\\packages\\microsoft.jsinterop.webassembly\\7.0.10\\microsoft.jsinterop.webassembly.7.0.10.nupkg.sha512",
+    "C:\\Users\\Scott\\.nuget\\packages\\system.io.packaging\\4.7.0\\system.io.packaging.4.7.0.nupkg.sha512",
     "C:\\Users\\Scott\\.nuget\\packages\\system.io.pipelines\\7.0.0\\system.io.pipelines.7.0.0.nupkg.sha512",
     "C:\\Users\\Scott\\.nuget\\packages\\system.text.encodings.web\\7.0.0\\system.text.encodings.web.7.0.0.nupkg.sha512",
     "C:\\Users\\Scott\\.nuget\\packages\\system.text.json\\7.0.0\\system.text.json.7.0.0.nupkg.sha512",

@@ -16,7 +16,7 @@ namespace Blogr.Data
 
         public DateTime b_UpdatedDate { get; set; }
 
-        public string b_Content { get; set; } = null!;
+        public BlogContent b_Content { get; set; } = null!;
 
         public ICollection<Image> b_Images { get; set; } = null!;
 

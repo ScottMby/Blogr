@@ -7,6 +7,7 @@
   "linkerEnabled": false,
   "resources": {
     "assembly": {
+      "DocumentFormat.OpenXml.dll": "sha256-JjiBI17BpHztipV39dQdXAjhHo6Ic0xRjijJJuBQLLo=",
       "Microsoft.AspNetCore.Authorization.dll": "sha256-t7KDwXpfEy\/UbmAIpuMJI0h+MMOTr8jLi1ei0lP44QI=",
       "Microsoft.AspNetCore.Components.dll": "sha256-CCnE1pQ8XDRrJWlqnelqinQo1pisIEK3lPSLNsOThy8=",
       "Microsoft.AspNetCore.Components.Authorization.dll": "sha256-K4i5UqLQl44BaadmwA1ivTJPEy3po65hcLLNnqyELrY=",
@@ -32,6 +33,7 @@
       "Microsoft.Extensions.Primitives.dll": "sha256-q4ruoDSCjV\/QJY9ZkzV6uxvEvZUVrDbyUjU3SSh5SlE=",
       "Microsoft.JSInterop.dll": "sha256-ZglXsTJFg7gIPbFdWyqdUxrG4L+2H\/eEGtGJgrf3mls=",
       "Microsoft.JSInterop.WebAssembly.dll": "sha256-uXNdaB5ieiQN17JUqeAopa3nh1z3wh+cyXpIYXeILzo=",
+      "System.IO.Packaging.dll": "sha256-giT6HwwUyd8\/EV3Bolo6APHDQKOExNFqmItX8S06Hyw=",
       "System.IO.Pipelines.dll": "sha256-P\/MqD0fCBd5bgTM16JC1QC\/Zz7s+CwViyzmDFkBG4\/c=",
       "Microsoft.CSharp.dll": "sha256-X69dv0Kcp5aCpsjyp0kh0E28KK1Z47p8anZQiQU8Irc=",
       "Microsoft.VisualBasic.Core.dll": "sha256-gqaDZ2GcFZADYOQ\/y+hWgkBU2p6w7DvAVQkHGZQAK44=",
@@ -202,14 +204,14 @@
       "netstandard.dll": "sha256-qjqaAEP3hdLnU\/TnoCd8HaSa+0ruV1TpdaB2GUujGMw=",
       "System.Private.CoreLib.dll": "sha256-\/7uQ+eNo9u3H1mpgMko4D3tKZHeGRfsRjna0Dqsu62k=",
       "Blogr.Shared.dll": "sha256-p0AEoeGGINV7QTAyJ6amVNaXhthAYNH1+lPayNwQ+sA=",
-      "Blogr.Client.dll": "sha256-YSpFKHNRA3+\/O\/Hwcj9NfduJOXPWoMEErE6BA1Gh4wk="
+      "Blogr.Client.dll": "sha256-NxLWAH5xB2KGF1PRzi\/9jmAcfr3qGi2syiGlSHLtByU="
     },
     "extensions": null,
     "lazyAssembly": null,
     "libraryInitializers": null,
     "pdb": {
       "Blogr.Shared.pdb": "sha256-OvQLdIBOY+ed4NWVPiSrq87k0EjQgPHxApijNimj97o=",
-      "Blogr.Client.pdb": "sha256-awMbzG+CjEwtgdSCm4JfrId9Zn0fQQL3Bzw5pPOZABE="
+      "Blogr.Client.pdb": "sha256-4KiK0OaeU4+cmnvrkV5xoXn+sxrSRE63KnhLgW9nW5Y="
     },
     "runtime": {
       "dotnet.7.0.10.y5thit92gj.js": "sha256-qJB30QURoyH3y3WyayHu6nMFIx2XNOkXCez7tagGpvE=",

@@ -1,12 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "W5BbD+vwFe1ulDfy9fKlZlz3V7mEaXWIK1zXVxzb7w5p3k2PaVyNcKCW7XDjePNipBP3TbtqTfOD7uW4EFoIVw==",
+  "dgSpecHash": "rG2qBdiZxkAUt6H8US6rMU3rRW5pwuvEb50BMLTNHs59UtYbnei9/Gb5Ddu52i7JQ9wMAqauupp6Rhxd3czl+A==",
   "success": true,
   "projectFilePath": "C:\\Users\\Scott\\Documents\\GitHub\\Blogr\\Blogr\\Server\\Blogr.Server.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Scott\\.nuget\\packages\\automapper\\11.0.0\\automapper.11.0.0.nupkg.sha512",
     "C:\\Users\\Scott\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
     "C:\\Users\\Scott\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",
+    "C:\\Users\\Scott\\.nuget\\packages\\documentformat.openxml\\2.20.0\\documentformat.openxml.2.20.0.nupkg.sha512",
     "C:\\Users\\Scott\\.nuget\\packages\\duende.identityserver\\6.0.4\\duende.identityserver.6.0.4.nupkg.sha512",
     "C:\\Users\\Scott\\.nuget\\packages\\duende.identityserver.aspnetidentity\\6.0.4\\duende.identityserver.aspnetidentity.6.0.4.nupkg.sha512",
     "C:\\Users\\Scott\\.nuget\\packages\\duende.identityserver.entityframework\\6.0.4\\duende.identityserver.entityframework.6.0.4.nupkg.sha512",
@@ -220,6 +221,7 @@
     "C:\\Users\\Scott\\.nuget\\packages\\system.io.compression.zipfile\\4.3.0\\system.io.compression.zipfile.4.3.0.nupkg.sha512",
     "C:\\Users\\Scott\\.nuget\\packages\\system.io.filesystem\\4.3.0\\system.io.filesystem.4.3.0.nupkg.sha512",
     "C:\\Users\\Scott\\.nuget\\packages\\system.io.filesystem.primitives\\4.3.0\\system.io.filesystem.primitives.4.3.0.nupkg.sha512",
+    "C:\\Users\\Scott\\.nuget\\packages\\system.io.packaging\\4.7.0\\system.io.packaging.4.7.0.nupkg.sha512",
     "C:\\Users\\Scott\\.nuget\\packages\\system.io.pipelines\\7.0.0\\system.io.pipelines.7.0.0.nupkg.sha512",
     "C:\\Users\\Scott\\.nuget\\packages\\system.linq\\4.3.0\\system.linq.4.3.0.nupkg.sha512",
     "C:\\Users\\Scott\\.nuget\\packages\\system.linq.expressions\\4.3.0\\system.linq.expressions.4.3.0.nupkg.sha512",
