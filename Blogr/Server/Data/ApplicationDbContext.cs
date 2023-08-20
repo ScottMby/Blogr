@@ -13,10 +13,18 @@ namespace Blogr.Server.Data
         public DbSet<Blog> Blogs { get; set; } = null!;
         public DbSet<Image> Images { get; set; } = null!;
 
+        public DbSet<UserImage> UserImages => Set<UserImage>();
+
         public ApplicationDbContext(
             DbContextOptions options,
             IOptions<OperationalStoreOptions> operationalStoreOptions) : base(options, operationalStoreOptions)
         {
+        }
+
+        protected override void OnModelCreating(ModelBuilder builder)
+        {
+            base.OnModelCreating(builder);
+            builder.Entity<ApplicationUser>().Navigation(e => e.u_Photo).AutoInclude();
         }
     }
 }

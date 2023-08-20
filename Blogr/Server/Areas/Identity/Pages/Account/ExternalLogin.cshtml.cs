@@ -85,8 +85,9 @@ namespace Blogr.Server.Areas.Identity.Pages.Account
             [Required]
             [EmailAddress]
             public string Email { get; set; }
+
         }
-        
+
         public IActionResult OnGet() => RedirectToPage("./Login");
 
         public IActionResult OnPost(string provider, string returnUrl = null)
@@ -154,10 +155,15 @@ namespace Blogr.Server.Areas.Identity.Pages.Account
             {
                 var user = CreateUser();
 
-                if (info.Principal.HasClaim(c => c.Type == "u_Photo"))
+                user.u_CreationDate = DateTime.UtcNow;
+                user.u_FirstName = info.Principal.FindFirst("FirstName").Value;
+                user.u_LastName = info.Principal.FindFirst("LastName").Value;
+                if (info.Principal.HasClaim(c => c.Type == "Photo"))
                 {
-                    await _userManager.AddClaimAsync(user, info.Principal.FindFirst("u_Photo"));
+                    user.u_Photo.path = info.Principal.FindFirst("Photo").Value;
                 }
+
+
 
                 await _userStore.SetUserNameAsync(user, Input.Email, CancellationToken.None);
                 await _emailStore.SetEmailAsync(user, Input.Email, CancellationToken.None);
@@ -168,6 +174,7 @@ namespace Blogr.Server.Areas.Identity.Pages.Account
                     result = await _userManager.AddLoginAsync(user, info);
                     if (result.Succeeded)
                     {
+
                         _logger.LogInformation("User created an account using {Name} provider.", info.LoginProvider);
 
                         var userId = await _userManager.GetUserIdAsync(user);

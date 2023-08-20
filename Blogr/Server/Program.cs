@@ -26,7 +26,9 @@ builder.Services.AddAuthentication()
     {
          googleOptions.ClientId = builder.Configuration["Authentication:Google:ClientId"];
          googleOptions.ClientSecret = builder.Configuration["Authentication:Google:ClientSecret"];
-         googleOptions.ClaimActions.MapJsonKey("u_Photo", "picture");
+         googleOptions.ClaimActions.MapJsonKey("FirstName", "given_name");
+         googleOptions.ClaimActions.MapJsonKey("LastName", "family_name");
+         googleOptions.ClaimActions.MapJsonKey("Photo", "picture");
     });
 
 builder.Services.AddControllersWithViews();

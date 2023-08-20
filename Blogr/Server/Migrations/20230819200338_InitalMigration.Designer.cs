@@ -9,11 +9,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
 
-namespace Blogr.Server.Data.Migrations
+namespace Blogr.Server.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20230818231226_AddBlogsAndUserData")]
-    partial class AddBlogsAndUserData
+    [Migration("20230819200338_InitalMigration")]
+    partial class InitalMigration
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -120,9 +120,8 @@ namespace Blogr.Server.Data.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("u_Photo")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int>("u_Photoi_Id")
+                        .HasColumnType("int");
 
                     b.HasKey("Id");
 
@@ -133,6 +132,8 @@ namespace Blogr.Server.Data.Migrations
                         .IsUnique()
                         .HasDatabaseName("UserNameIndex")
                         .HasFilter("[NormalizedUserName] IS NOT NULL");
+
+                    b.HasIndex("u_Photoi_Id");
 
                     b.ToTable("AspNetUsers", (string)null);
                 });
@@ -444,6 +445,17 @@ namespace Blogr.Server.Data.Migrations
                         .HasForeignKey("b_UserId");
 
                     b.Navigation("b_User");
+                });
+
+            modelBuilder.Entity("Blogr.Server.Models.ApplicationUser", b =>
+                {
+                    b.HasOne("Blogr.Server.Models.Image", "u_Photo")
+                        .WithMany()
+                        .HasForeignKey("u_Photoi_Id")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("u_Photo");
                 });
 
             modelBuilder.Entity("Blogr.Server.Models.Image", b =>

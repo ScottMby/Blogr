@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
 
-namespace Blogr.Server.Data.Migrations
+namespace Blogr.Server.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
     partial class ApplicationDbContextModelSnapshot : ModelSnapshot
@@ -117,9 +117,8 @@ namespace Blogr.Server.Data.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("u_Photo")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int>("u_PhotoId")
+                        .HasColumnType("int");
 
                     b.HasKey("Id");
 
@@ -130,6 +129,8 @@ namespace Blogr.Server.Data.Migrations
                         .IsUnique()
                         .HasDatabaseName("UserNameIndex")
                         .HasFilter("[NormalizedUserName] IS NOT NULL");
+
+                    b.HasIndex("u_PhotoId");
 
                     b.ToTable("AspNetUsers", (string)null);
                 });
@@ -154,6 +155,22 @@ namespace Blogr.Server.Data.Migrations
                     b.HasIndex("Blogb_ID");
 
                     b.ToTable("Images");
+                });
+
+            modelBuilder.Entity("Blogr.Server.Models.UserImage", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("path")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("UserImages");
                 });
 
             modelBuilder.Entity("Duende.IdentityServer.EntityFramework.Entities.DeviceFlowCodes", b =>
@@ -441,6 +458,17 @@ namespace Blogr.Server.Data.Migrations
                         .HasForeignKey("b_UserId");
 
                     b.Navigation("b_User");
+                });
+
+            modelBuilder.Entity("Blogr.Server.Models.ApplicationUser", b =>
+                {
+                    b.HasOne("Blogr.Server.Models.UserImage", "u_Photo")
+                        .WithMany()
+                        .HasForeignKey("u_PhotoId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("u_Photo");
                 });
 
             modelBuilder.Entity("Blogr.Server.Models.Image", b =>
