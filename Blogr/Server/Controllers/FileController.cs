@@ -6,7 +6,7 @@ using System.Net;
 
 namespace Blogr.Server.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/File")]
     [ApiController]
     public class FileController : ControllerBase
     {

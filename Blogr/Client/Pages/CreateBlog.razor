@@ -1,29 +1,33 @@
 ﻿@page "/CreateBlog"
 @using System.Net.Http.Headers
 @using Blogr.Server.Models;
+@using Blogr.Shared;
+@using Newtonsoft.Json;
+@using System.Text;
 @inject HttpClient Http;
 
 <PageTitle>CreateBlog</PageTitle>
 
 <div>
     <h1>Create Blog Post</h1>
-            <h4>Upload .docx file</h4>
-            @*Input text and post it and the file to the server*@
-            <InputText id="blogTitle"></InputText>
-            <InputFile OnChange="@OnInputFileChange" />
-            <button type="submit">Create Post</button>
+    <h4>Upload .docx file</h4>
+    @*Input text and post it and the file to the server*@
+    <InputText @bind-Value="blogTitle"></InputText>
+    <InputFile OnChange="@OnInputFileChange" />
+    <button type="submit" onclick="@UploadBlog">Create Post</button>
 
 
-    
 
-    @if(fileNames.Count > 0)
+
+    @if (fileNames.Count > 0)
     {
-        <p>File: @fileNames</p>
+        <p>File: @fileNames[0]</p>
     }
 </div>
 
 
 @code {
+    private string blogTitle { get; set; }
     private int maxAllowedFiles = 1;
     private long maxFileSize = 1024 * 20; //20Kb max file size
     private List<string> fileNames = new();
@@ -45,7 +49,7 @@
         var response = await Http.PostAsync("api/File", content);
         var newUploadResults = await response.Content.ReadFromJsonAsync<List<UploadResult>>();
 
-        if(newUploadResults is not null)
+        if (newUploadResults is not null)
         {
             uploadResults = uploadResults.Concat(newUploadResults).ToList();
         }
@@ -58,5 +62,26 @@
             return uploadResult.StoredFileName;
 
         return "File not found.";
+    }
+
+    private async Task<string> UploadBlog()
+    {
+        var values = new Dictionary<string, string>
+        {
+            { "Title", blogTitle },
+            { "ContentPath",  GetStoredFileName(fileNames[0])}
+        };
+        var stringPayload = JsonConvert.SerializeObject(values);
+        var content = new StringContent(stringPayload, Encoding.UTF8, "application/json");
+        var response = await Http.PostAsync("api/BlogUpload", content);
+
+        if(response.IsSuccessStatusCode)
+        {
+            return "Uploaded";
+        }
+        else
+        {
+            return "Failed to upload" + response.StatusCode;
+        }
     }
 }

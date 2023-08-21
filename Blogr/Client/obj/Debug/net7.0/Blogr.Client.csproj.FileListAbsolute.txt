@@ -854,3 +854,7 @@ C:\Users\Scott\Documents\GitHub\Blogr\Blogr\Client\bin\Debug\net7.0\DocumentForm
 C:\Users\Scott\Documents\GitHub\Blogr\Blogr\Client\bin\Debug\net7.0\System.IO.Packaging.dll
 C:\Users\Scott\Documents\GitHub\Blogr\Blogr\Client\obj\Debug\net7.0\build-gz\PBtI8Zz0.gz
 C:\Users\Scott\Documents\GitHub\Blogr\Blogr\Client\obj\Debug\net7.0\build-gz\V+eIT7Fj.gz
+C:\Users\Scott\Documents\GitHub\Blogr\Blogr\Client\bin\Debug\net7.0\wwwroot\_framework\Newtonsoft.Json.dll
+C:\Users\Scott\Documents\GitHub\Blogr\Blogr\Client\bin\Debug\net7.0\wwwroot\_framework\Newtonsoft.Json.dll.gz
+C:\Users\Scott\Documents\GitHub\Blogr\Blogr\Client\bin\Debug\net7.0\Newtonsoft.Json.dll
+C:\Users\Scott\Documents\GitHub\Blogr\Blogr\Client\obj\Debug\net7.0\build-gz\6CuFzzzi.gz
