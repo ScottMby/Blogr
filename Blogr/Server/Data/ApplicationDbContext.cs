@@ -11,7 +11,6 @@ namespace Blogr.Server.Data
     {
         //Uses EF to create a table called blogs
         public DbSet<Blog> Blogs { get; set; } = null!;
-        public DbSet<Image> Images { get; set; } = null!;
 
         public DbSet<UserImage> UserImages => Set<UserImage>();
 

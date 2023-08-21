@@ -29,7 +29,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="UserFileStorage\BlogImages\" />
     <Folder Include="UserFileStorage\BlogContent\" />
     <Folder Include="UserFileStorage\UserPhotos\" />
   </ItemGroup>

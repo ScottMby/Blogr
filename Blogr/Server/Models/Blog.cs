@@ -18,7 +18,5 @@ namespace Blogr.Data
 
         public BlogContent b_Content { get; set; } = null!;
 
-        public ICollection<Image> b_Images { get; set; } = null!;
-
     }
 }
