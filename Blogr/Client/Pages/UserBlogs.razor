@@ -1,0 +1,26 @@
+﻿@page "/UserBlogs"
+@using Blogr.Shared;
+@inject HttpClient Http;
+
+<h3>UserBlogs</h3>
+
+<ul>
+    @foreach (var blog in blogsList)
+    {
+        <h4>@blog.Title</h4>
+        <p>@blog.CreatorFirstName</p>
+        <p>@blog.CreatorLastName</p>
+        <img id="User-Photo" src="@blog.CreatorImgPath"/>
+        <p>Created: @blog.CreationDate.ToShortDateString()</p>
+        <p>Last Updated: @blog.UpdatedDate.ToShortDateString()</p>
+    }
+</ul>
+
+@code {
+    List<BlogDisplay> blogsList = new List<BlogDisplay>();
+
+    protected override async Task OnInitializedAsync()
+    {
+        blogsList = await Http.GetFromJsonAsync<List<BlogDisplay>>("api/GetBlogByCurrentUser");
+    }
+}

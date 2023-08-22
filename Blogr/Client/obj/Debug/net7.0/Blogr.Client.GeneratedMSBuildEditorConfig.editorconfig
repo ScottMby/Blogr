@@ -44,6 +44,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHJvZmlsZS5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/Scott/Documents/GitHub/Blogr/Blogr/Client/Pages/UserBlogs.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVXNlckJsb2dzLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Scott/Documents/GitHub/Blogr/Blogr/Client/Shared/LoginDisplay.razor]
 build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXExvZ2luRGlzcGxheS5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
