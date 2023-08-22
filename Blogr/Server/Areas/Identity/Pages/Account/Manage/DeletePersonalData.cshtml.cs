@@ -87,6 +87,8 @@ namespace Blogr.Server.Areas.Identity.Pages.Account.Manage
                 }
             }
 
+            //Delete user blogs and images here!!!
+
             var result = await _userManager.DeleteAsync(user);
             var userId = await _userManager.GetUserIdAsync(user);
             if (!result.Succeeded)

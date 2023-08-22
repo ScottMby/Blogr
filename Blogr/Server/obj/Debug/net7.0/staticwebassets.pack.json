@@ -1,6 +1,18 @@
 {
   "Files": [
     {
+      "Id": "C:\\Users\\Scott\\Documents\\GitHub\\Blogr\\Blogr\\Server\\wwwroot\\UserPhotos\\uv5axy2h.png",
+      "PackagePath": "staticwebassets\\UserPhotos\\uv5axy2h.png"
+    },
+    {
+      "Id": "C:\\Users\\Scott\\Documents\\GitHub\\Blogr\\Blogr\\Server\\wwwroot\\UserPhotos\\uz0gtalm.vrf",
+      "PackagePath": "staticwebassets\\UserPhotos\\uz0gtalm.vrf"
+    },
+    {
+      "Id": "C:\\Users\\Scott\\Documents\\GitHub\\Blogr\\Blogr\\Server\\wwwroot\\UserPhotos\\vilebqcu.png",
+      "PackagePath": "staticwebassets\\UserPhotos\\vilebqcu.png"
+    },
+    {
       "Id": "C:\\Users\\Scott\\Documents\\GitHub\\Blogr\\Blogr\\Server\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },

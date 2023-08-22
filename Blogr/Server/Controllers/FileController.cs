@@ -31,7 +31,7 @@ namespace Blogr.Server.Controllers
 
 
                 trustedFileNameForFileStorage = Path.GetRandomFileName();
-                var path = Path.Combine(_env.ContentRootPath, @"UserFileStorage\BlogContent", trustedFileNameForFileStorage);
+                var path = Path.Combine(_env.ContentRootPath, @"\wwroot\BlogContent", trustedFileNameForFileStorage);
 
                 await using FileStream fs = new(path, FileMode.Create);
                 await file.CopyToAsync(fs);
