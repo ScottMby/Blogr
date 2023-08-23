@@ -23,5 +23,7 @@ namespace Blogr.Shared
         public DateTime UpdatedDate { get; set; }
 
         public BlogContent Content { get; set; } = null!;
+
+        public bool DisplayContent = false;
     }
 }

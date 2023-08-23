@@ -1,5 +1,6 @@
 ﻿@page "/UserBlogs"
 @using Blogr.Shared;
+@using Microsoft.Office.Interop.Word;
 @inject HttpClient Http;
 
 <h3>UserBlogs</h3>
@@ -10,17 +11,30 @@
         <h4>@blog.Title</h4>
         <p>@blog.CreatorFirstName</p>
         <p>@blog.CreatorLastName</p>
-        <img id="User-Photo" src="@blog.CreatorImgPath"/>
+        <img id="User-Photo" src="@blog.CreatorImgPath" />
         <p>Created: @blog.CreationDate.ToShortDateString()</p>
         <p>Last Updated: @blog.UpdatedDate.ToShortDateString()</p>
+        <button @onclick="GetContent(blog)">View Content</button>
+        @if (blog.DisplayContent)
+        {
+            <pre></pre>
+        }
     }
 </ul>
 
 @code {
+
     List<BlogDisplay> blogsList = new List<BlogDisplay>();
 
-    protected override async Task OnInitializedAsync()
+    protected override async Task<string> OnInitializedAsync()
     {
         blogsList = await Http.GetFromJsonAsync<List<BlogDisplay>>("api/GetBlogByCurrentUser");
+        return "";
+    }
+
+    private EventCallback GetContent(BlogDisplay blog)
+    {
+        blog.DisplayContent = true;
+        return EventCallback.Empty;
     }
 }

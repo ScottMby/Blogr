@@ -31,6 +31,7 @@ namespace Blogr.Server.Controllers
 
 
                 trustedFileNameForFileStorage = Path.GetRandomFileName();
+                trustedFileNameForFileStorage = Path.ChangeExtension(trustedFileNameForFileStorage, ".docx");
                 var path = Path.Combine(_env.ContentRootPath, @"\wwroot\BlogContent", trustedFileNameForFileStorage);
 
                 await using FileStream fs = new(path, FileMode.Create);
