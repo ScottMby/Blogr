@@ -70,17 +70,6 @@
           }
         }
       },
-      "DocumentFormat.OpenXml/2.20.0": {
-        "dependencies": {
-          "System.IO.Packaging": "4.7.0"
-        },
-        "runtime": {
-          "lib/net6.0/DocumentFormat.OpenXml.dll": {
-            "assemblyVersion": "2.20.0.0",
-            "fileVersion": "2.20.0.0"
-          }
-        }
-      },
       "Duende.IdentityServer/6.0.4": {
         "dependencies": {
           "Duende.IdentityServer.Storage": "6.0.4",
@@ -1842,6 +1831,14 @@
       },
       "Microsoft.NETCore.Platforms/1.1.0": {},
       "Microsoft.NETCore.Targets/1.1.0": {},
+      "Microsoft.Office.Interop.Word/15.0.4797.1004": {
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.Office.Interop.Word.dll": {
+            "assemblyVersion": "15.0.0.0",
+            "fileVersion": "15.0.4797.1003"
+          }
+        }
+      },
       "Microsoft.SqlServer.Server/1.0.0": {
         "runtime": {
           "lib/netstandard2.0/Microsoft.SqlServer.Server.dll": {
@@ -2602,14 +2599,6 @@
           "System.Runtime": "4.3.0"
         }
       },
-      "System.IO.Packaging/4.7.0": {
-        "runtime": {
-          "lib/netstandard2.0/System.IO.Packaging.dll": {
-            "assemblyVersion": "4.0.5.0",
-            "fileVersion": "4.700.19.56404"
-          }
-        }
-      },
       "System.IO.Pipelines/7.0.0": {},
       "System.Linq/4.3.0": {
         "dependencies": {
@@ -3120,10 +3109,10 @@
       "Blogr.Client/1.0.0": {
         "dependencies": {
           "Blogr.Shared": "1.0.0",
-          "DocumentFormat.OpenXml": "2.20.0",
           "Microsoft.AspNetCore.Components.WebAssembly": "7.0.10",
           "Microsoft.AspNetCore.Components.WebAssembly.Authentication": "7.0.10",
           "Microsoft.Extensions.Http": "7.0.0",
+          "Microsoft.Office.Interop.Word": "15.0.4797.1004",
           "Newtonsoft.Json": "13.0.3"
         },
         "runtime": {
@@ -3163,13 +3152,6 @@
       "sha512": "sha512-EycyMsb6rD2PK9P0SyibFfEhvWWttdrYhyPF4f41uzdB/44yQlV+2Wehxyg489Rj6gbPvSPgbKq0xsHJBhipZA==",
       "path": "azure.identity/1.6.0",
       "hashPath": "azure.identity.1.6.0.nupkg.sha512"
-    },
-    "DocumentFormat.OpenXml/2.20.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-+oFMsEppo/W6KpGTRXaJl2jTFYn9zeon4FaZuDoCijQ1/0JaPENaCef7d4Y3f8v116eKhVBwd4Ya+/NDglxkjw==",
-      "path": "documentformat.openxml/2.20.0",
-      "hashPath": "documentformat.openxml.2.20.0.nupkg.sha512"
     },
     "Duende.IdentityServer/6.0.4": {
       "type": "package",
@@ -4151,6 +4133,13 @@
       "path": "microsoft.netcore.targets/1.1.0",
       "hashPath": "microsoft.netcore.targets.1.1.0.nupkg.sha512"
     },
+    "Microsoft.Office.Interop.Word/15.0.4797.1004": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-lavTOrMGK/o/t3+gGr7JuVrL8XDdnS0DwPLcYv/StOiysXO4L0C36IXTVtEJo1Mh9Aoxo9a8dgGcPi+faTlv0g==",
+      "path": "microsoft.office.interop.word/15.0.4797.1004",
+      "hashPath": "microsoft.office.interop.word.15.0.4797.1004.nupkg.sha512"
+    },
     "Microsoft.SqlServer.Server/1.0.0": {
       "type": "package",
       "serviceable": true,
@@ -4661,13 +4650,6 @@
       "sha512": "sha512-6QOb2XFLch7bEc4lIcJH49nJN2HV+OC3fHDgsLVsBVBk3Y4hFAnOBGzJ2lUu7CyDDFo9IBWkSsnbkT6IBwwiMw==",
       "path": "system.io.filesystem.primitives/4.3.0",
       "hashPath": "system.io.filesystem.primitives.4.3.0.nupkg.sha512"
-    },
-    "System.IO.Packaging/4.7.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-9VV4KAbgRQZ79iEoG40KIeZy38O30oWwewScAST879+oki8g/Wa2HXZQgrhDDxQM4GkP1PnRJll05NMiVPbYAw==",
-      "path": "system.io.packaging/4.7.0",
-      "hashPath": "system.io.packaging.4.7.0.nupkg.sha512"
     },
     "System.IO.Pipelines/7.0.0": {
       "type": "package",

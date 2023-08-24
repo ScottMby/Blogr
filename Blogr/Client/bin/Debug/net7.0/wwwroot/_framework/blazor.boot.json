@@ -7,7 +7,6 @@
   "linkerEnabled": false,
   "resources": {
     "assembly": {
-      "DocumentFormat.OpenXml.dll": "sha256-JjiBI17BpHztipV39dQdXAjhHo6Ic0xRjijJJuBQLLo=",
       "Microsoft.AspNetCore.Authorization.dll": "sha256-t7KDwXpfEy\/UbmAIpuMJI0h+MMOTr8jLi1ei0lP44QI=",
       "Microsoft.AspNetCore.Components.dll": "sha256-CCnE1pQ8XDRrJWlqnelqinQo1pisIEK3lPSLNsOThy8=",
       "Microsoft.AspNetCore.Components.Authorization.dll": "sha256-K4i5UqLQl44BaadmwA1ivTJPEy3po65hcLLNnqyELrY=",
@@ -33,8 +32,8 @@
       "Microsoft.Extensions.Primitives.dll": "sha256-q4ruoDSCjV\/QJY9ZkzV6uxvEvZUVrDbyUjU3SSh5SlE=",
       "Microsoft.JSInterop.dll": "sha256-ZglXsTJFg7gIPbFdWyqdUxrG4L+2H\/eEGtGJgrf3mls=",
       "Microsoft.JSInterop.WebAssembly.dll": "sha256-uXNdaB5ieiQN17JUqeAopa3nh1z3wh+cyXpIYXeILzo=",
+      "Microsoft.Office.Interop.Word.dll": "sha256-2tbDAqICW69vlq4SgloPt6uq0PnNSuhPN0iZ6Ocp2X0=",
       "Newtonsoft.Json.dll": "sha256-IsZJ91\/OW+fHzNqIgEc7Y072ns8z9dGritiSyvR9Wgc=",
-      "System.IO.Packaging.dll": "sha256-giT6HwwUyd8\/EV3Bolo6APHDQKOExNFqmItX8S06Hyw=",
       "System.IO.Pipelines.dll": "sha256-P\/MqD0fCBd5bgTM16JC1QC\/Zz7s+CwViyzmDFkBG4\/c=",
       "Microsoft.CSharp.dll": "sha256-X69dv0Kcp5aCpsjyp0kh0E28KK1Z47p8anZQiQU8Irc=",
       "Microsoft.VisualBasic.Core.dll": "sha256-gqaDZ2GcFZADYOQ\/y+hWgkBU2p6w7DvAVQkHGZQAK44=",
@@ -204,15 +203,15 @@
       "mscorlib.dll": "sha256-Xo3wdLenBZ41X73hGjkWTbEQZDKcQsnPFtlkePUxLY0=",
       "netstandard.dll": "sha256-qjqaAEP3hdLnU\/TnoCd8HaSa+0ruV1TpdaB2GUujGMw=",
       "System.Private.CoreLib.dll": "sha256-\/7uQ+eNo9u3H1mpgMko4D3tKZHeGRfsRjna0Dqsu62k=",
-      "Blogr.Shared.dll": "sha256-guxB\/XMFqKkPuhlLoOYPBB6VOEfcyaz9Q8vofszT9eo=",
-      "Blogr.Client.dll": "sha256-QVQkCkBoojn4j\/7f4AkBsoisSfbJqlWbBgGS+jv33Nw="
+      "Blogr.Shared.dll": "sha256-kWSkLS9Yz\/mXvyyxYxOOwvs2EZ6gmKSQ2ANpbuQQObM=",
+      "Blogr.Client.dll": "sha256-iwOU\/d0\/sAWopnU0fjC8livtqcE8c7zVlgLtziimrGs="
     },
     "extensions": null,
     "lazyAssembly": null,
     "libraryInitializers": null,
     "pdb": {
-      "Blogr.Shared.pdb": "sha256-lUoykRUd2RGwxWXzTcw8TQLRUaJ0kuqZnpAxZGvxDI4=",
-      "Blogr.Client.pdb": "sha256-Ae86JPaWYUg3Ghgk3ivC6BDBRVfn3Q7nt4p6lv9oF\/s="
+      "Blogr.Shared.pdb": "sha256-eK5uNpUane6CcD9QQkbNzirEB4Jyw\/8HbL+pPQhUsKQ=",
+      "Blogr.Client.pdb": "sha256-+FDsxpw6lWkng09f42oo7BxT7WP35wqMrRwYoijPvjo="
     },
     "runtime": {
       "dotnet.7.0.10.y5thit92gj.js": "sha256-qJB30QURoyH3y3WyayHu6nMFIx2XNOkXCez7tagGpvE=",

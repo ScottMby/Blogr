@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "voAgSS9c0SZiRqkyUn70SSDMRJUA+ZLQJLR/sagrbhY=",
+  "Hash": "6xXlOfNvzZU0RTqYWSpSUYVsILnj/VvbeSZrY5vTKf4=",
   "Source": "Blogr.Client",
   "BasePath": "/",
   "Mode": "Root",
@@ -134,23 +134,6 @@
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "C:\\Users\\Scott\\Documents\\GitHub\\Blogr\\Blogr\\Shared\\bin\\Debug\\net7.0\\Blogr.Shared.pdb"
-    },
-    {
-      "Identity": "C:\\Users\\Scott\\Documents\\GitHub\\Blogr\\Blogr\\Client\\bin\\Debug\\net7.0\\wwwroot\\_framework\\DocumentFormat.OpenXml.dll",
-      "SourceId": "Blogr.Client",
-      "SourceType": "Computed",
-      "ContentRoot": "C:\\Users\\Scott\\Documents\\GitHub\\Blogr\\Blogr\\Client\\bin\\Debug\\net7.0\\wwwroot\\",
-      "BasePath": "/",
-      "RelativePath": "_framework/DocumentFormat.OpenXml.dll",
-      "AssetKind": "Build",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "BlazorWebAssemblyResource",
-      "AssetTraitValue": "runtime",
-      "CopyToOutputDirectory": "PreserveNewest",
-      "CopyToPublishDirectory": "Never",
-      "OriginalItemSpec": "C:\\Users\\Scott\\.nuget\\packages\\documentformat.openxml\\2.20.0\\lib\\net6.0\\DocumentFormat.OpenXml.dll"
     },
     {
       "Identity": "C:\\Users\\Scott\\Documents\\GitHub\\Blogr\\Blogr\\Client\\bin\\Debug\\net7.0\\wwwroot\\_framework\\dotnet.7.0.10.y5thit92gj.js",
@@ -712,6 +695,23 @@
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "C:\\Users\\Scott\\.nuget\\packages\\microsoft.jsinterop.webassembly\\7.0.10\\lib\\net7.0\\Microsoft.JSInterop.WebAssembly.dll"
+    },
+    {
+      "Identity": "C:\\Users\\Scott\\Documents\\GitHub\\Blogr\\Blogr\\Client\\bin\\Debug\\net7.0\\wwwroot\\_framework\\Microsoft.Office.Interop.Word.dll",
+      "SourceId": "Blogr.Client",
+      "SourceType": "Computed",
+      "ContentRoot": "C:\\Users\\Scott\\Documents\\GitHub\\Blogr\\Blogr\\Client\\bin\\Debug\\net7.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/Microsoft.Office.Interop.Word.dll",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "BlazorWebAssemblyResource",
+      "AssetTraitValue": "runtime",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "C:\\Users\\Scott\\.nuget\\packages\\microsoft.office.interop.word\\15.0.4797.1004\\lib\\netstandard2.0\\Microsoft.Office.Interop.Word.dll"
     },
     {
       "Identity": "C:\\Users\\Scott\\Documents\\GitHub\\Blogr\\Blogr\\Client\\bin\\Debug\\net7.0\\wwwroot\\_framework\\Microsoft.VisualBasic.Core.dll",
@@ -1681,23 +1681,6 @@
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "C:\\Users\\Scott\\.nuget\\packages\\microsoft.netcore.app.runtime.mono.browser-wasm\\7.0.10\\runtimes\\browser-wasm\\lib\\net7.0\\System.IO.MemoryMappedFiles.dll"
-    },
-    {
-      "Identity": "C:\\Users\\Scott\\Documents\\GitHub\\Blogr\\Blogr\\Client\\bin\\Debug\\net7.0\\wwwroot\\_framework\\System.IO.Packaging.dll",
-      "SourceId": "Blogr.Client",
-      "SourceType": "Computed",
-      "ContentRoot": "C:\\Users\\Scott\\Documents\\GitHub\\Blogr\\Blogr\\Client\\bin\\Debug\\net7.0\\wwwroot\\",
-      "BasePath": "/",
-      "RelativePath": "_framework/System.IO.Packaging.dll",
-      "AssetKind": "Build",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "BlazorWebAssemblyResource",
-      "AssetTraitValue": "runtime",
-      "CopyToOutputDirectory": "PreserveNewest",
-      "CopyToPublishDirectory": "Never",
-      "OriginalItemSpec": "C:\\Users\\Scott\\.nuget\\packages\\system.io.packaging\\4.7.0\\lib\\netstandard2.0\\System.IO.Packaging.dll"
     },
     {
       "Identity": "C:\\Users\\Scott\\Documents\\GitHub\\Blogr\\Blogr\\Client\\bin\\Debug\\net7.0\\wwwroot\\_framework\\System.IO.Pipelines.dll",
@@ -5780,6 +5763,23 @@
       "OriginalItemSpec": "C:\\Users\\Scott\\Documents\\GitHub\\Blogr\\Blogr\\Client\\bin\\Debug\\net7.0\\wwwroot\\_framework\\Microsoft.AspNetCore.Metadata.dll"
     },
     {
+      "Identity": "C:\\Users\\Scott\\Documents\\GitHub\\Blogr\\Blogr\\Client\\obj\\Debug\\net7.0\\build-gz\\OK0HRpZd.gz",
+      "SourceId": "Blogr.Client",
+      "SourceType": "Computed",
+      "ContentRoot": "C:\\Users\\Scott\\Documents\\GitHub\\Blogr\\Blogr\\Client\\bin\\Debug\\net7.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/Microsoft.Office.Interop.Word.dll.gz",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "RelatedAsset": "C:\\Users\\Scott\\Documents\\GitHub\\Blogr\\Blogr\\Client\\bin\\Debug\\net7.0\\wwwroot\\_framework\\Microsoft.Office.Interop.Word.dll",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "C:\\Users\\Scott\\Documents\\GitHub\\Blogr\\Blogr\\Client\\bin\\Debug\\net7.0\\wwwroot\\_framework\\Microsoft.Office.Interop.Word.dll"
+    },
+    {
       "Identity": "C:\\Users\\Scott\\Documents\\GitHub\\Blogr\\Blogr\\Client\\obj\\Debug\\net7.0\\build-gz\\OVFjTr2p.gz",
       "SourceId": "Blogr.Client",
       "SourceType": "Computed",
@@ -5897,23 +5897,6 @@
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "C:\\Users\\Scott\\Documents\\GitHub\\Blogr\\Blogr\\Client\\bin\\Debug\\net7.0\\wwwroot\\_framework\\System.Collections.Specialized.dll"
-    },
-    {
-      "Identity": "C:\\Users\\Scott\\Documents\\GitHub\\Blogr\\Blogr\\Client\\obj\\Debug\\net7.0\\build-gz\\PBtI8Zz0.gz",
-      "SourceId": "Blogr.Client",
-      "SourceType": "Computed",
-      "ContentRoot": "C:\\Users\\Scott\\Documents\\GitHub\\Blogr\\Blogr\\Client\\bin\\Debug\\net7.0\\wwwroot\\",
-      "BasePath": "/",
-      "RelativePath": "_framework/DocumentFormat.OpenXml.dll.gz",
-      "AssetKind": "Build",
-      "AssetMode": "All",
-      "AssetRole": "Alternative",
-      "RelatedAsset": "C:\\Users\\Scott\\Documents\\GitHub\\Blogr\\Blogr\\Client\\bin\\Debug\\net7.0\\wwwroot\\_framework\\DocumentFormat.OpenXml.dll",
-      "AssetTraitName": "Content-Encoding",
-      "AssetTraitValue": "gzip",
-      "CopyToOutputDirectory": "PreserveNewest",
-      "CopyToPublishDirectory": "Never",
-      "OriginalItemSpec": "C:\\Users\\Scott\\Documents\\GitHub\\Blogr\\Blogr\\Client\\bin\\Debug\\net7.0\\wwwroot\\_framework\\DocumentFormat.OpenXml.dll"
     },
     {
       "Identity": "C:\\Users\\Scott\\Documents\\GitHub\\Blogr\\Blogr\\Client\\obj\\Debug\\net7.0\\build-gz\\PckpalX6.gz",
@@ -6509,23 +6492,6 @@
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "C:\\Users\\Scott\\Documents\\GitHub\\Blogr\\Blogr\\Client\\bin\\Debug\\net7.0\\wwwroot\\_framework\\System.Xml.Serialization.dll"
-    },
-    {
-      "Identity": "C:\\Users\\Scott\\Documents\\GitHub\\Blogr\\Blogr\\Client\\obj\\Debug\\net7.0\\build-gz\\V+eIT7Fj.gz",
-      "SourceId": "Blogr.Client",
-      "SourceType": "Computed",
-      "ContentRoot": "C:\\Users\\Scott\\Documents\\GitHub\\Blogr\\Blogr\\Client\\bin\\Debug\\net7.0\\wwwroot\\",
-      "BasePath": "/",
-      "RelativePath": "_framework/System.IO.Packaging.dll.gz",
-      "AssetKind": "Build",
-      "AssetMode": "All",
-      "AssetRole": "Alternative",
-      "RelatedAsset": "C:\\Users\\Scott\\Documents\\GitHub\\Blogr\\Blogr\\Client\\bin\\Debug\\net7.0\\wwwroot\\_framework\\System.IO.Packaging.dll",
-      "AssetTraitName": "Content-Encoding",
-      "AssetTraitValue": "gzip",
-      "CopyToOutputDirectory": "PreserveNewest",
-      "CopyToPublishDirectory": "Never",
-      "OriginalItemSpec": "C:\\Users\\Scott\\Documents\\GitHub\\Blogr\\Blogr\\Client\\bin\\Debug\\net7.0\\wwwroot\\_framework\\System.IO.Packaging.dll"
     },
     {
       "Identity": "C:\\Users\\Scott\\Documents\\GitHub\\Blogr\\Blogr\\Client\\obj\\Debug\\net7.0\\build-gz\\Vcz5EAI+.gz",

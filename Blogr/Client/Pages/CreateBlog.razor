@@ -29,7 +29,7 @@
 @code {
     private string blogTitle { get; set; }
     private int maxAllowedFiles = 1;
-    private long maxFileSize = 1024 * 20; //20Kb max file size
+    private long maxFileSize = 1048576 * 1; //1Mb max file size
     private List<string> fileNames = new();
     private List<UploadResult> uploadResults = new();
     private async Task OnInputFileChange(InputFileChangeEventArgs e)
@@ -38,7 +38,7 @@
 
         foreach (var file in e.GetMultipleFiles(maxAllowedFiles))
         {
-            var fileContent = new StreamContent(file.OpenReadStream(maxFileSize));
+            var fileContent = new StreamContent(file.OpenReadStream(maxFileSize)); 
             fileContent.Headers.ContentType = new MediaTypeHeaderValue(file.ContentType);
 
             fileNames.Add(file.Name);

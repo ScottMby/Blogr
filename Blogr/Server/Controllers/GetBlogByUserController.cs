@@ -5,6 +5,7 @@ using Blogr.Shared;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using System.Security.Claims;
 
 namespace Blogr.Server.Controllers
@@ -27,7 +28,9 @@ namespace Blogr.Server.Controllers
         {
             List<BlogDisplay> blogList = new List<BlogDisplay>();
             var user = await _userManager.FindByIdAsync(User.FindFirstValue(ClaimTypes.NameIdentifier));
-            var userBlogs = _context.Blogs.Where(u => u.b_User == user);
+            var userBlogs = _context.Blogs
+                .Where(u => u.b_User == user)
+                .Include("b_Content"); //To ensure that the blog content is also retrieved
             foreach(var blog in userBlogs)
             {
                 BlogDisplay blogDisplay = new BlogDisplay();
@@ -37,7 +40,8 @@ namespace Blogr.Server.Controllers
                 blogDisplay.CreatorLastName = user.u_LastName;
                 blogDisplay.CreationDate = blog.b_CreationDate;
                 blogDisplay.UpdatedDate = blog.b_CreationDate;
-                blogDisplay.Content = blog.b_Content;
+                blogDisplay.ContentId = blog.b_Content.Id;
+                blogDisplay.ContentPath = blog.b_Content.path;
                 blogList.Add(blogDisplay);
             }
             return Ok(blogList);
@@ -48,7 +52,10 @@ namespace Blogr.Server.Controllers
         {
             List<BlogDisplay> blogList = new List<BlogDisplay>();
             var user = await _userManager.FindByIdAsync(userId);
-            foreach (var blog in user.u_Blogs)
+            var userBlogs = _context.Blogs
+                .Where(u => u.b_User == user)
+                .Include("b_Content"); //To ensure that the blog content is also retrieved
+            foreach (var blog in userBlogs)
             {
                 BlogDisplay blogDisplay = new BlogDisplay();
                 blogDisplay.Title = blog.b_Title;
@@ -57,7 +64,8 @@ namespace Blogr.Server.Controllers
                 blogDisplay.CreatorLastName = user.u_LastName;
                 blogDisplay.CreationDate = blog.b_CreationDate;
                 blogDisplay.UpdatedDate = blog.b_CreationDate;
-                blogDisplay.Content = blog.b_Content;
+                blogDisplay.ContentId = blog.b_Content.Id;
+                blogDisplay.ContentPath = blog.b_Content.path;
                 blogList.Add(blogDisplay);
             }
             return Ok(blogList);

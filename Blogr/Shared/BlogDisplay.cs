@@ -22,7 +22,9 @@ namespace Blogr.Shared
 
         public DateTime UpdatedDate { get; set; }
 
-        public BlogContent Content { get; set; } = null!;
+        public int ContentId { get; set; }
+
+        public string ContentPath { get; set; }
 
         public bool DisplayContent = false;
     }

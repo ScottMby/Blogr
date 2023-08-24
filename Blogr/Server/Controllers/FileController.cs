@@ -30,14 +30,16 @@ namespace Blogr.Server.Controllers
                 var trustedFileNameForDisplay = WebUtility.HtmlEncode(untrustedFileName);
 
 
-                trustedFileNameForFileStorage = Path.GetRandomFileName();
-                trustedFileNameForFileStorage = Path.ChangeExtension(trustedFileNameForFileStorage, ".docx");
-                var path = Path.Combine(_env.ContentRootPath, @"\wwroot\BlogContent", trustedFileNameForFileStorage);
+                trustedFileNameForFileStorage = Path.GetRandomFileName(); 
+                trustedFileNameForFileStorage = Path.ChangeExtension(trustedFileNameForFileStorage, ".pdf");
+                var path = Path.Combine(_env.ContentRootPath, @"wwwroot\BlogContent", trustedFileNameForFileStorage);
 
-                await using FileStream fs = new(path, FileMode.Create);
-                await file.CopyToAsync(fs);
+                using (var fileStream = new FileStream(path, FileMode.Create))
+                {
+                    await file.CopyToAsync(fileStream);
+                }
 
-                uploadResult.StoredFileName = trustedFileNameForFileStorage;
+                uploadResult.StoredFileName = @"\BlogContent\" + trustedFileNameForFileStorage;
                 uploadResult.Uploaded = true;
                 uploadResults.Add(uploadResult);
             }
