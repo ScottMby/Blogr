@@ -14,40 +14,56 @@ namespace Blogr.Server.Controllers
         private readonly IWebHostEnvironment _env;
         public FileController(IWebHostEnvironment env)
         {
-            _env = env;
+            _env = env; //For getting server directory
         }
-
+        /// <summary>
+        /// Uploads the file/s into the server.
+        /// </summary>
+        /// <param name="files"></param>
+        /// <returns>A list of type UploadResult</returns>
         [HttpPost]
         public async Task<ActionResult<List<UploadResult>>> UploadBlogContent(List<IFormFile> files)
         {
-            List<UploadResult> uploadResults = new List<UploadResult>();
-
-            foreach (var file in files)
+            try
             {
-                var uploadResult = new UploadResult();
-                string trustedFileNameForFileStorage;
-                string untrustedFileName = file.FileName;
-                uploadResult.FileName = file.FileName;
-                var trustedFileNameForDisplay = WebUtility.HtmlEncode(untrustedFileName);
+                List<UploadResult> uploadResults = new List<UploadResult>();
 
-
-                trustedFileNameForFileStorage = Path.GetRandomFileName(); 
-                trustedFileNameForFileStorage = Path.ChangeExtension(trustedFileNameForFileStorage, ".pdf");
-                var path = Path.Combine(_env.ContentRootPath, @"wwwroot\BlogContent", trustedFileNameForFileStorage);
-
-                using (var fileStream = new FileStream(path, FileMode.Create))
+                foreach (var file in files)
                 {
-                    await file.CopyToAsync(fileStream);
+                    var uploadResult = new UploadResult();
+
+                    //Change filename to random name for security
+
+                    string trustedFileNameForFileStorage;
+                    string untrustedFileName = file.FileName;
+
+                    uploadResult.FileName = file.FileName;
+
+                    var trustedFileNameForDisplay = WebUtility.HtmlEncode(untrustedFileName);
+                    trustedFileNameForFileStorage = Path.GetRandomFileName();
+                    trustedFileNameForFileStorage = Path.ChangeExtension(trustedFileNameForFileStorage, ".pdf");
+
+                    //Get path for storing file
+                    var path = Path.Combine(_env.ContentRootPath, @"wwwroot\BlogContent", trustedFileNameForFileStorage);
+
+
+                    //Store File
+                    using (var fileStream = new FileStream(path, FileMode.Create))
+                    {
+                        await file.CopyToAsync(fileStream);
+                    }
+
+                    uploadResult.StoredFileName = @"\BlogContent\" + trustedFileNameForFileStorage;
+                    uploadResult.Uploaded = true;
+                    uploadResults.Add(uploadResult);
                 }
-
-                uploadResult.StoredFileName = @"\BlogContent\" + trustedFileNameForFileStorage;
-                uploadResult.Uploaded = true;
-                uploadResults.Add(uploadResult);
+                //Return Uploaded File Name
+                return Ok(uploadResults);
             }
-
-            //Add blog content to new blog
-
-            return Ok(uploadResults);
+            catch
+            {
+                return BadRequest("File Upload Failed");
+            }
         }
     }
 }

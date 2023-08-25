@@ -19,20 +19,31 @@ namespace Blogr.Server.Controllers
         private readonly UserManager<ApplicationUser> _userManager;
         public UserImageController(ApplicationDbContext context, UserManager<ApplicationUser> userManager)
         {
-            _context = context;
-            _userManager = userManager;
+            _context = context; //For database operations
+            _userManager = userManager; //For getting the current user
         }
 
         [HttpGet]
         public async Task<ActionResult<string>> GetUserImage()
         {
-            var user = await _userManager.FindByIdAsync(User.FindFirstValue(ClaimTypes.NameIdentifier));
-
-            if (user == null)
+            var claim = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            if(claim != null)
             {
-                return NotFound();
+                var user = await _userManager.FindByIdAsync(claim);
+                if (user != null)
+                {
+                    return Ok(user.u_Photo.ToJson());
+                }
+                else
+                {
+                    return BadRequest("Current User Not Found");
+                }
+                
             }
-            return Ok(user.u_Photo.ToJson());
+            else
+            {
+                return BadRequest("User Claim is Null");
+            }
         }
     }
 }

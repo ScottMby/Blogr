@@ -18,21 +18,46 @@ namespace Blogr.Server.Areas.Identity.Pages.Account.Manage
             _userManager = userManager;
             _context = context;
         }
+
         [BindProperty]
-        public IFormFile Upload { get; set; }
+        public IFormFile? Upload { get; set; }
+
+        //Uploads users image
         public async Task OnPostAsync()
         {
             var user = await _userManager.GetUserAsync(User);
-            var trustedFileName = Path.GetRandomFileName();
-            trustedFileName = Path.ChangeExtension(trustedFileName, ".png");
-            var file = Path.Combine(_env.ContentRootPath, @"wwwroot\UserPhotos", trustedFileName);
-            using (var fileStream = new FileStream(file, FileMode.Create))
+            if(user != null)
             {
-                await Upload.CopyToAsync(fileStream);
+                //Get random file name for security
+                var trustedFileName = Path.GetRandomFileName();
+                trustedFileName = Path.ChangeExtension(trustedFileName, ".png");
+
+                var file = Path.Combine(_env.ContentRootPath, @"wwwroot\UserPhotos", trustedFileName);
+
+                if(Upload != null)
+                {
+                    //Upload file to server
+                    using (var fileStream = new FileStream(file, FileMode.Create))
+                    {
+                        await Upload.CopyToAsync(fileStream);
+                    }
+                    
+                    //Save File Path to database
+                    var userPhoto = _context.UserImages.SingleOrDefault(x => x.Id == user.u_Photo.Id);
+                    userPhoto.path = @"\UserPhotos\" + trustedFileName;
+                    _context.SaveChanges();
+
+                    //Add confirmation to user
+                }
+                else
+                {
+                    //Tell user there is an error and to try again
+                }
             }
-            var userPhoto = _context.UserImages.SingleOrDefault(x => x.Id == user.u_Photo.Id);
-            userPhoto.path = @"\UserPhotos\" + trustedFileName;
-            _context.SaveChanges();
+            else
+            {
+                //Tell user there is no current user
+            }
         }
     }
 }

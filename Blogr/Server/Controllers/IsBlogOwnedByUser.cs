@@ -16,27 +16,54 @@ namespace Blogr.Server.Controllers
         private readonly UserManager<ApplicationUser> _userManager;
         public IsBlogOwnedByUser(ApplicationDbContext context, UserManager<ApplicationUser> userManager)
         {
-            _context = context;
-            _userManager = userManager;
+            _context = context; //For database operations
+            _userManager = userManager; //For getting the current user
         }
+        /// <summary>
+        /// Returns if the specified blog is owned by the user
+        /// </summary>
+        /// <param name="blogId"></param>
+        /// <returns>true or false</returns>
         [HttpGet]
-        public async Task<ActionResult<bool>> Get([FromQuery] int blogId) 
+        public async Task<ActionResult<bool>> GetIsBlogOwnedByUser([FromQuery] int blogId) 
         {
             var blog = _context.Blogs.Where(u => u.b_ID == blogId)
                 .Include("b_User")
                 .FirstOrDefault();
-
-            var user = _userManager.FindByIdAsync(User.FindFirstValue(ClaimTypes.NameIdentifier));
-
-
-            if (blog.b_User == user.Result)
+            if(blog != null)
             {
-                return Ok(true);
+                var claim = User.FindFirstValue(ClaimTypes.NameIdentifier);
+                if (claim != null)
+                {
+                    var user = _userManager.FindByIdAsync(claim);
+
+
+                    if (user != null)
+                    {
+                        if (blog.b_User == user.Result)
+                        {
+                            return Ok(true);
+                        }
+                        else
+                        {
+                            return Ok(false);
+                        }
+                    }
+                    else
+                    {
+                        return BadRequest("Current User Not Found");
+                    }
+                }
+                else
+                {
+                    return BadRequest("User Claim is Null");
+                }
             }
             else
             {
-                return Ok(false);
+                return BadRequest("Blog Doesn't Exist");
             }
+            
 
 
             
