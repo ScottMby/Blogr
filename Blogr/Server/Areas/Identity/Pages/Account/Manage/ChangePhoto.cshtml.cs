@@ -1,9 +1,14 @@
 using Blogr.Server.Data;
 using Blogr.Server.Models;
+using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Newtonsoft.Json.Linq;
+using Newtonsoft.Json;
+using NuGet.Protocol;
 using System.Net;
+using System.Text;
 
 namespace Blogr.Server.Areas.Identity.Pages.Account.Manage
 {
@@ -22,8 +27,11 @@ namespace Blogr.Server.Areas.Identity.Pages.Account.Manage
         [BindProperty]
         public IFormFile? Upload { get; set; }
 
+        [TempData]
+        public string StatusMessage { get; set; }
+
         //Uploads users image
-        public async Task OnPostAsync()
+        public async Task<IActionResult> OnPostAsync()
         {
             var user = await _userManager.GetUserAsync(User);
             if(user != null)
@@ -34,29 +42,32 @@ namespace Blogr.Server.Areas.Identity.Pages.Account.Manage
 
                 var file = Path.Combine(_env.ContentRootPath, @"wwwroot\UserPhotos", trustedFileName);
 
-                if(Upload != null)
+                if (Upload != null)
                 {
                     //Upload file to server
                     using (var fileStream = new FileStream(file, FileMode.Create))
                     {
                         await Upload.CopyToAsync(fileStream);
                     }
-                    
+
                     //Save File Path to database
                     var userPhoto = _context.UserImages.SingleOrDefault(x => x.Id == user.u_Photo.Id);
                     userPhoto.path = @"\UserPhotos\" + trustedFileName;
                     _context.SaveChanges();
 
-                    //Add confirmation to user
+                    StatusMessage = "Your profile has been updated";
+                    return RedirectToPage();
                 }
                 else
                 {
-                    //Tell user there is an error and to try again
+                    StatusMessage = "Error: Uploaded File Not Found!";
+                    return RedirectToPage();
                 }
             }
             else
             {
-                //Tell user there is no current user
+                StatusMessage = "Error: No User Found!";
+                return RedirectToPage();
             }
         }
     }

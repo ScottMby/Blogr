@@ -11,8 +11,15 @@
     <h1>Edit Blog</h1>
     <InputText @bind-Value="blogTitle"></InputText>
     <InputFile OnChange="@OnInputFileChange" />
-    <button type="submit" onclick="@UploadBlog">Create Post</button>
-
+    <button type="submit" disabled="@SubmitDisabled" onclick="@UploadBlog">Create Post</button>
+    @if (fileNames.Count > 0)
+    {
+        <p>File: @fileNames[0]</p>
+    }
+    @if (StatusMessage != null)
+    {
+        <p>@StatusMessage</p>
+    }
 }
 else
 {
@@ -20,6 +27,11 @@ else
 }
 
 @code {
+
+    string StatusMessage { get; set; }
+
+    bool SubmitDisabled = false;
+
     [Parameter]
     public int? blogID { get; set; }
 
@@ -71,6 +83,7 @@ else
         if (uploadResult is not null)
             return uploadResult.StoredFileName;
 
+        StatusMessage = "File not found.";
         return "File not found.";
     }
 
@@ -88,11 +101,14 @@ else
 
         if (response.IsSuccessStatusCode)
         {
+            StatusMessage = "File Uploaded Successfully.";
+            SubmitDisabled = true;
             return "Uploaded";
             //Add confirmation to user
         }
         else
         {
+            StatusMessage = "File not found.";
             return "Failed to upload" + response.StatusCode;
         }
     }

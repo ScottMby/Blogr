@@ -5,6 +5,7 @@
     ViewData["ActivePage"] = ManageNavPages.ChangePhoto;
 }
 <h3>@ViewData["Title"]</h3>
+<partial name="_StatusMessage" for="StatusMessage" />
 <form method="post" enctype="multipart/form-data">
     <input type="file" asp-for="Upload" />
     <input type="submit" />

@@ -14,19 +14,25 @@
     @*Input text and post it and the file to the server*@
     <InputText @bind-Value="blogTitle"></InputText>
     <InputFile OnChange="@OnInputFileChange" />
-    <button type="submit" onclick="@UploadBlog">Create Post</button>
-
-
-
-
+    <button type="submit" disabled="@SubmitDisabled" onclick="@UploadBlog">Create Post</button>
     @if (fileNames.Count > 0)
     {
         <p>File: @fileNames[0]</p>
     }
+    @if(StatusMessage != null)
+    {
+        <p>@StatusMessage</p>
+    }
+   
 </div>
 
 
 @code {
+
+    string StatusMessage { get; set; }
+
+    bool SubmitDisabled = false;
+
     private string blogTitle { get; set; }
     private int maxAllowedFiles = 1;
     private long maxFileSize = 1048576 * 1; //1Mb max file size
@@ -53,6 +59,10 @@
         {
             uploadResults = uploadResults.Concat(newUploadResults).ToList();
         }
+        else
+        {
+            StatusMessage = "File not found.";
+        }
     }
 
     private string? GetStoredFileName(string fileName)
@@ -61,6 +71,7 @@
         if (uploadResult is not null)
             return uploadResult.StoredFileName;
 
+        StatusMessage = "File not found.";
         return "File not found.";
     }
 
@@ -77,11 +88,14 @@
 
         if(response.IsSuccessStatusCode)
         {
+            SubmitDisabled = true;
+            StatusMessage = "File Uploaded Successfully.";
             return "Uploaded";
             //Add confirmation to user
         }
         else
         {
+            StatusMessage = "Failed to Upload";
             return "Failed to upload" + response.StatusCode;
         }
     }
