@@ -41,7 +41,7 @@
 
     private EventCallback DeletePost(BlogDisplay Blog)
     {
-
+        navMan.NavigateTo("/DeleteBlog/" + Blog.Id);
         return EventCallback.Empty;
     }
 }

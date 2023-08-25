@@ -1,0 +1,50 @@
+﻿@page "/deleteblog"
+@page "/deleteblog/{blogId:int}"
+@using Newtonsoft.Json;
+@using System.Text;
+@inject HttpClient Http;
+
+<h3>DeleteBlog</h3>
+
+@if (blogID != null)
+{
+    @if (StatusMessage != null)
+    {
+        <p>@StatusMessage</p>
+    }
+}
+else
+{
+    <p>There is no blog to edit. Please go to your profile and view your blogs to edit.</p>
+}
+
+@code {
+    string StatusMessage { get; set; }
+
+    [Parameter]
+    public int? blogID { get; set; }
+
+    private string blogTitle { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+        DeleteBlogFromDB(blogID);
+
+    }
+    private async Task DeleteBlogFromDB(int? blogID)
+    {
+        var values = blogID;
+        var stringPayload = JsonConvert.SerializeObject(values);
+        var content = new StringContent(stringPayload, Encoding.UTF8, "application/json");
+        var response = await Http.PostAsync("api/DeleteBlog", content);
+        if (response.IsSuccessStatusCode)
+        {
+            StatusMessage = "Successfuly Deleted Blog Post";
+        }
+        else
+        {
+            StatusMessage = "Failed to Delete Blog Post";
+        }
+        StateHasChanged();
+    }
+}
