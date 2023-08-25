@@ -9,6 +9,7 @@ namespace Blogr.Shared
 {
     public class BlogDisplay
     {        
+        public int Id { get; set; }
         public string Title { get; set; } = null!;
 
         public string CreatorImgPath { get; set; }
@@ -26,6 +27,5 @@ namespace Blogr.Shared
 
         public string ContentPath { get; set; }
 
-        public bool DisplayContent = false;
     }
 }

@@ -1,5 +1,6 @@
 ﻿using Blogr.Server.Data;
 using Blogr.Server.Models;
+using Blogr.Shared;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System.Net;

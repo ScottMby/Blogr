@@ -1,0 +1,99 @@
+﻿@page "/editblog"
+@page "/editblog/{blogId:int}"
+@using Blogr.Shared;
+@using System.Net.Http.Headers;
+@using Newtonsoft.Json;
+@using System.Text;
+@inject HttpClient Http;
+
+@if (blogID != null && UserISOwner)
+{
+    <h1>Edit Blog</h1>
+    <InputText @bind-Value="blogTitle"></InputText>
+    <InputFile OnChange="@OnInputFileChange" />
+    <button type="submit" onclick="@UploadBlog">Create Post</button>
+
+}
+else
+{
+    <p>There is no blog to edit. Please go to your profile and view your blogs to edit.</p>
+}
+
+@code {
+    [Parameter]
+    public int? blogID { get; set; }
+
+    private string blogTitle { get; set; }
+
+    private bool UserISOwner;
+
+    protected override async Task OnInitializedAsync()
+    {
+        UserISOwner = await IsCorrectBlogUser(blogID);
+        StateHasChanged();
+    }
+
+    private async Task<bool> IsCorrectBlogUser(int? blogID)
+    {
+        bool Result = await Http.GetFromJsonAsync<bool>("api/IsBlogOwnedByUser?blogId=" + blogID);
+        return Result;
+    }
+    private int maxAllowedFiles = 1;
+    private long maxFileSize = 1048576 * 1; //1Mb max file size
+    private List<string> fileNames = new();
+    private List<UploadResult> uploadResults = new();
+    private async Task OnInputFileChange(InputFileChangeEventArgs e)
+    {
+        using var content = new MultipartFormDataContent();
+
+        foreach (var file in e.GetMultipleFiles(maxAllowedFiles))
+        {
+            var fileContent = new StreamContent(file.OpenReadStream(maxFileSize));
+            fileContent.Headers.ContentType = new MediaTypeHeaderValue(file.ContentType);
+
+            fileNames.Add(file.Name);
+
+            content.Add(content: fileContent, name: "\"files\"", fileName: file.Name);
+        }
+
+        var response = await Http.PostAsync("api/File", content);
+        var newUploadResults = await response.Content.ReadFromJsonAsync<List<UploadResult>>();
+
+        if (newUploadResults is not null)
+        {
+            uploadResults = uploadResults.Concat(newUploadResults).ToList();
+        }
+    }
+
+    private string? GetStoredFileName(string fileName)
+    {
+        var uploadResult = uploadResults.SingleOrDefault(f => f.FileName == fileName);
+        if (uploadResult is not null)
+            return uploadResult.StoredFileName;
+
+        return "File not found.";
+    }
+
+    private async Task<string> UploadBlog()
+    {
+        var values = new Dictionary<string, string>
+        {
+            { "Title", blogTitle },
+            { "ContentPath",  GetStoredFileName(fileNames[0])},
+            { "BlogId", Convert.ToString(blogID)}
+        };
+        var stringPayload = JsonConvert.SerializeObject(values);
+        var content = new StringContent(stringPayload, Encoding.UTF8, "application/json");
+        var response = await Http.PostAsync("api/BlogUpload", content);
+
+        if (response.IsSuccessStatusCode)
+        {
+            return "Uploaded";
+        }
+        else
+        {
+            return "Failed to upload" + response.StatusCode;
+        }
+    }
+    }
+}

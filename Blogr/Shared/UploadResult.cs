@@ -1,4 +1,4 @@
-﻿namespace Blogr.Server.Models
+﻿namespace Blogr.Shared
 {
     public class UploadResult
     {

@@ -2,6 +2,7 @@
 @using Blogr.Shared;
 @using Microsoft.Office.Interop.Word;
 @inject HttpClient Http;
+@inject NavigationManager navMan;
 
 <h3>UserBlogs</h3>
 
@@ -14,13 +15,12 @@
         <img id="User-Photo" src="@blog.CreatorImgPath" />
         <p>Created: @blog.CreationDate.ToShortDateString()</p>
         <p>Last Updated: @blog.UpdatedDate.ToShortDateString()</p>
-        @if(blogsList.Count > 0)
-        {
-            <object data="@blog.ContentPath" type="application/pdf" width="100%" height="500px">
-                <p>Unable to display PDF file. <a href="@blog.ContentPath">Download</a> instead.</p>
-            </object>
-        }
-    }
+        <button @onclick="() => EditPost(blog)">Edit Post</button>
+        <button @onclick="() => DeletePost(blog)">Delete Post</button>
+        <object data="@blog.ContentPath" type="application/pdf" width="100%" height="500px">
+            <p>Unable to display PDF file. <a href="@blog.ContentPath">Download</a> instead.</p>
+        </object>
+    } 
 </ul>
 
 @code {
@@ -33,9 +33,15 @@
         return "";
     }
 
-    private EventCallback GetContent(BlogDisplay blog)
+    private EventCallback EditPost(BlogDisplay Blog)
     {
-        blog.DisplayContent = true;
+        navMan.NavigateTo("/EditBlog/" + Blog.Id);
+        return EventCallback.Empty;
+    }
+
+    private EventCallback DeletePost(BlogDisplay Blog)
+    {
+
         return EventCallback.Empty;
     }
 }

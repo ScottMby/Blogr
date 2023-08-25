@@ -31,15 +31,16 @@ namespace Blogr.Server.Controllers
             var userBlogs = _context.Blogs
                 .Where(u => u.b_User == user)
                 .Include("b_Content"); //To ensure that the blog content is also retrieved
-            foreach(var blog in userBlogs)
+            foreach (var blog in userBlogs)
             {
                 BlogDisplay blogDisplay = new BlogDisplay();
+                blogDisplay.Id = blog.b_ID;
                 blogDisplay.Title = blog.b_Title;
                 blogDisplay.CreatorImgPath = user.u_Photo.path;
                 blogDisplay.CreatorFirstName = user.u_FirstName;
                 blogDisplay.CreatorLastName = user.u_LastName;
                 blogDisplay.CreationDate = blog.b_CreationDate;
-                blogDisplay.UpdatedDate = blog.b_CreationDate;
+                blogDisplay.UpdatedDate = blog.b_UpdatedDate;
                 blogDisplay.ContentId = blog.b_Content.Id;
                 blogDisplay.ContentPath = blog.b_Content.path;
                 blogList.Add(blogDisplay);
@@ -58,12 +59,13 @@ namespace Blogr.Server.Controllers
             foreach (var blog in userBlogs)
             {
                 BlogDisplay blogDisplay = new BlogDisplay();
+                blogDisplay.Id = blog.b_ID;
                 blogDisplay.Title = blog.b_Title;
                 blogDisplay.CreatorImgPath = user.u_Photo.path;
                 blogDisplay.CreatorFirstName = user.u_FirstName;
                 blogDisplay.CreatorLastName = user.u_LastName;
                 blogDisplay.CreationDate = blog.b_CreationDate;
-                blogDisplay.UpdatedDate = blog.b_CreationDate;
+                blogDisplay.UpdatedDate = blog.b_UpdatedDate;
                 blogDisplay.ContentId = blog.b_Content.Id;
                 blogDisplay.ContentPath = blog.b_Content.path;
                 blogList.Add(blogDisplay);
