@@ -126,10 +126,10 @@ namespace Blogr.Server.Areas.Identity.Pages.Account
             {
                 var user = CreateUser();
                 
-                user.u_CreationDate = DateTime.Now;
-                user.u_FirstName = Input.FirstName;
-                user.u_LastName = Input.LastName;
-                user.u_Blogs = new List<Blog>();
+                user.CreationDate = DateTime.Now;
+                user.FirstName = Input.FirstName;
+                user.LastName = Input.LastName;
+                user.Blogs = new List<Blog>();
 
                 await _userStore.SetUserNameAsync(user, Input.Email, CancellationToken.None);
                 await _emailStore.SetEmailAsync(user, Input.Email, CancellationToken.None);

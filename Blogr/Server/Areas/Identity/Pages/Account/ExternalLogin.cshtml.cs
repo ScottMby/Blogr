@@ -155,12 +155,12 @@ namespace Blogr.Server.Areas.Identity.Pages.Account
             {
                 var user = CreateUser();
 
-                user.u_CreationDate = DateTime.UtcNow;
-                user.u_FirstName = info.Principal.FindFirst("FirstName").Value;
-                user.u_LastName = info.Principal.FindFirst("LastName").Value;
+                user.CreationDate = DateTime.UtcNow;
+                user.FirstName = info.Principal.FindFirst("FirstName").Value;
+                user.LastName = info.Principal.FindFirst("LastName").Value;
                 if (info.Principal.HasClaim(c => c.Type == "Photo"))
                 {
-                    user.u_Photo.path = info.Principal.FindFirst("Photo").Value;
+                    user.Photo.path = info.Principal.FindFirst("Photo").Value;
                 }
 
 

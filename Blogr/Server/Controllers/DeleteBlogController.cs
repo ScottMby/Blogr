@@ -29,12 +29,12 @@ namespace Blogr.Server.Controllers
             {
                 IsBlogOwnedByUser isBlogOwnedByUser = new IsBlogOwnedByUser(_context, _userManager);
                 var userBlog = _context.Blogs
-                .Where(u => u.b_ID == blogId)
-                .Include("b_User")
+                .Where(u => u.ID == blogId)
+                .Include("User")
                 .FirstOrDefault();
                 if(userBlog != null)
                 {
-                    if (userBlog.b_User == user)
+                    if (userBlog.User == user)
                     {
                         _context.Blogs.Remove(userBlog);
                         _context.SaveChanges();

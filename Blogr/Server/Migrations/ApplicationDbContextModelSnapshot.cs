@@ -24,33 +24,38 @@ namespace Blogr.Server.Migrations
 
             modelBuilder.Entity("Blogr.Data.Blog", b =>
                 {
-                    b.Property<int>("b_ID")
+                    b.Property<int>("ID")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("b_ID"));
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ID"));
 
-                    b.Property<int>("b_ContentId")
+                    b.Property<int>("AnalyticsId")
                         .HasColumnType("int");
 
-                    b.Property<DateTime>("b_CreationDate")
+                    b.Property<int>("ContentId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("CreationDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<string>("b_Title")
+                    b.Property<string>("Title")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime>("b_UpdatedDate")
+                    b.Property<DateTime>("UpdatedDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<string>("b_UserId")
+                    b.Property<string>("UserId")
                         .HasColumnType("nvarchar(450)");
 
-                    b.HasKey("b_ID");
+                    b.HasKey("ID");
 
-                    b.HasIndex("b_ContentId");
+                    b.HasIndex("AnalyticsId");
 
-                    b.HasIndex("b_UserId");
+                    b.HasIndex("ContentId");
+
+                    b.HasIndex("UserId");
 
                     b.ToTable("Blogs");
                 });
@@ -67,12 +72,23 @@ namespace Blogr.Server.Migrations
                         .IsConcurrencyToken()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<DateTime>("CreationDate")
+                        .HasColumnType("datetime2");
+
                     b.Property<string>("Email")
                         .HasMaxLength(256)
                         .HasColumnType("nvarchar(256)");
 
                     b.Property<bool>("EmailConfirmed")
                         .HasColumnType("bit");
+
+                    b.Property<string>("FirstName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("LastName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<bool>("LockoutEnabled")
                         .HasColumnType("bit");
@@ -97,6 +113,9 @@ namespace Blogr.Server.Migrations
                     b.Property<bool>("PhoneNumberConfirmed")
                         .HasColumnType("bit");
 
+                    b.Property<int>("PhotoId")
+                        .HasColumnType("int");
+
                     b.Property<string>("SecurityStamp")
                         .HasColumnType("nvarchar(max)");
 
@@ -106,20 +125,6 @@ namespace Blogr.Server.Migrations
                     b.Property<string>("UserName")
                         .HasMaxLength(256)
                         .HasColumnType("nvarchar(256)");
-
-                    b.Property<DateTime>("u_CreationDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("u_FirstName")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("u_LastName")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("u_PhotoId")
-                        .HasColumnType("int");
 
                     b.HasKey("Id");
 
@@ -131,7 +136,7 @@ namespace Blogr.Server.Migrations
                         .HasDatabaseName("UserNameIndex")
                         .HasFilter("[NormalizedUserName] IS NOT NULL");
 
-                    b.HasIndex("u_PhotoId");
+                    b.HasIndex("PhotoId");
 
                     b.ToTable("AspNetUsers", (string)null);
                 });
@@ -153,28 +158,6 @@ namespace Blogr.Server.Migrations
                     b.ToTable("BlogContent");
                 });
 
-            modelBuilder.Entity("Blogr.Server.Models.Image", b =>
-                {
-                    b.Property<int>("i_Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("i_Id"));
-
-                    b.Property<int?>("Blogb_ID")
-                        .HasColumnType("int");
-
-                    b.Property<string>("i_Path")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("i_Id");
-
-                    b.HasIndex("Blogb_ID");
-
-                    b.ToTable("Images");
-                });
-
             modelBuilder.Entity("Blogr.Server.Models.UserImage", b =>
                 {
                     b.Property<int>("Id")
@@ -189,6 +172,25 @@ namespace Blogr.Server.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("UserImages");
+                });
+
+            modelBuilder.Entity("Blogr.Shared.BlogAnalytics", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("UniqueVisitors")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Views")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("BlogAnalytics");
                 });
 
             modelBuilder.Entity("Duende.IdentityServer.EntityFramework.Entities.DeviceFlowCodes", b =>
@@ -471,37 +473,38 @@ namespace Blogr.Server.Migrations
 
             modelBuilder.Entity("Blogr.Data.Blog", b =>
                 {
-                    b.HasOne("Blogr.Server.Models.BlogContent", "b_Content")
+                    b.HasOne("Blogr.Shared.BlogAnalytics", "Analytics")
                         .WithMany()
-                        .HasForeignKey("b_ContentId")
+                        .HasForeignKey("AnalyticsId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Blogr.Server.Models.ApplicationUser", "b_User")
-                        .WithMany("u_Blogs")
-                        .HasForeignKey("b_UserId");
+                    b.HasOne("Blogr.Server.Models.BlogContent", "Content")
+                        .WithMany()
+                        .HasForeignKey("ContentId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
-                    b.Navigation("b_Content");
+                    b.HasOne("Blogr.Server.Models.ApplicationUser", "User")
+                        .WithMany("Blogs")
+                        .HasForeignKey("UserId");
 
-                    b.Navigation("b_User");
+                    b.Navigation("Analytics");
+
+                    b.Navigation("Content");
+
+                    b.Navigation("User");
                 });
 
             modelBuilder.Entity("Blogr.Server.Models.ApplicationUser", b =>
                 {
-                    b.HasOne("Blogr.Server.Models.UserImage", "u_Photo")
+                    b.HasOne("Blogr.Server.Models.UserImage", "Photo")
                         .WithMany()
-                        .HasForeignKey("u_PhotoId")
+                        .HasForeignKey("PhotoId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("u_Photo");
-                });
-
-            modelBuilder.Entity("Blogr.Server.Models.Image", b =>
-                {
-                    b.HasOne("Blogr.Data.Blog", null)
-                        .WithMany("b_Images")
-                        .HasForeignKey("Blogb_ID");
+                    b.Navigation("Photo");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -555,14 +558,9 @@ namespace Blogr.Server.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("Blogr.Data.Blog", b =>
-                {
-                    b.Navigation("b_Images");
-                });
-
             modelBuilder.Entity("Blogr.Server.Models.ApplicationUser", b =>
                 {
-                    b.Navigation("u_Blogs");
+                    b.Navigation("Blogs");
                 });
 #pragma warning restore 612, 618
         }

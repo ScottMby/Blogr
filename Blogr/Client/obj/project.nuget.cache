@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "wDIn7FiEN3fTsHS/moXAlfXTb+OAhZ41oyeh4ZXh3ScP8L2Hcxv/VtERcKfn6wghNQCyGVvwBqbxv6yaAECbdg==",
+  "dgSpecHash": "6MTkHMMwdoMvU7TCQn03uNFLAOC39kkhfpsmLm9a62Th7At2hVEVzES0HBGnKdTvC+YseWf/IZ8EHxzzrGNbVg==",
   "success": true,
   "projectFilePath": "C:\\Users\\Scott\\Documents\\GitHub\\Blogr\\Blogr\\Client\\Blogr.Client.csproj",
   "expectedPackageFiles": [
@@ -13,7 +13,14 @@
     "C:\\Users\\Scott\\.nuget\\packages\\microsoft.aspnetcore.components.webassembly\\7.0.10\\microsoft.aspnetcore.components.webassembly.7.0.10.nupkg.sha512",
     "C:\\Users\\Scott\\.nuget\\packages\\microsoft.aspnetcore.components.webassembly.authentication\\7.0.10\\microsoft.aspnetcore.components.webassembly.authentication.7.0.10.nupkg.sha512",
     "C:\\Users\\Scott\\.nuget\\packages\\microsoft.aspnetcore.components.webassembly.devserver\\7.0.10\\microsoft.aspnetcore.components.webassembly.devserver.7.0.10.nupkg.sha512",
+    "C:\\Users\\Scott\\.nuget\\packages\\microsoft.aspnetcore.connections.abstractions\\7.0.10\\microsoft.aspnetcore.connections.abstractions.7.0.10.nupkg.sha512",
+    "C:\\Users\\Scott\\.nuget\\packages\\microsoft.aspnetcore.http.connections.client\\7.0.10\\microsoft.aspnetcore.http.connections.client.7.0.10.nupkg.sha512",
+    "C:\\Users\\Scott\\.nuget\\packages\\microsoft.aspnetcore.http.connections.common\\7.0.10\\microsoft.aspnetcore.http.connections.common.7.0.10.nupkg.sha512",
     "C:\\Users\\Scott\\.nuget\\packages\\microsoft.aspnetcore.metadata\\7.0.10\\microsoft.aspnetcore.metadata.7.0.10.nupkg.sha512",
+    "C:\\Users\\Scott\\.nuget\\packages\\microsoft.aspnetcore.signalr.client\\7.0.10\\microsoft.aspnetcore.signalr.client.7.0.10.nupkg.sha512",
+    "C:\\Users\\Scott\\.nuget\\packages\\microsoft.aspnetcore.signalr.client.core\\7.0.10\\microsoft.aspnetcore.signalr.client.core.7.0.10.nupkg.sha512",
+    "C:\\Users\\Scott\\.nuget\\packages\\microsoft.aspnetcore.signalr.common\\7.0.10\\microsoft.aspnetcore.signalr.common.7.0.10.nupkg.sha512",
+    "C:\\Users\\Scott\\.nuget\\packages\\microsoft.aspnetcore.signalr.protocols.json\\7.0.10\\microsoft.aspnetcore.signalr.protocols.json.7.0.10.nupkg.sha512",
     "C:\\Users\\Scott\\.nuget\\packages\\microsoft.extensions.configuration\\7.0.0\\microsoft.extensions.configuration.7.0.0.nupkg.sha512",
     "C:\\Users\\Scott\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\7.0.0\\microsoft.extensions.configuration.abstractions.7.0.0.nupkg.sha512",
     "C:\\Users\\Scott\\.nuget\\packages\\microsoft.extensions.configuration.binder\\7.0.4\\microsoft.extensions.configuration.binder.7.0.4.nupkg.sha512",
@@ -21,6 +28,7 @@
     "C:\\Users\\Scott\\.nuget\\packages\\microsoft.extensions.configuration.json\\7.0.0\\microsoft.extensions.configuration.json.7.0.0.nupkg.sha512",
     "C:\\Users\\Scott\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\7.0.0\\microsoft.extensions.dependencyinjection.7.0.0.nupkg.sha512",
     "C:\\Users\\Scott\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\7.0.0\\microsoft.extensions.dependencyinjection.abstractions.7.0.0.nupkg.sha512",
+    "C:\\Users\\Scott\\.nuget\\packages\\microsoft.extensions.features\\7.0.10\\microsoft.extensions.features.7.0.10.nupkg.sha512",
     "C:\\Users\\Scott\\.nuget\\packages\\microsoft.extensions.fileproviders.abstractions\\7.0.0\\microsoft.extensions.fileproviders.abstractions.7.0.0.nupkg.sha512",
     "C:\\Users\\Scott\\.nuget\\packages\\microsoft.extensions.fileproviders.physical\\7.0.0\\microsoft.extensions.fileproviders.physical.7.0.0.nupkg.sha512",
     "C:\\Users\\Scott\\.nuget\\packages\\microsoft.extensions.filesystemglobbing\\7.0.0\\microsoft.extensions.filesystemglobbing.7.0.0.nupkg.sha512",
@@ -36,6 +44,7 @@
     "C:\\Users\\Scott\\.nuget\\packages\\system.io.pipelines\\7.0.0\\system.io.pipelines.7.0.0.nupkg.sha512",
     "C:\\Users\\Scott\\.nuget\\packages\\system.text.encodings.web\\7.0.0\\system.text.encodings.web.7.0.0.nupkg.sha512",
     "C:\\Users\\Scott\\.nuget\\packages\\system.text.json\\7.0.0\\system.text.json.7.0.0.nupkg.sha512",
+    "C:\\Users\\Scott\\.nuget\\packages\\system.threading.channels\\7.0.0\\system.threading.channels.7.0.0.nupkg.sha512",
     "C:\\Users\\Scott\\.nuget\\packages\\microsoft.netcore.app.runtime.mono.browser-wasm\\7.0.10\\microsoft.netcore.app.runtime.mono.browser-wasm.7.0.10.nupkg.sha512"
   ],
   "logs": []

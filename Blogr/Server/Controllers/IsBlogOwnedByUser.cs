@@ -27,8 +27,8 @@ namespace Blogr.Server.Controllers
         [HttpGet]
         public async Task<ActionResult<bool>> GetIsBlogOwnedByUser([FromQuery] int blogId) 
         {
-            var blog = _context.Blogs.Where(u => u.b_ID == blogId)
-                .Include("b_User")
+            var blog = _context.Blogs.Where(u => u.ID == blogId)
+                .Include("User")
                 .FirstOrDefault();
             if(blog != null)
             {
@@ -40,7 +40,7 @@ namespace Blogr.Server.Controllers
 
                     if (user != null)
                     {
-                        if (blog.b_User == user.Result)
+                        if (blog.User == user.Result)
                         {
                             return Ok(true);
                         }

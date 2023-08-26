@@ -35,29 +35,29 @@ namespace Blogr.Server.Controllers
             if(user != null)
             {
                 var userBlogs = _context.Blogs
-                .Where(u => u.b_User == user)
-                .Include("b_Content"); //To ensure that the blog content is also retrieved
+                .Where(u => u.User == user)
+                .Include("Content"); //To ensure that the blog content is also retrieved
                 if(userBlogs != null)
                 {
                     foreach (var blog in userBlogs)
                     {
                         BlogDisplay blogDisplay = new BlogDisplay();
-                        blogDisplay.Id = blog.b_ID;
-                        blogDisplay.Title = blog.b_Title;
-                        if (user.u_Photo.path != null)
+                        blogDisplay.Id = blog.ID;
+                        blogDisplay.Title = blog.Title;
+                        if (user.Photo.path != null)
                         {
-                            blogDisplay.CreatorImgPath = user.u_Photo.path;
+                            blogDisplay.CreatorImgPath = user.Photo.path;
                         }
                         else
                         {
                             blogDisplay.CreatorImgPath = @"~\UserPhotos\default.png";
                         }
-                        blogDisplay.CreatorFirstName = user.u_FirstName;
-                        blogDisplay.CreatorLastName = user.u_LastName;
-                        blogDisplay.CreationDate = blog.b_CreationDate;
-                        blogDisplay.UpdatedDate = blog.b_UpdatedDate;
-                        blogDisplay.ContentId = blog.b_Content.Id;
-                        blogDisplay.ContentPath = blog.b_Content.path;
+                        blogDisplay.CreatorFirstName = user.FirstName;
+                        blogDisplay.CreatorLastName = user.LastName;
+                        blogDisplay.CreationDate = blog.CreationDate;
+                        blogDisplay.UpdatedDate = blog.UpdatedDate;
+                        blogDisplay.ContentId = blog.Content.Id;
+                        blogDisplay.ContentPath = blog.Content.path;
                         blogList.Add(blogDisplay);
                     }
                     return Ok(blogList);
@@ -87,29 +87,29 @@ namespace Blogr.Server.Controllers
             if (user != null)
             {
                 var userBlogs = _context.Blogs
-                .Where(u => u.b_User == user)
-                .Include("b_Content"); //To ensure that the blog content is also retrieved
+                .Where(u => u.User == user)
+                .Include("Content"); //To ensure that the blog content is also retrieved
                 if (userBlogs != null)
                 {
                     foreach (var blog in userBlogs)
                     {
                         BlogDisplay blogDisplay = new BlogDisplay();
-                        blogDisplay.Id = blog.b_ID;
-                        blogDisplay.Title = blog.b_Title;
-                        if (user.u_Photo.path != null)
+                        blogDisplay.Id = blog.ID;
+                        blogDisplay.Title = blog.Title;
+                        if (user.Photo.path != null)
                         {
-                            blogDisplay.CreatorImgPath = user.u_Photo.path;
+                            blogDisplay.CreatorImgPath = user.Photo.path;
                         }
                         else
                         {
                             blogDisplay.CreatorImgPath = @"~\UserPhotos\default.png";
                         }
-                        blogDisplay.CreatorFirstName = user.u_FirstName;
-                        blogDisplay.CreatorLastName = user.u_LastName;
-                        blogDisplay.CreationDate = blog.b_CreationDate;
-                        blogDisplay.UpdatedDate = blog.b_UpdatedDate;
-                        blogDisplay.ContentId = blog.b_Content.Id;
-                        blogDisplay.ContentPath = blog.b_Content.path;
+                        blogDisplay.CreatorFirstName = user.FirstName;
+                        blogDisplay.CreatorLastName = user.LastName;
+                        blogDisplay.CreationDate = blog.CreationDate;
+                        blogDisplay.UpdatedDate = blog.UpdatedDate;
+                        blogDisplay.ContentId = blog.Content.Id;
+                        blogDisplay.ContentPath = blog.Content.path;
                         blogList.Add(blogDisplay);
                     }
                     return Ok(blogList);

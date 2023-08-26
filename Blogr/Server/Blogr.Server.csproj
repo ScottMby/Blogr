@@ -48,6 +48,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="Hubs\" />
+    <Folder Include="Migrations\" />
     <Folder Include="wwwroot\BlogContent\" />
     <Folder Include="wwwroot\UserPhotos\" />
   </ItemGroup>

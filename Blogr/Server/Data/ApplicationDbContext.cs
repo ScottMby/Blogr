@@ -1,6 +1,7 @@
 ﻿using Blogr.Client.Pages;
 using Blogr.Data;
 using Blogr.Server.Models;
+using Blogr.Shared;
 using Duende.IdentityServer.EntityFramework.Options;
 using Microsoft.AspNetCore.ApiAuthorization.IdentityServer;
 using Microsoft.EntityFrameworkCore;
@@ -13,6 +14,7 @@ namespace Blogr.Server.Data
         //Uses EF to create a table called blogs
         public DbSet<Blog> Blogs { get; set; } = null!;
         public DbSet<BlogContent> BlogContent => Set<BlogContent>();
+        public DbSet<BlogAnalytics> BlogAnalytics => Set<BlogAnalytics>();
 
         public DbSet<UserImage> UserImages => Set<UserImage>();
 
@@ -25,7 +27,7 @@ namespace Blogr.Server.Data
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);
-            builder.Entity<ApplicationUser>().Navigation(e => e.u_Photo).AutoInclude();
+            builder.Entity<ApplicationUser>().Navigation(e => e.Photo).AutoInclude();
         }
     }
 }

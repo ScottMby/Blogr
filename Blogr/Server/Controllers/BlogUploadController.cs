@@ -46,11 +46,11 @@ namespace Blogr.Server.Controllers
                         var user = await _userManager.FindByIdAsync(User.FindFirstValue(ClaimTypes.NameIdentifier));
                         if(user != null)
                         {
-                            bl.b_Title = bu.Title;
-                            bl.b_User = user;
-                            bl.b_CreationDate = DateTime.Now;
-                            bl.b_UpdatedDate = DateTime.Now;
-                            bl.b_Content = bc;
+                            bl.Title = bu.Title;
+                            bl.User = user;
+                            bl.CreationDate = DateTime.Now;
+                            bl.UpdatedDate = DateTime.Now;
+                            bl.Content = bc;
                             _context.Add(bl);
                             _context.SaveChanges();
                             return Ok("Blog Uploaded");
@@ -68,16 +68,16 @@ namespace Blogr.Server.Controllers
                         bc.path = bu.ContentPath;
 
                         var currentBlog = _context.Blogs
-                        .Where(u => u.b_ID == bu.BlogId)
+                        .Where(u => u.ID == bu.BlogId)
                         .FirstOrDefault();
 
                         var user = await _userManager.FindByIdAsync(User.FindFirstValue(ClaimTypes.NameIdentifier));
                         if (user != null)
                         {
-                            currentBlog.b_Title = bu.Title;
-                            currentBlog.b_CreationDate = currentBlog.b_CreationDate;
-                            currentBlog.b_UpdatedDate = DateTime.Now;
-                            currentBlog.b_Content = bc;
+                            currentBlog.Title = bu.Title;
+                            currentBlog.CreationDate = currentBlog.CreationDate;
+                            currentBlog.UpdatedDate = DateTime.Now;
+                            currentBlog.Content = bc;
                             _context.SaveChanges();
                             return Ok("Blog Uploaded");
                         }

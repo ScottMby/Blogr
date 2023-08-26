@@ -26,13 +26,13 @@ namespace Blogr.Server.Controllers
         [HttpGet]
         public async Task<ActionResult<string>> GetUserImage()
         {
-            var claim = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            string? claim = User.FindFirstValue(ClaimTypes.NameIdentifier);
             if(claim != null)
             {
-                var user = await _userManager.FindByIdAsync(claim);
+                ApplicationUser? user = await _userManager.FindByIdAsync(claim);
                 if (user != null)
                 {
-                    return Ok(user.u_Photo.ToJson());
+                    return Ok(user.Photo.ToJson());
                 }
                 else
                 {

@@ -81,8 +81,8 @@ namespace Blogr.Server.Areas.Identity.Pages.Account.Manage
 
             Input = new InputModel
             {
-                FirstName = user.u_FirstName,
-                LastName = user.u_LastName,
+                FirstName = user.FirstName,
+                LastName = user.LastName,
                 PhoneNumber = phoneNumber
             };
         }
@@ -124,14 +124,14 @@ namespace Blogr.Server.Areas.Identity.Pages.Account.Manage
                 }
             }
 
-            if (Input.FirstName != user.u_FirstName)
+            if (Input.FirstName != user.FirstName)
             {
-                user.u_FirstName = Input.FirstName;
+                user.FirstName = Input.FirstName;
             }
 
-            if (Input.LastName != user.u_LastName)
+            if (Input.LastName != user.LastName)
             {
-                user.u_LastName = Input.LastName;
+                user.LastName = Input.LastName;
             }
 
             await _userManager.UpdateAsync(user);

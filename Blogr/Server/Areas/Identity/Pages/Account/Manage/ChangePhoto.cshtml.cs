@@ -51,7 +51,7 @@ namespace Blogr.Server.Areas.Identity.Pages.Account.Manage
                     }
 
                     //Save File Path to database
-                    var userPhoto = _context.UserImages.SingleOrDefault(x => x.Id == user.u_Photo.Id);
+                    var userPhoto = _context.UserImages.SingleOrDefault(x => x.Id == user.Photo.Id);
                     userPhoto.path = @"\UserPhotos\" + trustedFileName;
                     _context.SaveChanges();
 

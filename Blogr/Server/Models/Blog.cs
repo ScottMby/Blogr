@@ -1,4 +1,5 @@
 ﻿using Blogr.Server.Models;
+using Blogr.Shared;
 using System.ComponentModel.DataAnnotations;
 
 namespace Blogr.Data
@@ -6,17 +7,19 @@ namespace Blogr.Data
     public class Blog
     {
         [Key]
-        public int b_ID { get; set; }
+        public int ID { get; set; }
 
-        public string b_Title { get; set; } = null!;
+        public string Title { get; set; } = null!;
 
-        public ApplicationUser b_User { get; set; } = null!;
+        public ApplicationUser User { get; set; } = null!;
 
-        public DateTime b_CreationDate { get; set; }
+        public DateTime CreationDate { get; set; }
 
-        public DateTime b_UpdatedDate { get; set; }
+        public DateTime UpdatedDate { get; set; }
 
-        public BlogContent b_Content { get; set; } = null!;
+        public BlogContent Content { get; set; } = null!;
+
+        public BlogAnalytics Analytics { get; set; } = null;
 
     }
 }
