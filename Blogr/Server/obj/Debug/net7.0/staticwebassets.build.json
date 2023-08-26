@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "fXxsMHjYfBQaXV0Ckl3AqFpQieoKyASlEIJnw9zkLLg=",
+  "Hash": "JkjTl1NineemJ/SN5KvdiJZQBoNur2qla+FPRFD4XWo=",
   "Source": "Blogr.Server",
   "BasePath": "_content/Blogr.Server",
   "Mode": "Default",
@@ -8740,6 +8740,23 @@
       "OriginalItemSpec": "wwwroot\\BlogContent\\25dvdtva.pdf"
     },
     {
+      "Identity": "C:\\Users\\Scott\\Documents\\GitHub\\Blogr\\Blogr\\Server\\wwwroot\\BlogContent\\4pt0uaon.pdf",
+      "SourceId": "Blogr.Server",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Scott\\Documents\\GitHub\\Blogr\\Blogr\\Server\\wwwroot\\",
+      "BasePath": "_content/Blogr.Server",
+      "RelativePath": "BlogContent/4pt0uaon.pdf",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\BlogContent\\4pt0uaon.pdf"
+    },
+    {
       "Identity": "C:\\Users\\Scott\\Documents\\GitHub\\Blogr\\Blogr\\Server\\wwwroot\\BlogContent\\4sy44xgm.pdf",
       "SourceId": "Blogr.Server",
       "SourceType": "Discovered",
@@ -8772,6 +8789,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\BlogContent\\d1nfcbup.pdf"
+    },
+    {
+      "Identity": "C:\\Users\\Scott\\Documents\\GitHub\\Blogr\\Blogr\\Server\\wwwroot\\BlogContent\\dns3ifuu.pdf",
+      "SourceId": "Blogr.Server",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Scott\\Documents\\GitHub\\Blogr\\Blogr\\Server\\wwwroot\\",
+      "BasePath": "_content/Blogr.Server",
+      "RelativePath": "BlogContent/dns3ifuu.pdf",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\BlogContent\\dns3ifuu.pdf"
     },
     {
       "Identity": "C:\\Users\\Scott\\Documents\\GitHub\\Blogr\\Blogr\\Server\\wwwroot\\BlogContent\\dxidt2wk.pdf",
@@ -8959,6 +8993,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\BlogContent\\rru1jlbl.pdf"
+    },
+    {
+      "Identity": "C:\\Users\\Scott\\Documents\\GitHub\\Blogr\\Blogr\\Server\\wwwroot\\BlogContent\\tvqgnxbz.pdf",
+      "SourceId": "Blogr.Server",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Scott\\Documents\\GitHub\\Blogr\\Blogr\\Server\\wwwroot\\",
+      "BasePath": "_content/Blogr.Server",
+      "RelativePath": "BlogContent/tvqgnxbz.pdf",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\BlogContent\\tvqgnxbz.pdf"
     },
     {
       "Identity": "C:\\Users\\Scott\\Documents\\GitHub\\Blogr\\Blogr\\Server\\wwwroot\\BlogContent\\valji1z3.pdf",

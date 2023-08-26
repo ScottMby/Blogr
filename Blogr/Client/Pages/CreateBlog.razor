@@ -13,6 +13,7 @@
     <h4>Upload .docx file</h4>
     @*Input text and post it and the file to the server*@
     <InputText @bind-Value="blogTitle"></InputText>
+    <InputText @bind-Value="blogCategory"></InputText>
     <InputFile OnChange="@OnInputFileChange" />
     <button type="submit" disabled="@SubmitDisabled" onclick="@UploadBlog">Create Post</button>
     @if (fileNames.Count > 0)
@@ -34,6 +35,7 @@
     bool SubmitDisabled = false;
 
     private string blogTitle { get; set; }
+    private string blogCategory { get; set; }
     private int maxAllowedFiles = 1;
     private long maxFileSize = 1048576 * 1; //1Mb max file size
     private List<string> fileNames = new();
@@ -80,7 +82,8 @@
         var values = new Dictionary<string, string>
         {
             { "Title", blogTitle },
-            { "ContentPath",  GetStoredFileName(fileNames[0])}
+            { "Category", blogCategory },
+            { "ContentPath",  GetStoredFileName(fileNames[0]) }
         };
         var stringPayload = JsonConvert.SerializeObject(values);
         var content = new StringContent(stringPayload, Encoding.UTF8, "application/json");

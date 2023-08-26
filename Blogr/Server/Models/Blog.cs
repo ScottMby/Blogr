@@ -13,13 +13,15 @@ namespace Blogr.Data
 
         public ApplicationUser User { get; set; } = null!;
 
+        public string Category { get; set; } = null!;
+
         public DateTime CreationDate { get; set; }
 
         public DateTime UpdatedDate { get; set; }
 
         public BlogContent Content { get; set; } = null!;
 
-        public BlogAnalytics Analytics { get; set; } = null;
+        public BlogAnalytics Analytics { get; set; } = null!;
 
     }
 }

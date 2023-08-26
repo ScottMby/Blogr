@@ -27,5 +27,7 @@ namespace Blogr.Shared
 
         public string ContentPath { get; set; }
 
+        //public int Views { get; set; }
+
     }
 }

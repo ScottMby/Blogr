@@ -11,6 +11,8 @@ namespace Blogr.Shared
         public string Title { get; set; }
         public string ContentPath { get; set; }
 
+        public string Category { get; set; }
+
         public int? BlogId { get; set; }
     }
 }

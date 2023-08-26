@@ -47,10 +47,12 @@ namespace Blogr.Server.Controllers
                         if(user != null)
                         {
                             bl.Title = bu.Title;
+                            bl.Category = bu.Category;
                             bl.User = user;
                             bl.CreationDate = DateTime.Now;
                             bl.UpdatedDate = DateTime.Now;
                             bl.Content = bc;
+                            bl.Analytics = new BlogAnalytics();
                             _context.Add(bl);
                             _context.SaveChanges();
                             return Ok("Blog Uploaded");

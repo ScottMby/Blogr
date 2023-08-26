@@ -1,8 +1,38 @@
 ﻿@page "/ViewBlog"
 @page "/ViewBlog/{blogId:int}"
-
+@using Blogr.Shared;
+@inject HttpClient Http
 <h3>ViewBlog</h3>
 
-@code {
+@if (BlogValid)
+{
+    <h4>@blog.Title</h4>
+    <p>@blog.CreatorFirstName</p>
+    <p>@blog.CreatorLastName</p>
+    <img id="User-Photo" src="@blog.CreatorImgPath" />
+    <p>Created: @blog.CreationDate.ToShortDateString()</p>
+    <p>Last Updated: @blog.UpdatedDate.ToShortDateString()</p>
+    <object data="@blog.ContentPath" type="application/pdf" width="100%" height="500px">
+        <p>Unable to display PDF file. <a href="@blog.ContentPath">Download</a> instead.</p>
+    </object>
+}
 
+@code {
+    [Parameter]
+    public int blogId { get; set; }
+
+    private bool BlogValid = false;
+
+    BlogDisplay blog = new BlogDisplay();
+
+    protected override async Task OnInitializedAsync()
+    {
+
+        var temp = await Http.GetFromJsonAsync<BlogDisplay>("api/GetBlogById/" + blogId);
+        if (temp != null)
+        {
+            blog = temp;
+            BlogValid = true;
+        }
+    }
 }
