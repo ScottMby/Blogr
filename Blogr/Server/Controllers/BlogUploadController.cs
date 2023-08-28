@@ -77,6 +77,7 @@ namespace Blogr.Server.Controllers
                         if (user != null)
                         {
                             currentBlog.Title = bu.Title;
+                            currentBlog.Category = bu.Category;
                             currentBlog.CreationDate = currentBlog.CreationDate;
                             currentBlog.UpdatedDate = DateTime.Now;
                             currentBlog.Content = bc;

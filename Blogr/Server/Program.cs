@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.ResponseCompression;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Authentication.Google;
 using Microsoft.AspNetCore.Identity;
+using Blogr.Server.Hubs;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -33,8 +34,15 @@ builder.Services.AddAuthentication()
 
 builder.Services.AddControllersWithViews();
 builder.Services.AddRazorPages();
+builder.Services.AddSignalR();
+builder.Services.AddResponseCompression(opts =>
+{
+    opts.MimeTypes = ResponseCompressionDefaults.MimeTypes.Concat(new[] { "application/octet-stream" });
+});
 
 var app = builder.Build();
+
+app.UseResponseCompression();
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
@@ -60,7 +68,7 @@ app.UseRouting();
 app.UseIdentityServer();
 app.UseAuthorization();
 
-
+app.MapHub<AnalyticsHub>("/analyticshub");
 app.MapRazorPages();
 app.MapControllers();
 app.MapFallbackToFile("index.html");

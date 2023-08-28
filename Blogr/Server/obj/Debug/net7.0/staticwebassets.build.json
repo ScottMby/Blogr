@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "JkjTl1NineemJ/SN5KvdiJZQBoNur2qla+FPRFD4XWo=",
+  "Hash": "XFstvQez2DeOYJXLVIbHd7GEhIzMpX2oXAFo0TxH0QI=",
   "Source": "Blogr.Server",
   "BasePath": "_content/Blogr.Server",
   "Mode": "Default",
@@ -8723,6 +8723,23 @@
       "OriginalItemSpec": "wwwroot\\BlogContent\\005crpt1.pdf"
     },
     {
+      "Identity": "C:\\Users\\Scott\\Documents\\GitHub\\Blogr\\Blogr\\Server\\wwwroot\\BlogContent\\0oxt4hvh.pdf",
+      "SourceId": "Blogr.Server",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Scott\\Documents\\GitHub\\Blogr\\Blogr\\Server\\wwwroot\\",
+      "BasePath": "_content/Blogr.Server",
+      "RelativePath": "BlogContent/0oxt4hvh.pdf",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\BlogContent\\0oxt4hvh.pdf"
+    },
+    {
       "Identity": "C:\\Users\\Scott\\Documents\\GitHub\\Blogr\\Blogr\\Server\\wwwroot\\BlogContent\\25dvdtva.pdf",
       "SourceId": "Blogr.Server",
       "SourceType": "Discovered",
@@ -8772,6 +8789,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\BlogContent\\4sy44xgm.pdf"
+    },
+    {
+      "Identity": "C:\\Users\\Scott\\Documents\\GitHub\\Blogr\\Blogr\\Server\\wwwroot\\BlogContent\\cg12h4b5.pdf",
+      "SourceId": "Blogr.Server",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Scott\\Documents\\GitHub\\Blogr\\Blogr\\Server\\wwwroot\\",
+      "BasePath": "_content/Blogr.Server",
+      "RelativePath": "BlogContent/cg12h4b5.pdf",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\BlogContent\\cg12h4b5.pdf"
     },
     {
       "Identity": "C:\\Users\\Scott\\Documents\\GitHub\\Blogr\\Blogr\\Server\\wwwroot\\BlogContent\\d1nfcbup.pdf",
@@ -8859,6 +8893,23 @@
       "OriginalItemSpec": "wwwroot\\BlogContent\\hmaodr2e.pdf"
     },
     {
+      "Identity": "C:\\Users\\Scott\\Documents\\GitHub\\Blogr\\Blogr\\Server\\wwwroot\\BlogContent\\ixeu4roh.pdf",
+      "SourceId": "Blogr.Server",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Scott\\Documents\\GitHub\\Blogr\\Blogr\\Server\\wwwroot\\",
+      "BasePath": "_content/Blogr.Server",
+      "RelativePath": "BlogContent/ixeu4roh.pdf",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\BlogContent\\ixeu4roh.pdf"
+    },
+    {
       "Identity": "C:\\Users\\Scott\\Documents\\GitHub\\Blogr\\Blogr\\Server\\wwwroot\\BlogContent\\jdstaqi0.pdf",
       "SourceId": "Blogr.Server",
       "SourceType": "Discovered",
@@ -8891,6 +8942,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\BlogContent\\ksyzn5l0.pdf"
+    },
+    {
+      "Identity": "C:\\Users\\Scott\\Documents\\GitHub\\Blogr\\Blogr\\Server\\wwwroot\\BlogContent\\kxczq4vf.pdf",
+      "SourceId": "Blogr.Server",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Scott\\Documents\\GitHub\\Blogr\\Blogr\\Server\\wwwroot\\",
+      "BasePath": "_content/Blogr.Server",
+      "RelativePath": "BlogContent/kxczq4vf.pdf",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\BlogContent\\kxczq4vf.pdf"
     },
     {
       "Identity": "C:\\Users\\Scott\\Documents\\GitHub\\Blogr\\Blogr\\Server\\wwwroot\\BlogContent\\l21za1gt.pdf",

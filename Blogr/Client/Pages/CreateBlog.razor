@@ -12,8 +12,8 @@
     <h1>Create Blog Post</h1>
     <h4>Upload .docx file</h4>
     @*Input text and post it and the file to the server*@
-    <InputText @bind-V="blogTitle"></InputText>
-    <InpuSelect @bind="blogCategory">
+    <InputText @bind-Value="blogTitle"></InputText>
+    <select @bind="blogCategory">
         <option value="Software Engineering">Software Engineering</option>
         <option value="Data Science"> Data Science</option>
         <option value="Web Development">Web Development</option>
@@ -21,7 +21,7 @@
         <option value="Cybersecurity">Cybersecurity</option>
         <option value="Software Architecture">Software Architecture</option>
         <option value="Databases">Databases</option>
-    </InpuSelect>
+    </select>
     <InputFile OnChange="@OnInputFileChange" />
     <button type="submit" disabled="@SubmitDisabled" onclick="@UploadBlog">Create Post</button>
     @if (fileNames.Count > 0)
