@@ -44,6 +44,7 @@ namespace Blogr.Server.Controllers
                         BlogDisplay blogDisplay = new BlogDisplay();
                         blogDisplay.Id = blog.ID;
                         blogDisplay.Title = blog.Title;
+                        blogDisplay.Category = blog.Category;
                         if (user.Photo.path != null)
                         {
                             blogDisplay.CreatorImgPath = user.Photo.path;
@@ -96,6 +97,7 @@ namespace Blogr.Server.Controllers
                         BlogDisplay blogDisplay = new BlogDisplay();
                         blogDisplay.Id = blog.ID;
                         blogDisplay.Title = blog.Title;
+                        blogDisplay.Category = blog.Category;
                         if (user.Photo.path != null)
                         {
                             blogDisplay.CreatorImgPath = user.Photo.path;

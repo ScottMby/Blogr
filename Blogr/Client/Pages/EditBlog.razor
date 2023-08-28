@@ -10,6 +10,15 @@
 {
     <h1>Edit Blog</h1>
     <InputText @bind-Value="blogTitle"></InputText>
+    <select @bind="blogCategory">
+        <option value="Software Engineering">Software Engineering</option>
+        <option value="Data Science"> Data Science</option>
+        <option value="Web Development">Web Development</option>
+        <option value="Machine Learning">Machine Learning</option>
+        <option value="Cybersecurity">Cybersecurity</option>
+        <option value="Software Architecture">Software Architecture</option>
+        <option value="Databases">Databases</option>
+    </select>
     <InputFile OnChange="@OnInputFileChange" />
     <button type="submit" disabled="@SubmitDisabled" onclick="@UploadBlog">Create Post</button>
     @if (fileNames.Count > 0)
@@ -36,6 +45,7 @@ else
     public int? blogID { get; set; }
 
     private string blogTitle { get; set; }
+    private string blogCategory { get; set; }
 
     private bool UserISOwner;
 
@@ -92,7 +102,7 @@ else
         var values = new Dictionary<string, string>
         {
             { "Title", blogTitle },
-            //{ "Category", blogCategory },
+            { "Category", blogCategory },
             { "ContentPath",  GetStoredFileName(fileNames[0])},
             { "BlogId", Convert.ToString(blogID)}
         };

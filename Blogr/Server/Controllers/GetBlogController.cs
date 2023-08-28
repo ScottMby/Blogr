@@ -34,6 +34,7 @@ namespace Blogr.Server.Controllers
             {
                 bg.Id = blog.ID;
                 bg.Title = blog.Title;
+                bg.Category = blog.Category;
 
                 var user = await _userManager.FindByIdAsync(blog.User.Id);
                 if (user != null)
