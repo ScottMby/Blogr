@@ -35,12 +35,12 @@ namespace Blogr.Server.Controllers
                 var claim = User.FindFirstValue(ClaimTypes.NameIdentifier);
                 if (claim != null)
                 {
-                    var user = _userManager.FindByIdAsync(claim);
+                    var user = await _userManager.FindByIdAsync(claim);
 
 
                     if (user != null)
                     {
-                        if (blog.User == user.Result)
+                        if (blog.User == user)
                         {
                             return Ok(true);
                         }

@@ -16,6 +16,8 @@ namespace Blogr.Server.Data
         public DbSet<BlogContent> BlogContent => Set<BlogContent>();
         public DbSet<BlogAnalytics> BlogAnalytics => Set<BlogAnalytics>();
 
+        public DbSet<BlogViewers> BlogViewers => Set<BlogViewers>();
+
         public DbSet<UserImage> UserImages => Set<UserImage>();
 
         public ApplicationDbContext(
@@ -28,6 +30,11 @@ namespace Blogr.Server.Data
         {
             base.OnModelCreating(builder);
             builder.Entity<ApplicationUser>().Navigation(e => e.Photo).AutoInclude();
+            builder.Entity<BlogAnalytics>()
+                .HasMany(e => e.Viewers)
+                .WithOne(e => e.Analytics)
+                .HasForeignKey(e => e.AnalyticsId)
+                .IsRequired();
         }
     }
 }

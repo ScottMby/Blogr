@@ -211,15 +211,15 @@
       "mscorlib.dll": "sha256-Xo3wdLenBZ41X73hGjkWTbEQZDKcQsnPFtlkePUxLY0=",
       "netstandard.dll": "sha256-qjqaAEP3hdLnU\/TnoCd8HaSa+0ruV1TpdaB2GUujGMw=",
       "System.Private.CoreLib.dll": "sha256-\/7uQ+eNo9u3H1mpgMko4D3tKZHeGRfsRjna0Dqsu62k=",
-      "Blogr.Shared.dll": "sha256-k2X07w8j7opE+Lr8\/RCbzmU+IB6MINYPxKthgAtLGQc=",
-      "Blogr.Client.dll": "sha256-R9kopuQPIDQMhKgYZ7O4jfb\/FwWQw4uVCs8igL+c5dw="
+      "Blogr.Shared.dll": "sha256-t2I7\/txV5p4mOZ8r8RhFmiA0ouO4ojlvR1PDrlq5IrU=",
+      "Blogr.Client.dll": "sha256-Gy2H3ylTc0c1RK7gXAiM2UwwuQGobIe0RiNc6A6w3qk="
     },
     "extensions": null,
     "lazyAssembly": null,
     "libraryInitializers": null,
     "pdb": {
-      "Blogr.Shared.pdb": "sha256-U7wsx3hOdXL8nVx6hRAoymWIt2Uh4lOX7uh4dvnIRt4=",
-      "Blogr.Client.pdb": "sha256-hM7WG2UNvFWfQ4LZw0WO9x2z287mYyLAFCX3rDDzhec="
+      "Blogr.Shared.pdb": "sha256-LmGsh9IFehDZSgc3jJvpbKoRZ05\/2kgY4G4JtLXXHUQ=",
+      "Blogr.Client.pdb": "sha256-LP+9EDDLFaYXFhnFLYO3FH1m+I7R+oJbLqgkEsj5RK4="
     },
     "runtime": {
       "dotnet.7.0.10.y5thit92gj.js": "sha256-qJB30QURoyH3y3WyayHu6nMFIx2XNOkXCez7tagGpvE=",

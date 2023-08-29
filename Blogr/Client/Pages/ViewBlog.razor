@@ -55,7 +55,8 @@
     {
         if (hubConnection != null)
         {
-            await hubConnection.SendAsync("BlogViewChange", 1, blogId);
+            var userId = await Http.GetStringAsync("api/GetUserId");
+            await hubConnection.SendAsync("BlogViewChange", 1, blogId, userId);
         }
 
 

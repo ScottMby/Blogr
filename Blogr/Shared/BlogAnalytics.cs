@@ -15,6 +15,8 @@ namespace Blogr.Shared
 
         public int UniqueVisitors { get; set; }
 
+        public ICollection<BlogViewers> Viewers = new List<BlogViewers>();
+
         //Impletement Engamement and BOunce rate in the future
 
     }

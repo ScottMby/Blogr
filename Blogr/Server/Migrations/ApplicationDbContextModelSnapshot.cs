@@ -197,6 +197,28 @@ namespace Blogr.Server.Migrations
                     b.ToTable("BlogAnalytics");
                 });
 
+            modelBuilder.Entity("Blogr.Shared.BlogViewers", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("AnalyticsId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("UserId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("AnalyticsId");
+
+                    b.ToTable("BlogViewers");
+                });
+
             modelBuilder.Entity("Duende.IdentityServer.EntityFramework.Entities.DeviceFlowCodes", b =>
                 {
                     b.Property<string>("UserCode")
@@ -511,6 +533,17 @@ namespace Blogr.Server.Migrations
                     b.Navigation("Photo");
                 });
 
+            modelBuilder.Entity("Blogr.Shared.BlogViewers", b =>
+                {
+                    b.HasOne("Blogr.Shared.BlogAnalytics", "Analytics")
+                        .WithMany("Viewers")
+                        .HasForeignKey("AnalyticsId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Analytics");
+                });
+
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
                 {
                     b.HasOne("Microsoft.AspNetCore.Identity.IdentityRole", null)
@@ -565,6 +598,11 @@ namespace Blogr.Server.Migrations
             modelBuilder.Entity("Blogr.Server.Models.ApplicationUser", b =>
                 {
                     b.Navigation("Blogs");
+                });
+
+            modelBuilder.Entity("Blogr.Shared.BlogAnalytics", b =>
+                {
+                    b.Navigation("Viewers");
                 });
 #pragma warning restore 612, 618
         }
