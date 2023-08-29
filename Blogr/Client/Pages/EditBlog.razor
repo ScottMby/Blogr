@@ -11,6 +11,7 @@
     <h1>Edit Blog</h1>
     <InputText @bind-Value="blogTitle"></InputText>
     <select @bind="blogCategory">
+        <option disabled selected value> -- select an option -- </option>
         <option value="Software Engineering">Software Engineering</option>
         <option value="Data Science"> Data Science</option>
         <option value="Web Development">Web Development</option>
@@ -99,29 +100,46 @@ else
 
     private async Task<string> UploadBlog()
     {
-        var values = new Dictionary<string, string>
+        if (blogTitle != null && !string.IsNullOrWhiteSpace(blogTitle))
         {
-            { "Title", blogTitle },
-            { "Category", blogCategory },
-            { "ContentPath",  GetStoredFileName(fileNames[0])},
-            { "BlogId", Convert.ToString(blogID)}
-        };
-        var stringPayload = JsonConvert.SerializeObject(values);
-        var content = new StringContent(stringPayload, Encoding.UTF8, "application/json");
-        var response = await Http.PostAsync("api/BlogUpload", content);
+            if (blogCategory != null)
+            {
+                var values = new Dictionary<string, string>
+            {
+                { "Title", blogTitle },
+                { "Category", blogCategory },
+                { "ContentPath",  GetStoredFileName(fileNames[0])},
+                { "BlogId", Convert.ToString(blogID)}
+            };
+                var stringPayload = JsonConvert.SerializeObject(values);
+                var content = new StringContent(stringPayload, Encoding.UTF8, "application/json");
+                var response = await Http.PostAsync("api/BlogUpload", content);
 
-        if (response.IsSuccessStatusCode)
-        {
-            StatusMessage = "File Uploaded Successfully.";
-            SubmitDisabled = true;
-            return "Uploaded";
-            //Add confirmation to user
+                if (response.IsSuccessStatusCode)
+                {
+                    StatusMessage = "File Uploaded Successfully.";
+                    SubmitDisabled = true;
+                    return "Uploaded";
+                    //Add confirmation to user
+                }
+                else
+                {
+                    StatusMessage = "File not found.";
+                    return "Failed to upload" + response.StatusCode;
+                }
+            }
+            else
+            {
+                StatusMessage = "Please add a category";
+                return "Failed to upload";
+            }
         }
         else
         {
-            StatusMessage = "File not found.";
-            return "Failed to upload" + response.StatusCode;
+            StatusMessage = "Please add a title";
+            return "Failed to upload";
         }
-    }
+
     }
 }
+

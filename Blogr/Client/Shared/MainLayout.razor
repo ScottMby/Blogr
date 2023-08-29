@@ -1,4 +1,5 @@
 ﻿@inherits LayoutComponentBase
+@inject NavigationManager NavMan
 
 <div class="page">
 
@@ -7,8 +8,8 @@
             <LoginDisplay />
             <AuthorizeView>
                 <Authorized>
-                    <a href="/createBlog" target="_blank">Create</a>
-                    <a href="/createBlog" target="_blank">Notification</a>
+                    <a @onclick="CreateBlog" target="_blank">Create</a>
+                    <a @onclick="Notifications" target="_blank">Notification</a>
                 </Authorized>
             </AuthorizeView>
         </div>
@@ -20,4 +21,12 @@
 </div>
 
 @code{
+    private void CreateBlog()
+    {
+        NavMan.NavigateTo("/createBlog");
+    }
+    private void Notifications()
+    {
+        NavMan.NavigateTo("/notifications");
+    }
 }
