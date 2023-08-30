@@ -1,5 +1,6 @@
 ﻿using Blogr.Server.Data;
 using Blogr.Server.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
@@ -8,6 +9,7 @@ using System.Security.Claims;
 
 namespace Blogr.Server.Controllers
 {
+    [Authorize]
     [Route("api/IsBlogOwnedByUser")]
     [ApiController]
     public class IsBlogOwnedByUser : ControllerBase

@@ -8,9 +8,11 @@ using Blogr.Data;
 using System;
 using System.Text.Json;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Blogr.Server.Controllers
 {
+    [Authorize]
     [Route("api/BlogUpload")]
     [ApiController]
     public class BlogUploadController : ControllerBase

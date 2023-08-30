@@ -1,5 +1,6 @@
 ﻿using Blogr.Server.Data;
 using Blogr.Server.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
@@ -9,6 +10,7 @@ using System.Threading.Tasks;
 
 namespace Blogr.Server.Controllers
 {
+    [Authorize]
     [Route("api/DeleteBlog")]
     [ApiController]
     public class DeleteBlogController : ControllerBase

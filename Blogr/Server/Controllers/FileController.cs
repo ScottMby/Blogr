@@ -1,12 +1,14 @@
 ﻿using Blogr.Server.Data;
 using Blogr.Server.Models;
 using Blogr.Shared;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System.Net;
 
 namespace Blogr.Server.Controllers
 {
+    [Authorize]
     [Route("api/File")]
     [ApiController]
     public class FileController : ControllerBase

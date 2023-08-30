@@ -26,7 +26,7 @@ namespace Blogr.Server.Hubs
             await Clients.All.SendAsync("GetBlogViews", views, bId);
         }
 
-        public async Task BlogViewChange(int views, int bId, string userId)
+        public async Task BlogViewChange(int views, int bId, string? userId)
         {
             var blog = _context.Blogs
                 .Where(u => u.ID == bId)

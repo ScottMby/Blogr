@@ -3,7 +3,7 @@
 @using Blogr.Shared;
 @using Microsoft.AspNetCore.SignalR.Client;
 @inject NavigationManager NavMan;
-@inject HttpClient Http;
+@inject IHttpClientFactory ClientFactory;
 @implements IAsyncDisposable
 <h3>ViewBlog</h3>
 
@@ -55,7 +55,17 @@
     {
         if (hubConnection != null)
         {
-            var userId = await Http.GetStringAsync("api/GetUserId");
+            var Http = ClientFactory.CreateClient("public");
+            string? userId;
+            try
+            {
+                userId = await Http.GetStringAsync("api/GetUserId");
+            }
+            catch
+            {
+                //No user logged in
+                userId = null;
+            }
             await hubConnection.SendAsync("BlogViewChange", 1, blogId, userId);
         }
 
@@ -75,6 +85,7 @@
     protected override async Task OnInitializedAsync()
     {
         //Get the blog
+        var Http = ClientFactory.CreateClient("public");
         var temp = await Http.GetFromJsonAsync<BlogDisplay>("api/GetBlogById/" + blogId);
         if (temp != null)
         {

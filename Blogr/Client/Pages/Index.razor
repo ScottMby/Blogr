@@ -1,6 +1,50 @@
 ﻿@page "/"
+@page "/index"
+@page "/home"
+@inject IHttpClientFactory ClientFactory;
+@inject NavigationManager NavMan;
+@using Blogr.Shared;
 
 <PageTitle>Blogr</PageTitle>
 
 <h1>Welcome to Blogr</h1>
+
+@foreach (string catString in categoryStruct.Categories)
+{
+    <button @onclick=" () => GetCategory(catString)">@catString</button>
+}
+
+
+@foreach(BlogDisplay blog in BlogsList)
+{
+    <button @onclick="() => GotoBlog(blog.Id)">
+        <h4>@blog.Title</h4>
+        <p>@blog.CreatorFirstName</p>
+        <p>@blog.CreatorLastName</p>
+        <img id="User-Photo" src="@blog.CreatorImgPath" />
+        <p>Last Updated: @blog.UpdatedDate.ToShortDateString()</p>
+    </button>
+}
+
+@code{
+    List<BlogDisplay> BlogsList = new List<BlogDisplay>();
+    Category categoryStruct = new Category();
+
+    private async Task GetCategory(string category)
+    {
+        //Create a public HttpClient because a user might not be logged in
+        HttpClient Http = ClientFactory.CreateClient("public");
+        var blogs = await Http.GetFromJsonAsync<List<BlogDisplay>>("/api/GetBlogByCategory/" + category);
+        if(blogs != null)
+        {
+            BlogsList = blogs;
+            StateHasChanged();
+        }
+    }
+
+    private void GotoBlog(int blogId)
+    {
+        NavMan.NavigateTo("/viewblog/" + blogId);
+    }
+}
 
