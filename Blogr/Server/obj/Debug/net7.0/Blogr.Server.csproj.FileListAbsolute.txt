@@ -333,3 +333,6 @@ C:\Users\Scott\Documents\GitHub\Blogr\Blogr\Server\bin\Debug\net7.0\Microsoft.As
 C:\Users\Scott\Documents\GitHub\Blogr\Blogr\Server\bin\Debug\net7.0\Microsoft.AspNetCore.SignalR.Common.dll
 C:\Users\Scott\Documents\GitHub\Blogr\Blogr\Server\bin\Debug\net7.0\Microsoft.AspNetCore.SignalR.Protocols.Json.dll
 C:\Users\Scott\Documents\GitHub\Blogr\Blogr\Server\bin\Debug\net7.0\Microsoft.Extensions.Features.dll
+C:\Users\Scott\Documents\GitHub\Blogr\Blogr\Server\bin\Debug\net7.0\Blogr.Components.staticwebassets.runtime.json
+C:\Users\Scott\Documents\GitHub\Blogr\Blogr\Server\bin\Debug\net7.0\Blogr.Components.dll
+C:\Users\Scott\Documents\GitHub\Blogr\Blogr\Server\bin\Debug\net7.0\Blogr.Components.pdb

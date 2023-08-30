@@ -710,6 +710,20 @@
           "buildTransitive/net6.0/_._": {}
         }
       },
+      "Blogr.Components/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "Blogr.Shared": "1.0.0",
+          "Microsoft.AspNetCore.Components.Web": "7.0.10"
+        },
+        "compile": {
+          "bin/placeholder/Blogr.Components.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Blogr.Components.dll": {}
+        }
+      },
       "Blogr.Shared/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
@@ -1422,6 +1436,20 @@
         },
         "build": {
           "buildTransitive/net6.0/_._": {}
+        }
+      },
+      "Blogr.Components/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "Blogr.Shared": "1.0.0",
+          "Microsoft.AspNetCore.Components.Web": "7.0.10"
+        },
+        "compile": {
+          "bin/placeholder/Blogr.Components.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Blogr.Components.dll": {}
         }
       },
       "Blogr.Shared/1.0.0": {
@@ -2573,6 +2601,11 @@
         "useSharedDesignerContext.txt"
       ]
     },
+    "Blogr.Components/1.0.0": {
+      "type": "project",
+      "path": "../../Blogr.Components/Blogr.Components.csproj",
+      "msbuildProject": "../../Blogr.Components/Blogr.Components.csproj"
+    },
     "Blogr.Shared/1.0.0": {
       "type": "project",
       "path": "../Shared/Blogr.Shared.csproj",
@@ -2581,6 +2614,7 @@
   },
   "projectFileDependencyGroups": {
     "net7.0": [
+      "Blogr.Components >= 1.0.0",
       "Blogr.Shared >= 1.0.0",
       "Microsoft.AspNetCore.Components.WebAssembly >= 7.0.10",
       "Microsoft.AspNetCore.Components.WebAssembly.Authentication >= 7.0.10",
@@ -2624,6 +2658,9 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
+            "C:\\Users\\Scott\\Documents\\GitHub\\Blogr\\Blogr.Components\\Blogr.Components.csproj": {
+              "projectPath": "C:\\Users\\Scott\\Documents\\GitHub\\Blogr\\Blogr.Components\\Blogr.Components.csproj"
+            },
             "C:\\Users\\Scott\\Documents\\GitHub\\Blogr\\Blogr\\Shared\\Blogr.Shared.csproj": {
               "projectPath": "C:\\Users\\Scott\\Documents\\GitHub\\Blogr\\Blogr\\Shared\\Blogr.Shared.csproj"
             }

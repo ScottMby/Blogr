@@ -1,17 +1,36 @@
 {
   "Version": 1,
-  "Hash": "VtJAnpULNOSzmXcdRkG+1/JXbgVafHVpRDamPgiKI24=",
+  "Hash": "f01oQwONJX3aOWwysOyvoxThLocWtQC/8XV1qN7+83s=",
   "Source": "Blogr.Client",
   "BasePath": "/",
   "Mode": "Root",
   "ManifestType": "Build",
-  "ReferencedProjectsConfiguration": [],
+  "ReferencedProjectsConfiguration": [
+    {
+      "Identity": "C:\\Users\\Scott\\Documents\\GitHub\\Blogr\\Blogr.Components\\Blogr.Components.csproj",
+      "Version": 2,
+      "Source": "Blogr.Components",
+      "GetPublishAssetsTargets": "ComputeReferencedStaticWebAssetsPublishManifest;GetCurrentProjectPublishStaticWebAssetItems",
+      "AdditionalPublishProperties": "Configuration=Debug;Platform=AnyCPU",
+      "AdditionalPublishPropertiesToRemove": "WebPublishProfileFile;TargetFramework;RuntimeIdentifier;SelfContained",
+      "GetBuildAssetsTargets": "GetCurrentProjectBuildStaticWebAssetItems",
+      "AdditionalBuildProperties": "Configuration=Debug;Platform=AnyCPU",
+      "AdditionalBuildPropertiesToRemove": "WebPublishProfileFile;TargetFramework;RuntimeIdentifier;SelfContained"
+    }
+  ],
   "DiscoveryPatterns": [
     {
       "Name": "Blogr.Client\\wwwroot",
       "Source": "Blogr.Client",
       "ContentRoot": "C:\\Users\\Scott\\Documents\\GitHub\\Blogr\\Blogr\\Client\\wwwroot\\",
       "BasePath": "/",
+      "Pattern": "**"
+    },
+    {
+      "Name": "Blogr.Components\\wwwroot",
+      "Source": "Blogr.Components",
+      "ContentRoot": "C:\\Users\\Scott\\Documents\\GitHub\\Blogr\\Blogr.Components\\wwwroot\\",
+      "BasePath": "_content/Blogr.Components",
       "Pattern": "**"
     }
   ],
@@ -32,6 +51,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\Users\\Scott\\.nuget\\packages\\microsoft.aspnetcore.components.webassembly.authentication\\7.0.10\\staticwebassets\\AuthenticationService.js"
+    },
+    {
+      "Identity": "C:\\Users\\Scott\\Documents\\GitHub\\Blogr\\Blogr.Components\\wwwroot\\exampleJsInterop.js",
+      "SourceId": "Blogr.Components",
+      "SourceType": "Project",
+      "ContentRoot": "C:\\Users\\Scott\\Documents\\GitHub\\Blogr\\Blogr.Components\\wwwroot\\",
+      "BasePath": "_content/Blogr.Components",
+      "RelativePath": "exampleJsInterop.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\exampleJsInterop.js"
     },
     {
       "Identity": "C:\\Users\\Scott\\Documents\\GitHub\\Blogr\\Blogr\\Client\\bin\\Debug\\net7.0\\wwwroot\\_framework\\blazor.boot.json",
@@ -100,6 +136,40 @@
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "obj\\Debug\\net7.0\\Blogr.Client.pdb"
+    },
+    {
+      "Identity": "C:\\Users\\Scott\\Documents\\GitHub\\Blogr\\Blogr\\Client\\bin\\Debug\\net7.0\\wwwroot\\_framework\\Blogr.Components.dll",
+      "SourceId": "Blogr.Client",
+      "SourceType": "Computed",
+      "ContentRoot": "C:\\Users\\Scott\\Documents\\GitHub\\Blogr\\Blogr\\Client\\bin\\Debug\\net7.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/Blogr.Components.dll",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "BlazorWebAssemblyResource",
+      "AssetTraitValue": "runtime",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "C:\\Users\\Scott\\Documents\\GitHub\\Blogr\\Blogr.Components\\bin\\Debug\\net7.0\\Blogr.Components.dll"
+    },
+    {
+      "Identity": "C:\\Users\\Scott\\Documents\\GitHub\\Blogr\\Blogr\\Client\\bin\\Debug\\net7.0\\wwwroot\\_framework\\Blogr.Components.pdb",
+      "SourceId": "Blogr.Client",
+      "SourceType": "Computed",
+      "ContentRoot": "C:\\Users\\Scott\\Documents\\GitHub\\Blogr\\Blogr\\Client\\bin\\Debug\\net7.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/Blogr.Components.pdb",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "BlazorWebAssemblyResource",
+      "AssetTraitValue": "symbol",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "C:\\Users\\Scott\\Documents\\GitHub\\Blogr\\Blogr.Components\\bin\\Debug\\net7.0\\Blogr.Components.pdb"
     },
     {
       "Identity": "C:\\Users\\Scott\\Documents\\GitHub\\Blogr\\Blogr\\Client\\bin\\Debug\\net7.0\\wwwroot\\_framework\\Blogr.Shared.dll",
@@ -5423,6 +5493,23 @@
       "OriginalItemSpec": "C:\\Users\\Scott\\Documents\\GitHub\\Blogr\\Blogr\\Client\\bin\\Debug\\net7.0\\wwwroot\\_framework\\System.Text.RegularExpressions.dll"
     },
     {
+      "Identity": "C:\\Users\\Scott\\Documents\\GitHub\\Blogr\\Blogr\\Client\\obj\\Debug\\net7.0\\build-gz\\hFV12fMX.gz",
+      "SourceId": "Blogr.Client",
+      "SourceType": "Computed",
+      "ContentRoot": "C:\\Users\\Scott\\Documents\\GitHub\\Blogr\\Blogr\\Client\\bin\\Debug\\net7.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/Blogr.Components.pdb.gz",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "RelatedAsset": "C:\\Users\\Scott\\Documents\\GitHub\\Blogr\\Blogr\\Client\\bin\\Debug\\net7.0\\wwwroot\\_framework\\Blogr.Components.pdb",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "C:\\Users\\Scott\\Documents\\GitHub\\Blogr\\Blogr\\Client\\bin\\Debug\\net7.0\\wwwroot\\_framework\\Blogr.Components.pdb"
+    },
+    {
       "Identity": "C:\\Users\\Scott\\Documents\\GitHub\\Blogr\\Blogr\\Client\\obj\\Debug\\net7.0\\build-gz\\HLAH9XhR.gz",
       "SourceId": "Blogr.Client",
       "SourceType": "Computed",
@@ -6543,6 +6630,23 @@
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "C:\\Users\\Scott\\Documents\\GitHub\\Blogr\\Blogr\\Client\\bin\\Debug\\net7.0\\wwwroot\\_framework\\Microsoft.AspNetCore.Components.Web.dll"
+    },
+    {
+      "Identity": "C:\\Users\\Scott\\Documents\\GitHub\\Blogr\\Blogr\\Client\\obj\\Debug\\net7.0\\build-gz\\u79+DKtY.gz",
+      "SourceId": "Blogr.Client",
+      "SourceType": "Computed",
+      "ContentRoot": "C:\\Users\\Scott\\Documents\\GitHub\\Blogr\\Blogr\\Client\\bin\\Debug\\net7.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/Blogr.Components.dll.gz",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "RelatedAsset": "C:\\Users\\Scott\\Documents\\GitHub\\Blogr\\Blogr\\Client\\bin\\Debug\\net7.0\\wwwroot\\_framework\\Blogr.Components.dll",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "C:\\Users\\Scott\\Documents\\GitHub\\Blogr\\Blogr\\Client\\bin\\Debug\\net7.0\\wwwroot\\_framework\\Blogr.Components.dll"
     },
     {
       "Identity": "C:\\Users\\Scott\\Documents\\GitHub\\Blogr\\Blogr\\Client\\obj\\Debug\\net7.0\\build-gz\\ucTp0Pl3.gz",

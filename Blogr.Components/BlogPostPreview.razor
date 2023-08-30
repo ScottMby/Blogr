@@ -1,0 +1,32 @@
+﻿@using Blogr.Shared;
+@inject NavigationManager NavMan;
+<button @onclick="() => GotoBlog(Blog.Id)" class="w-30" style="background: none; color: inherit; border: none; padding: 0; font: inherit; cursor: pointer; outline: inherit;">
+    <div class="container w-100 m-2 p-2 bg-primary rounded">
+        <div class="row">
+            <div class="col-md-auto">
+                <img class="rounded-circle align-middle" src="@Blog.CreatorImgPath" />
+            </div>
+            <div class="col">
+                <h1 class="text-center align-middle text-truncate">@Blog.Title</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-auto">
+                <p class="text-center align-middle text-truncate">@Blog.CreatorFirstName @Blog.CreatorLastName</p>
+            </div>
+            <div class="col">
+                <p class="text-center align-middle text-truncate">@Blog.UpdatedDate.ToShortDateString()</p>
+            </div>
+        </div>
+    </div>
+</button>
+
+@code{
+    [Parameter]
+    public required BlogDisplay Blog { get; set; }
+
+    private void GotoBlog(int blogId)
+    {
+        NavMan.NavigateTo("/viewblog/" + blogId);
+    }
+}

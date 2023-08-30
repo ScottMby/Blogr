@@ -4946,6 +4946,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
         "dependencies": {
+          "Blogr.Components": "1.0.0",
           "Blogr.Shared": "1.0.0",
           "Microsoft.AspNetCore.Components.WebAssembly": "7.0.10",
           "Microsoft.AspNetCore.Components.WebAssembly.Authentication": "7.0.10",
@@ -4959,6 +4960,20 @@
         },
         "runtime": {
           "bin/placeholder/Blogr.Client.dll": {}
+        }
+      },
+      "Blogr.Components/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "Blogr.Shared": "1.0.0",
+          "Microsoft.AspNetCore.Components.Web": "7.0.10"
+        },
+        "compile": {
+          "bin/placeholder/Blogr.Components.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Blogr.Components.dll": {}
         }
       },
       "Blogr.Shared/1.0.0": {
@@ -13586,6 +13601,11 @@
       "type": "project",
       "path": "../Client/Blogr.Client.csproj",
       "msbuildProject": "../Client/Blogr.Client.csproj"
+    },
+    "Blogr.Components/1.0.0": {
+      "type": "project",
+      "path": "../../Blogr.Components/Blogr.Components.csproj",
+      "msbuildProject": "../../Blogr.Components/Blogr.Components.csproj"
     },
     "Blogr.Shared/1.0.0": {
       "type": "project",

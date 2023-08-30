@@ -3203,6 +3203,7 @@
       },
       "Blogr.Client/1.0.0": {
         "dependencies": {
+          "Blogr.Components": "1.0.0",
           "Blogr.Shared": "1.0.0",
           "Microsoft.AspNetCore.Components.WebAssembly": "7.0.10",
           "Microsoft.AspNetCore.Components.WebAssembly.Authentication": "7.0.10",
@@ -3213,6 +3214,15 @@
         },
         "runtime": {
           "Blogr.Client.dll": {}
+        }
+      },
+      "Blogr.Components/1.0.0": {
+        "dependencies": {
+          "Blogr.Shared": "1.0.0",
+          "Microsoft.AspNetCore.Components.Web": "7.0.10"
+        },
+        "runtime": {
+          "Blogr.Components.dll": {}
         }
       },
       "Blogr.Shared/1.0.0": {
@@ -5189,6 +5199,11 @@
       "hashPath": "system.xml.xdocument.4.3.0.nupkg.sha512"
     },
     "Blogr.Client/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Blogr.Components/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

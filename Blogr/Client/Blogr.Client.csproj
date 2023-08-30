@@ -17,6 +17,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\Blogr.Components\Blogr.Components.csproj" />
     <ProjectReference Include="..\Shared\Blogr.Shared.csproj" />
   </ItemGroup>
 

@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "Hash": "dNQ9PhkC22FR/5fARW6ySIF03bi/ggj51/RbGgXdzqk=",
+  "Source": "Blogr.Components",
+  "BasePath": "_content/Blogr.Components",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "Blogr.Components\\wwwroot",
+      "Source": "Blogr.Components",
+      "ContentRoot": "C:\\Users\\Scott\\Documents\\GitHub\\Blogr\\Blogr.Components\\wwwroot\\",
+      "BasePath": "_content/Blogr.Components",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "C:\\Users\\Scott\\Documents\\GitHub\\Blogr\\Blogr.Components\\wwwroot\\exampleJsInterop.js",
+      "SourceId": "Blogr.Components",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Scott\\Documents\\GitHub\\Blogr\\Blogr.Components\\wwwroot\\",
+      "BasePath": "_content/Blogr.Components",
+      "RelativePath": "exampleJsInterop.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\exampleJsInterop.js"
+    }
+  ]
+}

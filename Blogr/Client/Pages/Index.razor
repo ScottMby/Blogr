@@ -15,18 +15,12 @@
 }
 
 
-@foreach(BlogDisplay blog in BlogsList)
+@foreach (BlogDisplay blog in BlogsList)
 {
-    <button @onclick="() => GotoBlog(blog.Id)">
-        <h4>@blog.Title</h4>
-        <p>@blog.CreatorFirstName</p>
-        <p>@blog.CreatorLastName</p>
-        <img id="User-Photo" src="@blog.CreatorImgPath" />
-        <p>Last Updated: @blog.UpdatedDate.ToShortDateString()</p>
-    </button>
+    <BlogPostPreview Blog="blog"/>
 }
 
-@code{
+@code {
     List<BlogDisplay> BlogsList = new List<BlogDisplay>();
     Category categoryStruct = new Category();
 
@@ -35,16 +29,13 @@
         //Create a public HttpClient because a user might not be logged in
         HttpClient Http = ClientFactory.CreateClient("public");
         var blogs = await Http.GetFromJsonAsync<List<BlogDisplay>>("/api/GetBlogByCategory/" + category);
-        if(blogs != null)
+        if (blogs != null)
         {
             BlogsList = blogs;
             StateHasChanged();
         }
     }
 
-    private void GotoBlog(int blogId)
-    {
-        NavMan.NavigateTo("/viewblog/" + blogId);
-    }
+
 }
 

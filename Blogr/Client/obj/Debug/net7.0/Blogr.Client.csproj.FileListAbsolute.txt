@@ -886,3 +886,12 @@ C:\Users\Scott\Documents\GitHub\Blogr\Blogr\Client\obj\Debug\net7.0\build-gz\SZb
 C:\Users\Scott\Documents\GitHub\Blogr\Blogr\Client\obj\Debug\net7.0\build-gz\kPW9D2su.gz
 C:\Users\Scott\Documents\GitHub\Blogr\Blogr\Client\obj\Debug\net7.0\build-gz\BVzPMffD.gz
 C:\Users\Scott\Documents\GitHub\Blogr\Blogr\Client\obj\Debug\net7.0\build-gz\sAOrKjp6.gz
+C:\Users\Scott\Documents\GitHub\Blogr\Blogr\Client\bin\Debug\net7.0\wwwroot\_framework\Blogr.Components.dll
+C:\Users\Scott\Documents\GitHub\Blogr\Blogr\Client\bin\Debug\net7.0\wwwroot\_framework\Blogr.Components.pdb
+C:\Users\Scott\Documents\GitHub\Blogr\Blogr\Client\bin\Debug\net7.0\wwwroot\_framework\Blogr.Components.pdb.gz
+C:\Users\Scott\Documents\GitHub\Blogr\Blogr\Client\bin\Debug\net7.0\wwwroot\_framework\Blogr.Components.dll.gz
+C:\Users\Scott\Documents\GitHub\Blogr\Blogr\Client\bin\Debug\net7.0\Blogr.Components.staticwebassets.runtime.json
+C:\Users\Scott\Documents\GitHub\Blogr\Blogr\Client\bin\Debug\net7.0\Blogr.Components.dll
+C:\Users\Scott\Documents\GitHub\Blogr\Blogr\Client\bin\Debug\net7.0\Blogr.Components.pdb
+C:\Users\Scott\Documents\GitHub\Blogr\Blogr\Client\obj\Debug\net7.0\build-gz\u79+DKtY.gz
+C:\Users\Scott\Documents\GitHub\Blogr\Blogr\Client\obj\Debug\net7.0\build-gz\hFV12fMX.gz
