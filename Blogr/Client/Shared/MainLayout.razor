@@ -5,6 +5,7 @@
 
     <main>
         <div class="top-row px-4 auth">
+            <a class="" @onclick="GoHome" target="_blank">Home</a>
             <LoginDisplay />
             <AuthorizeView>
                 <Authorized>
@@ -28,5 +29,9 @@
     private void Notifications()
     {
         NavMan.NavigateTo("/notifications");
+    }
+    private void GoHome()
+    {
+        NavMan.NavigateTo("/");
     }
 }
