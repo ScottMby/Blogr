@@ -12,8 +12,8 @@
     <h1>Create Blog Post</h1>
     <h4>Upload .docx file</h4>
     @*Input text and post it and the file to the server*@
-    <InputText @bind-Value="blogTitle"></InputText>
-    <select @bind="blogCategory">
+    <InputText @bind-Value="BlogTitle"></InputText>
+    <select @bind="BlogCategory">
         <option disabled selected value> -- select an option -- </option>
         <option value="Software Engineering">Software Engineering</option>
         <option value="Data Science"> Data Science</option>
@@ -24,10 +24,10 @@
         <option value="Databases">Databases</option>
     </select>
     <InputFile OnChange="@OnInputFileChange" />
-    <button type="submit" disabled="@SubmitDisabled" onclick="@UploadBlog">Create Post</button>
-    @if (fileNames.Count > 0)
+    <button type="submit" disabled="@_submitDisabled" onclick="@UploadBlog">Create Post</button>
+    @if (_fileNames.Count > 0)
     {
-        <p>File: @fileNames[0]</p>
+        <p>File: @_fileNames[0]</p>
     }
     @if(StatusMessage != null)
     {
@@ -39,36 +39,36 @@
 
 @code {
 
-    string StatusMessage { get; set; }
+    string? StatusMessage { get; set; }
 
-    bool SubmitDisabled = false;
+    bool _submitDisabled = false;
 
-    private string blogTitle { get; set; }
-    private string blogCategory { get; set; }
-    private int maxAllowedFiles = 1;
-    private long maxFileSize = 1048576 * 1; //1Mb max file size
-    private List<string> fileNames = new();
-    private List<UploadResult> uploadResults = new();
+    private string? BlogTitle { get; set; }
+    private string? BlogCategory { get; set; }
+    private readonly int _maxAllowedFiles = 1;
+    private readonly long _maxFileSize = 1048576 * 1; //1Mb max file size
+    private List<string> _fileNames = new();
+    private List<UploadResult> _uploadResults = new();
     private async Task OnInputFileChange(InputFileChangeEventArgs e)
     {
-        using var content = new MultipartFormDataContent();
+        using MultipartFormDataContent content = new MultipartFormDataContent();
 
-        foreach (var file in e.GetMultipleFiles(maxAllowedFiles))
+        foreach (IBrowserFile file in e.GetMultipleFiles(_maxAllowedFiles))
         {
-            var fileContent = new StreamContent(file.OpenReadStream(maxFileSize)); 
+            StreamContent fileContent = new StreamContent(file.OpenReadStream(_maxFileSize)); 
             fileContent.Headers.ContentType = new MediaTypeHeaderValue(file.ContentType);
 
-            fileNames.Add(file.Name);
+            _fileNames.Add(file.Name);
 
             content.Add(content: fileContent, name: "\"files\"", fileName: file.Name);
         }
 
-        var response = await Http.PostAsync("api/File", content);
-        var newUploadResults = await response.Content.ReadFromJsonAsync<List<UploadResult>>();
+        HttpResponseMessage response = await Http.PostAsync("api/File", content);
+        List<UploadResult>? newUploadResults = await response.Content.ReadFromJsonAsync<List<UploadResult>>();
 
         if (newUploadResults is not null)
         {
-            uploadResults = uploadResults.Concat(newUploadResults).ToList();
+            _uploadResults = _uploadResults.Concat(newUploadResults).ToList();
         }
         else
         {
@@ -78,7 +78,7 @@
 
     private string? GetStoredFileName(string fileName)
     {
-        var uploadResult = uploadResults.SingleOrDefault(f => f.FileName == fileName);
+        var uploadResult = _uploadResults.SingleOrDefault(f => f.FileName == fileName);
         if (uploadResult is not null)
             return uploadResult.StoredFileName;
 
@@ -88,26 +88,30 @@
 
     private async Task<string> UploadBlog()
     {
-        if (blogTitle != null && !string.IsNullOrWhiteSpace(blogTitle))
+        if (string.IsNullOrWhiteSpace(BlogTitle))
         {
-            if (blogCategory != null)
+            StatusMessage = "Please add a title";
+            return "Failed to upload";
+        }
+        else
+        {
+            if (BlogCategory != null)
             {
-                var values = new Dictionary<string, string>
-            {
-                { "Title", blogTitle },
-                { "Category", blogCategory },
-                { "ContentPath",  GetStoredFileName(fileNames[0])},
-            };
-                var stringPayload = JsonConvert.SerializeObject(values);
-                var content = new StringContent(stringPayload, Encoding.UTF8, "application/json");
-                var response = await Http.PostAsync("api/BlogUpload", content);
+                Dictionary<string, string?> values = new Dictionary<string, string?>
+                {
+                    { "Title", BlogTitle },
+                    { "Category", BlogCategory },
+                    { "ContentPath", GetStoredFileName(_fileNames[0]) },
+                };
+                string stringPayload = JsonConvert.SerializeObject(values);
+                StringContent content = new StringContent(stringPayload, Encoding.UTF8, "application/json");
+                HttpResponseMessage response = await Http.PostAsync("api/BlogUpload", content);
 
                 if (response.IsSuccessStatusCode)
                 {
                     StatusMessage = "File Uploaded Successfully.";
-                    SubmitDisabled = true;
+                    _submitDisabled = true;
                     return "Uploaded";
-                    //Add confirmation to user
                 }
                 else
                 {
@@ -121,11 +125,5 @@
                 return "Failed to upload";
             }
         }
-        else
-        {
-            StatusMessage = "Please add a title";
-            return "Failed to upload";
-        }
-
     }
 }

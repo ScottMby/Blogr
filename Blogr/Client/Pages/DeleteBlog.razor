@@ -6,7 +6,7 @@
 
 <h3>DeleteBlog</h3>
 
-@if (blogID != null)
+@if (BlogId != null)
 {
     @if (StatusMessage != null)
     {
@@ -19,32 +19,23 @@ else
 }
 
 @code {
-    string StatusMessage { get; set; }
-
     [Parameter]
-    public int? blogID { get; set; }
+    public int? BlogId { get; set; }
+    private string? BlogTitle { get; set; }
 
-    private string blogTitle { get; set; }
+    string? StatusMessage { get; set; }
 
     protected override async Task OnInitializedAsync()
     {
-        DeleteBlogFromDB(blogID);
+        await DeleteBlogFromDb(BlogId);
 
     }
-    private async Task DeleteBlogFromDB(int? blogID)
+    private async Task DeleteBlogFromDb(int? blogId)
     {
-        var values = blogID;
-        var stringPayload = JsonConvert.SerializeObject(values);
+        var stringPayload = JsonConvert.SerializeObject(blogId);
         var content = new StringContent(stringPayload, Encoding.UTF8, "application/json");
         var response = await Http.PostAsync("api/DeleteBlog", content);
-        if (response.IsSuccessStatusCode)
-        {
-            StatusMessage = "Successfuly Deleted Blog Post";
-        }
-        else
-        {
-            StatusMessage = "Failed to Delete Blog Post";
-        }
+        StatusMessage = response.IsSuccessStatusCode ? "Successfully Deleted Blog Post" : "Failed to Delete Blog Post";
         StateHasChanged();
     }
 }

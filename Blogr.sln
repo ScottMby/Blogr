@@ -9,7 +9,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Blogr.Client", "Blogr\Clien
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Blogr.Shared", "Blogr\Shared\Blogr.Shared.csproj", "{A55BDD75-FC3D-4829-A26C-F9F68AD064C8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blogr.Components", "Blogr.Components\Blogr.Components.csproj", "{44C2AE16-FC91-4781-8610-89C7D22448A6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Blogr.Components", "Blogr.Components\Blogr.Components.csproj", "{44C2AE16-FC91-4781-8610-89C7D22448A6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

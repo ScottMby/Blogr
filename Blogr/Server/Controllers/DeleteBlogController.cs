@@ -23,10 +23,15 @@ namespace Blogr.Server.Controllers
             _userManager = userManager; //For getting the current user
         }
 
+        /// <summary>
+        /// Deletes a blog using its Id
+        /// </summary>
+        /// <param name="blogId"></param>
+        /// <returns>ActionResult<string></returns>
         [HttpPost]
         public async Task<ActionResult<string>> Post([FromBody] int blogId)
         {
-            var user = await _userManager.FindByIdAsync(User.FindFirstValue(ClaimTypes.NameIdentifier));
+            var user = await _userManager.FindByIdAsync(User.FindFirstValue(ClaimTypes.NameIdentifier) ?? string.Empty);
             if (user != null)
             {
                 IsBlogOwnedByUser isBlogOwnedByUser = new IsBlogOwnedByUser(_context, _userManager);
@@ -39,7 +44,7 @@ namespace Blogr.Server.Controllers
                     if (userBlog.User == user)
                     {
                         _context.Blogs.Remove(userBlog);
-                        _context.SaveChanges();
+                        await _context.SaveChangesAsync();
                         return Ok("Successfully Deleted");
                     }
                     else

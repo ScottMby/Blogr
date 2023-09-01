@@ -12,7 +12,7 @@ namespace Blogr.Server.Data
     public class ApplicationDbContext : ApiAuthorizationDbContext<ApplicationUser>
     {
         //Uses EF to create a table called blogs
-        public DbSet<Blog> Blogs { get; set; } = null!;
+        public DbSet<Blog?> Blogs { get; set; } = null!;
         public DbSet<BlogContent> BlogContent => Set<BlogContent>();
         public DbSet<BlogAnalytics> BlogAnalytics => Set<BlogAnalytics>();
 

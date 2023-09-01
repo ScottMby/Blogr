@@ -1,7 +1,7 @@
-﻿using Blogr.Server.Data;
+﻿using Blogr.Data;
+using Blogr.Server.Data;
 using Blogr.Server.Models;
 using Blogr.Shared;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -10,11 +10,11 @@ namespace Blogr.Server.Controllers
 {
     [Route("api/GetBlogById")]
     [ApiController]
-    public class GetBlogController : ControllerBase
+    public class GetBlogController : GetBlogBase
     {
         private readonly ApplicationDbContext _context;
         private readonly UserManager<ApplicationUser> _userManager;
-        public GetBlogController(ApplicationDbContext context, UserManager<ApplicationUser> userManager)
+        public GetBlogController(ApplicationDbContext context, UserManager<ApplicationUser> userManager) : base (context, userManager)
         {
             _context = context;
             _userManager = userManager;
@@ -24,48 +24,22 @@ namespace Blogr.Server.Controllers
         [HttpGet]
         public async Task<ActionResult<BlogDisplay>>Get([FromRoute(Name = "blogID")] int blogId)
         {
-            BlogDisplay bg = new BlogDisplay();
-            var blog = _context.Blogs
-                .Where(u => u.ID == blogId)
-                .Include("Content")
-                .Include("User")
-                .FirstOrDefault();
-            if (blog != null)
+            try
             {
-                bg.Id = blog.ID;
-                bg.Title = blog.Title;
-                bg.Category = blog.Category;
+                Blog? blog = _context.Blogs
+                    .Where(u => u.ID == blogId)
+                    .Include("Content")
+                    .Include("User")
+                    .FirstOrDefault();
 
-                var user = await _userManager.FindByIdAsync(blog.User.Id);
-                if (user != null)
-                {
-                    if (user.Photo.path != null)
-                    {
-                        bg.CreatorImgPath = user.Photo.path;
-                    }
-                    else
-                    {
-                        bg.CreatorImgPath = @"~\UserPhotos\default.png";
-                    }
-                    bg.CreatorFirstName = user.FirstName;
-                    bg.CreatorLastName = user.LastName;
-                    bg.CreationDate = blog.CreationDate;
-                    bg.UpdatedDate = blog.UpdatedDate;
-                    bg.ContentId = blog.Content.Id;
-                    bg.ContentPath = blog.Content.path;
-                }
-                else
-                {
-                    return BadRequest("Blog Creator Not Found");
-                }
+                List<Blog?> blogsList = new List<Blog?> { blog };
+
+                return Ok(GetBlogDisplays(blogsList, false));
             }
-            else
+            catch (Exception ex)
             {
-                return BadRequest("Blog Not Found");
+                return BadRequest(ex.Message);
             }
-            
-
-            return Ok(bg);
         }
     }
 }

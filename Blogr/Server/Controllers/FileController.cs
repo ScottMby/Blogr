@@ -30,27 +30,26 @@ namespace Blogr.Server.Controllers
             {
                 List<UploadResult> uploadResults = new List<UploadResult>();
 
-                foreach (var file in files)
+                foreach (IFormFile file in files)
                 {
-                    var uploadResult = new UploadResult();
+                    UploadResult uploadResult = new UploadResult();
 
                     //Change filename to random name for security
 
-                    string trustedFileNameForFileStorage;
                     string untrustedFileName = file.FileName;
 
                     uploadResult.FileName = file.FileName;
 
-                    var trustedFileNameForDisplay = WebUtility.HtmlEncode(untrustedFileName);
-                    trustedFileNameForFileStorage = Path.GetRandomFileName();
+                    string trustedFileNameForDisplay = WebUtility.HtmlEncode(untrustedFileName);
+                    string trustedFileNameForFileStorage = Path.GetRandomFileName();
                     trustedFileNameForFileStorage = Path.ChangeExtension(trustedFileNameForFileStorage, ".pdf");
 
                     //Get path for storing file
-                    var path = Path.Combine(_env.ContentRootPath, @"wwwroot\BlogContent", trustedFileNameForFileStorage);
+                    string path = Path.Combine(_env.ContentRootPath, @"wwwroot\BlogContent", trustedFileNameForFileStorage);
 
 
                     //Store File
-                    using (var fileStream = new FileStream(path, FileMode.Create))
+                    await using (FileStream fileStream = new FileStream(path, FileMode.Create))
                     {
                         await file.CopyToAsync(fileStream);
                     }

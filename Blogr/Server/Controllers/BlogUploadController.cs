@@ -31,64 +31,78 @@ namespace Blogr.Server.Controllers
         /// <param name="bu"></param>
         /// <returns>Success String</returns>
         [HttpPost]
-        public async Task<ActionResult<string>> UploadBlog(BlogUpload bu)
+        public async Task<ActionResult<string>> UploadBlog(BlogUpload? bu)
         {
-            if(bu != null)
+            if (bu != null)
             {
                 try
                 {
                     //If BlogId is null then we add a new blog
                     if (bu.BlogId == null)
                     {
-                        BlogContent bc = new BlogContent();
-                        bc.path = bu.ContentPath;
-
-                        Blog bl = new Blog();
-
-                        var user = await _userManager.FindByIdAsync(User.FindFirstValue(ClaimTypes.NameIdentifier));
-                        if(user != null)
+                        var user = await _userManager.FindByIdAsync(User.FindFirstValue(ClaimTypes.NameIdentifier) ?? string.Empty);
+                        if (user != null)
                         {
-                            bl.Title = bu.Title;
-                            bl.Category = bu.Category;
-                            bl.User = user;
-                            bl.CreationDate = DateTime.Now;
-                            bl.UpdatedDate = DateTime.Now;
-                            bl.Content = bc;
-                            bl.Analytics = new BlogAnalytics();
+                            var bc = new BlogContent
+                            {
+                                path = bu.ContentPath
+                            };
+
+                            var bl = new Blog
+                            {
+                                Title = bu.Title,
+                                Category = bu.Category,
+                                User = user,
+                                CreationDate = DateTime.Now,
+                                UpdatedDate = DateTime.Now,
+                                Content = bc,
+                                Analytics = new BlogAnalytics()
+                            };
+
                             _context.Add(bl);
-                            _context.SaveChanges();
+                            await _context.SaveChangesAsync();
                             return Ok("Blog Uploaded");
                         }
                         else
                         {
                             return BadRequest("There is no Current User");
                         }
-                        
+
                     }
                     //if a BlogId is present then update the blog associated with the Id
                     else
                     {
-                        BlogContent bc = new BlogContent();
-                        bc.path = bu.ContentPath;
+                        var bc = new BlogContent
+                        {
+                            path = bu.ContentPath
+                        };
+
 
                         var currentBlog = _context.Blogs
-                        .Where(u => u.ID == bu.BlogId)
-                        .FirstOrDefault();
+                            .FirstOrDefault(u => u.ID == bu.BlogId);
 
-                        var user = await _userManager.FindByIdAsync(User.FindFirstValue(ClaimTypes.NameIdentifier));
-                        if (user != null)
+                        if (currentBlog != null)
                         {
-                            currentBlog.Title = bu.Title;
-                            currentBlog.Category = bu.Category;
-                            currentBlog.CreationDate = currentBlog.CreationDate;
-                            currentBlog.UpdatedDate = DateTime.Now;
-                            currentBlog.Content = bc;
-                            _context.SaveChanges();
-                            return Ok("Blog Uploaded");
+                            var user = await _userManager.FindByIdAsync(User.FindFirstValue(ClaimTypes.NameIdentifier) ?? string.Empty);
+                            if (user != null)
+                            {
+                                currentBlog.Title = bu.Title;
+                                currentBlog.Category = bu.Category;
+                                currentBlog.CreationDate = currentBlog.CreationDate;
+                                currentBlog.UpdatedDate = DateTime.Now;
+                                currentBlog.Content = bc;
+                                await _context.SaveChangesAsync();
+                                return Ok("Blog Uploaded");
+                            }
+                            else
+                            {
+                                return BadRequest("There is no Current User");
+                            }
                         }
+
                         else
                         {
-                            return BadRequest("There is no Current User");
+                            return BadRequest("Blog Not Found");
                         }
                     }
                 }
@@ -101,7 +115,7 @@ namespace Blogr.Server.Controllers
             {
                 return BadRequest("Blog Upload Parameter is Null");
             }
-           
+
         }
     }
 }

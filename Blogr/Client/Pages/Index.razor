@@ -9,21 +9,21 @@
 
 <h1>Welcome to Blogr</h1>
 
-@foreach (string catString in categoryStruct.Categories)
+@foreach (string catString in _categoryStruct.Categories)
 {
     <button @onclick=" () => GetCategory(catString)">@catString</button>
 }
 
 <br />
 
-@foreach (BlogDisplay blog in BlogsList)
+@foreach (BlogDisplay blog in _blogsList)
 {
     <BlogPostPreview Blog="blog"/>
 }
 
 @code {
-    List<BlogDisplay> BlogsList = new List<BlogDisplay>();
-    Category categoryStruct = new Category();
+    List<BlogDisplay> _blogsList = new List<BlogDisplay>();
+    Category _categoryStruct = new Category();
 
     private async Task GetCategory(string category)
     {
@@ -32,7 +32,7 @@
         var blogs = await Http.GetFromJsonAsync<List<BlogDisplay>>("/api/GetBlogByCategory/" + category);
         if (blogs != null)
         {
-            BlogsList = blogs;
+            _blogsList = blogs;
             StateHasChanged();
         }
     }
