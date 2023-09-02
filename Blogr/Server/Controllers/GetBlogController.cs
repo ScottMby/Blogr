@@ -5,16 +5,17 @@ using Blogr.Shared;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using System.Security.Claims;
 
 namespace Blogr.Server.Controllers
 {
     [Route("api/GetBlogById")]
     [ApiController]
-    public class GetBlogController : GetBlogBase
+    public class GetBlogController : ControllerBase
     {
         private readonly ApplicationDbContext _context;
         private readonly UserManager<ApplicationUser> _userManager;
-        public GetBlogController(ApplicationDbContext context, UserManager<ApplicationUser> userManager) : base (context, userManager)
+        public GetBlogController(ApplicationDbContext context, UserManager<ApplicationUser> userManager)
         {
             _context = context;
             _userManager = userManager;
@@ -34,7 +35,7 @@ namespace Blogr.Server.Controllers
 
                 List<Blog?> blogsList = new List<Blog?> { blog };
 
-                return Ok(GetBlogDisplays(blogsList, false));
+                return Ok(GetBlog.Get(blogsList, null, _userManager).Result[0]);
             }
             catch (Exception ex)
             {

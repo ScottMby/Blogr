@@ -29,7 +29,8 @@
 
     protected override async Task<string> OnInitializedAsync()
     {
-        blogsList = await Http.GetFromJsonAsync<List<BlogDisplay>>("api/GetBlogByCurrentUser");
+        var temp = await Http.GetFromJsonAsync<List<BlogDisplay>>("api/GetBlogByCurrentUser");
+        blogsList = temp;
         return "";
     }
 

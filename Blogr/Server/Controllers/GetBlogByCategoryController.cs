@@ -7,17 +7,18 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using System.Reflection.Metadata;
 
 namespace Blogr.Server.Controllers
 {
     [Route("api/GetBlogByCategory")]
     [ApiController]
-    public class GetBlogByCategoryController : GetBlogBase
+    public class GetBlogByCategoryController : ControllerBase
     {
         private readonly ApplicationDbContext _context;
         private readonly UserManager<ApplicationUser> _userManager;
 
-        public GetBlogByCategoryController(ApplicationDbContext context, UserManager<ApplicationUser> userManager) : base(context, userManager)
+        public GetBlogByCategoryController(ApplicationDbContext context, UserManager<ApplicationUser> userManager)
         {
             _context = context;
             _userManager = userManager;
@@ -37,8 +38,11 @@ namespace Blogr.Server.Controllers
                     .Include("Analytics")
                     .Include("Content")
                     .OrderBy(b => b.Analytics.UniqueVisitors)
-                    .ToList();
-                return GetBlogDisplays(blogs, false).Result;
+                .ToList();
+
+                var result = GetBlog.Get(blogs, null, _userManager).Result;
+
+                return Ok(result);
             }
             catch (Exception ex)
             {

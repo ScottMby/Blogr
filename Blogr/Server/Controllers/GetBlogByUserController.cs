@@ -12,13 +12,12 @@ namespace Blogr.Server.Controllers
 {
     [Authorize]
     [ApiController]
-    public class GetBlogByUserController : GetBlogBase
+    public class GetBlogByUserController : ControllerBase
     {
         private readonly ApplicationDbContext _context;
         private readonly UserManager<ApplicationUser> _userManager;
 
-        public GetBlogByUserController(ApplicationDbContext context, UserManager<ApplicationUser> userManager) : base(
-            context, userManager)
+        public GetBlogByUserController(ApplicationDbContext context, UserManager<ApplicationUser> userManager)
         {
             _context = context; //For database operations
             _userManager = userManager; //For getting the current user
@@ -41,9 +40,12 @@ namespace Blogr.Server.Controllers
                 {
                     var userBlogs = _context.Blogs
                         .Where(u => u.User == user)
-                        .Include("Content"); //To ensure that the blog content is also retrieve
+                        .Include("Content")
+                        .ToList(); //To ensure that the blog content is also retrieve
 
-                    return GetBlogDisplays(userBlogs.ToList(), true).Result;
+                    user = await _userManager.FindByIdAsync(User.FindFirstValue(ClaimTypes.NameIdentifier) ?? string.Empty);
+                    var result = await GetBlog.Get(userBlogs, user, _userManager);
+                    return Ok(result);
                 }
                 else
                 {
@@ -76,7 +78,8 @@ namespace Blogr.Server.Controllers
                         .Include("Content")
                         .ToList(); //To ensure that the blog content is also retrieve
 
-                    return GetBlogDisplays(userBlogs, false).Result;
+                    var result = await GetBlog.Get(userBlogs, user, _userManager);
+                    return Ok(result);
                 }
                 else
                 {
