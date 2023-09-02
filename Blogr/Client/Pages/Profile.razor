@@ -1,8 +1,15 @@
 ﻿@page "/profile"
+@using Microsoft.AspNetCore.Components.WebAssembly.Authentication;
+@inject NavigationManager Navigation
+
 <h3>Profile</h3>
 <a href="userblogs">Blog Posts</a>
 <a href="authentication/profile">Profile Settings</a>
+<button @onclick="BeginLogOut">Log Out</button>
 
 @code {
-
+    private void BeginLogOut()
+    {
+        Navigation.NavigateToLogout("authentication/logout");
+    }
 }
