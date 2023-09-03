@@ -1,0 +1,25 @@
+﻿@page "/search"
+@page "/search/{SearchInput}"
+@using Blogr.Shared
+@inject IHttpClientFactory ClientFactory
+
+@foreach (BlogDisplay blog in _blogsList)
+{
+    <BlogPostPreview Blog="blog" />
+}
+
+@code {
+
+    [Parameter]
+    public string? SearchInput { get; set; }
+
+
+    List<BlogDisplay> _blogsList = new List<BlogDisplay>();
+
+    protected override async Task OnInitializedAsync()
+    {
+        HttpClient Http = ClientFactory.CreateClient("public");
+        List<BlogDisplay> blogs = await Http.GetFromJsonAsync<List<BlogDisplay>>("api/Search/" + SearchInput);
+        _blogsList = blogs;
+    }
+}

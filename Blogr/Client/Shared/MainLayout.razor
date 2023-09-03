@@ -1,27 +1,38 @@
-﻿@inherits LayoutComponentBase
+﻿@using Blogr.Shared
+@inherits LayoutComponentBase
 @inject NavigationManager NavMan
+@using Microsoft.AspNetCore.Components
+@using Microsoft.AspNetCore.Components.Web
 
 <div class="page">
 
     <main>
         <div class="top-row px-4 auth">
-            <a class="" @onclick="GoHome" target="_blank">Home</a>
-            <LoginDisplay />
-            <AuthorizeView>
-                <Authorized>
-                    <a @onclick="CreateBlog" target="_blank">Create</a>
-                    <a @onclick="Notifications" target="_blank">Notification</a>
-                </Authorized>
-            </AuthorizeView>
+            <a class="d-inline text-start m-0" @onclick="GoHome" target="_blank">Home</a>
+            <div>
+                <InputText @bind-Value="searchInput"></InputText>
+                <button @onclick="Search" type="submit">Search</button>
+            </div>
+            <div>
+                <LoginDisplay />
+                <AuthorizeView>
+                    <Authorized>
+                        <a @onclick="CreateBlog" target="_blank">Create</a>
+                        <a @onclick="Notifications" target="_blank">Notification</a>
+                    </Authorized>
+                </AuthorizeView>
+            </div>
         </div>
 
         <article class="content px-4">
-                @Body
+            @Body
         </article>
     </main>
 </div>
 
-@code{
+@code {
+    private string searchInput { get; set; }
+
     private void CreateBlog()
     {
         NavMan.NavigateTo("/createBlog");
@@ -33,5 +44,10 @@
     private void GoHome()
     {
         NavMan.NavigateTo("/");
+    }
+
+    public void Search()
+    {
+        NavMan.NavigateTo("/search/" + searchInput);
     }
 }

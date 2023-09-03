@@ -15,7 +15,8 @@
 </AuthorizeView>
 
 @code {
-    string imgString;
+    string? imgString;
+    readonly string defaultUserImage = "";
     private void BeginLogOut()
     {
         Navigation.NavigateToLogout("authentication/logout");
@@ -24,7 +25,9 @@
     {
         try
         {
-            UserImage? image = await Http.GetFromJsonAsync<UserImage>("api/userImage");
+            UserImage image = await Http.GetFromJsonAsync<UserImage>("api/userImage") ?? new UserImage();
+
+            image.path = image.path ?? defaultUserImage;
 
             imgString = @image.path;
         }
