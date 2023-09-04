@@ -2,6 +2,7 @@
 @page "/search/{SearchInput}"
 @using Blogr.Shared
 @inject IHttpClientFactory ClientFactory
+@inject NavigationManager NavMan
 
 @foreach (BlogDisplay blog in _blogsList)
 {
@@ -14,12 +15,19 @@
     public string? SearchInput { get; set; }
 
 
+
     List<BlogDisplay> _blogsList = new List<BlogDisplay>();
 
     protected override async Task OnInitializedAsync()
     {
+        if (string.IsNullOrWhiteSpace(SearchInput))
+        {
+            NavMan.NavigateTo("/");
+        }
+
+
         HttpClient Http = ClientFactory.CreateClient("public");
-        List<BlogDisplay> blogs = await Http.GetFromJsonAsync<List<BlogDisplay>>("api/Search/" + SearchInput);
+        List<BlogDisplay>? blogs = await Http.GetFromJsonAsync<List<BlogDisplay>>("api/Search/" + SearchInput);
         _blogsList = blogs;
     }
 }

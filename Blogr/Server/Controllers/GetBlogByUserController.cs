@@ -78,7 +78,7 @@ namespace Blogr.Server.Controllers
                         .Include("Content")
                         .ToList(); //To ensure that the blog content is also retrieve
 
-                    var result = await GetBlog.Get(userBlogs, user, _userManager);
+                    List<BlogDisplay> result = await GetBlog.Get(userBlogs, user, _userManager);
                     return Ok(result);
                 }
                 else

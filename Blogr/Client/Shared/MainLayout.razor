@@ -48,6 +48,14 @@
 
     public void Search()
     {
-        NavMan.NavigateTo("/search/" + searchInput);
+        if (string.IsNullOrWhiteSpace(searchInput))
+        {
+            Console.WriteLine("No search value entered");
+        }
+        else
+        {
+            NavMan.NavigateTo("/");
+            NavMan.NavigateTo("/search/" + searchInput);
+        }
     }
 }

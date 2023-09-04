@@ -29,7 +29,7 @@
     {
         //Create a public HttpClient because a user might not be logged in
         HttpClient Http = ClientFactory.CreateClient("public");
-        var blogs = await Http.GetFromJsonAsync<List<BlogDisplay>>("/api/GetBlogByCategory/" + category);
+        List<BlogDisplay>? blogs = await Http.GetFromJsonAsync<List<BlogDisplay>>("/api/GetBlogByCategory/" + category);
         if (blogs != null)
         {
             _blogsList = blogs;
