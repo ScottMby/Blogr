@@ -104,3 +104,24 @@ a, .btn-link {
     border-radius: 50%;
     width: 45px;
 }
+#category-button {
+    -webkit-border-radius: 28;
+    -moz-border-radius: 28;
+    border-radius: 28px;
+    color: #ffffff;
+    font-size: 15px;
+    background: #383838;
+    padding: 10px 20px 10px 20px;
+    text-decoration: none;
+    margin-right: 10px;
+}
+
+#category-button:hover {
+    background: #858585;
+    text-decoration: none;
+}
+#blog-post-preview {
+    background: #383838;
+    color: white;
+    max-width: 500px;
+}

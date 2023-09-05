@@ -7,18 +7,18 @@
 <div class="page">
 
     <main>
-        <div class="top-row px-4 auth">
-            <a class="d-inline text-start m-0" @onclick="GoHome" target="_blank">Home</a>
-            <div>
-                <InputText @bind-Value="searchInput"></InputText>
+        <div class="top-row px-4">
+            <a class="d-inline-flex text-start m-0 text-white" @onclick="GoHome" target="_blank">Home</a>
+            <div class="flex-grow-1 text-center">
+                <InputText class="w-70" @bind-Value="searchInput"></InputText>
                 <button @onclick="Search" type="submit">Search</button>
             </div>
             <div>
                 <LoginDisplay />
                 <AuthorizeView>
                     <Authorized>
-                        <a @onclick="CreateBlog" target="_blank">Create</a>
-                        <a @onclick="Notifications" target="_blank">Notification</a>
+                        <a class="text-white" @onclick="CreateBlog" target="_blank">Create</a>
+                        <a class="text-white" @onclick="Notifications" target="_blank">Notification</a>
                     </Authorized>
                 </AuthorizeView>
             </div>

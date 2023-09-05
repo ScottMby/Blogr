@@ -7,11 +7,9 @@
 
 <PageTitle>Blogr</PageTitle>
 
-<h1>Welcome to Blogr</h1>
-
 @foreach (string catString in _categoryStruct.Categories)
 {
-    <button @onclick=" () => GetCategory(catString)">@catString</button>
+    <button id="category-button" @onclick=" () => GetCategory(catString)">@catString</button>
 }
 
 <br />
