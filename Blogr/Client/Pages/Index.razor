@@ -23,6 +23,11 @@
     List<BlogDisplay> _blogsList = new List<BlogDisplay>();
     readonly Category _categoryStruct = new();
 
+    protected override async Task OnInitializedAsync()
+    {
+        await GetCategory(_categoryStruct.Categories[0]);
+    }
+
     private async Task GetCategory(string category)
     {
         //Create a public HttpClient because a user might not be logged in

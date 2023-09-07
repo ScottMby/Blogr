@@ -8,8 +8,8 @@
 
     <main>
         <div class="top-row px-4">
-            <div style ="width: 200px;">
-                <a class="d-inline-flex text-start m-0 text-white" @onclick="GoHome" target="_blank">Home</a>
+            <div style ="width: 300px;">
+                <button class="d-inline-flex text-start m-0 bg-transparent border-0" @onclick="GoHome" target="_blank"><img class="w-50" src="/blog(r).png"/></button>
             </div>
             <div class="flex-grow-1 text-center mx-5 align-items-center">
                 <div id="search-container" class="rounded-pill d-flex flex-s w-50 m-auto">
@@ -17,7 +17,7 @@
                     <button id="search-button" class="position-relative rounded-pill" @onclick="Search" type="submit">Search</button>
                 </div>
             </div>
-            <div style="width: 200px;">
+            <div style="width: 300px;">
                 <LoginDisplay/>
                 <AuthorizeView>
                     <Authorized>

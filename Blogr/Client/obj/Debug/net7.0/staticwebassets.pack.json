@@ -13,6 +13,10 @@
       "PackagePath": "staticwebassets\\Blogr.Client.styles.css"
     },
     {
+      "Id": "C:\\Users\\Scott\\Documents\\GitHub\\Blogr\\Blogr\\Client\\wwwroot\\blog(r).png",
+      "PackagePath": "staticwebassets\\blog(r).png"
+    },
+    {
       "Id": "C:\\Users\\Scott\\Documents\\GitHub\\Blogr\\Blogr\\Client\\wwwroot\\css\\app.css",
       "PackagePath": "staticwebassets\\css\\app.css"
     },

@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "f01oQwONJX3aOWwysOyvoxThLocWtQC/8XV1qN7+83s=",
+  "Hash": "lW1UQ04jvDjchbzxeM1EUL/BKzUmSriLySE16n3e2tA=",
   "Source": "Blogr.Client",
   "BasePath": "/",
   "Mode": "Root",
@@ -7531,6 +7531,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\Users\\Scott\\Documents\\GitHub\\Blogr\\Blogr\\Client\\obj\\Debug\\net7.0\\scopedcss\\projectbundle\\Blogr.Client.bundle.scp.css"
+    },
+    {
+      "Identity": "C:\\Users\\Scott\\Documents\\GitHub\\Blogr\\Blogr\\Client\\wwwroot\\blog(r).png",
+      "SourceId": "Blogr.Client",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Scott\\Documents\\GitHub\\Blogr\\Blogr\\Client\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "blog(r).png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\blog(r).png"
     },
     {
       "Identity": "C:\\Users\\Scott\\Documents\\GitHub\\Blogr\\Blogr\\Client\\wwwroot\\css\\app.css",
