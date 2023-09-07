@@ -21,7 +21,7 @@
 
 @code {
     List<BlogDisplay> _blogsList = new List<BlogDisplay>();
-    Category _categoryStruct = new Category();
+    readonly Category _categoryStruct = new();
 
     private async Task GetCategory(string category)
     {

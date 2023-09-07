@@ -8,13 +8,17 @@
 
     <main>
         <div class="top-row px-4">
-            <a class="d-inline-flex text-start m-0 text-white" @onclick="GoHome" target="_blank">Home</a>
-            <div class="flex-grow-1 text-center">
-                <InputText class="w-70" @bind-Value="searchInput"></InputText>
-                <button @onclick="Search" type="submit">Search</button>
+            <div style ="width: 200px;">
+                <a class="d-inline-flex text-start m-0 text-white" @onclick="GoHome" target="_blank">Home</a>
             </div>
-            <div>
-                <LoginDisplay />
+            <div class="flex-grow-1 text-center mx-5 align-items-center">
+                <div id="search-container" class="rounded-pill d-flex flex-s w-50 m-auto">
+                    <InputText class="w-100 rounded-pill py-1 px-2 border-0" @bind-Value="SearchInput"></InputText>
+                    <button id="search-button" class="position-relative rounded-pill" @onclick="Search" type="submit">Search</button>
+                </div>
+            </div>
+            <div style="width: 200px;">
+                <LoginDisplay/>
                 <AuthorizeView>
                     <Authorized>
                         <a class="text-white" @onclick="CreateBlog" target="_blank">Create</a>
@@ -31,7 +35,7 @@
 </div>
 
 @code {
-    private string searchInput { get; set; }
+    private string? SearchInput { get; set; }
 
     private void CreateBlog()
     {
@@ -48,14 +52,14 @@
 
     public void Search()
     {
-        if (string.IsNullOrWhiteSpace(searchInput))
+        if (string.IsNullOrWhiteSpace(SearchInput))
         {
             Console.WriteLine("No search value entered");
         }
         else
         {
             NavMan.NavigateTo("/");
-            NavMan.NavigateTo("/search/" + searchInput);
+            NavMan.NavigateTo("/search/" + SearchInput);
         }
     }
 }

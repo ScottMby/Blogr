@@ -79,3 +79,9 @@ main[b-6gh35isol8] {
         padding-right: 1.5rem !important;
     }
 }
+
+#search-button[b-6gh35isol8] {
+    z-index: 10;
+    transform: translateX(-62px);
+    border: none;
+}

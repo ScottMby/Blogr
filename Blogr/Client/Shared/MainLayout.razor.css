@@ -79,3 +79,9 @@ main {
         padding-right: 1.5rem !important;
     }
 }
+
+#search-button {
+    z-index: 10;
+    transform: translateX(-62px);
+    border: none;
+}

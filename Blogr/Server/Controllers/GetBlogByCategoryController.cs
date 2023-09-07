@@ -33,7 +33,7 @@ namespace Blogr.Server.Controllers
 
                 List<Blog> blogs = _context.Blogs
                     .Where(b => b.Category == category)
-                    .Where(b => b.UpdatedDate > DateTime.Now.AddDays(-7))
+                    .Where(b => b.UpdatedDate > DateTime.Now.AddDays(-30))
                     .Include("User")
                     .Include("Analytics")
                     .Include("Content")
