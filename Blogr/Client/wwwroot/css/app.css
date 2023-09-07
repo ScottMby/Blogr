@@ -4,6 +4,10 @@ html, body {
     font-family: Arial, Helvetica, sans-serif;
 }
 
+body {
+    background-color: dimgray;
+}
+
 h1:focus {
     outline: none;
 }
