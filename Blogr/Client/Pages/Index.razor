@@ -9,7 +9,7 @@
 
 @foreach (string catString in _categoryStruct.Categories)
 {
-    <button id="category-button" @onclick=" () => GetCategory(catString)">@catString</button>
+    <button class="btn" @onclick=" () => GetCategory(catString)">@catString</button>
 }
 
 <br />

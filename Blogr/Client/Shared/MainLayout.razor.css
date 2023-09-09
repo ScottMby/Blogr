@@ -85,3 +85,8 @@ main {
     transform: translateX(-62px);
     border: none;
 }
+#search-input:focus {
+    outline: none;
+}
+#search-container:active{
+}

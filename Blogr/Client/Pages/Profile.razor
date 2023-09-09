@@ -1,15 +1,29 @@
 ﻿@page "/profile"
 @using Microsoft.AspNetCore.Components.WebAssembly.Authentication;
 @inject NavigationManager Navigation
+@using Blogr.Server.Models
 
-<h3>Profile</h3>
-<a href="userblogs">Blog Posts</a>
-<a href="authentication/profile">Profile Settings</a>
-<button @onclick="BeginLogOut">Log Out</button>
+<h3 class="text-white">Profile</h3>
+<button class="btn" @onclick="UserBlogs">Blog Posts</button>
+<button class="btn" @onclick="ProfileSettings">Profile Settings</button>
+<button class="btn bg-warning" @onclick="BeginLogOut">Log Out</button>
 
 @code {
+    ApplicationUser user = new ApplicationUser();
+
     private void BeginLogOut()
     {
         Navigation.NavigateToLogout("authentication/logout");
     }
+
+    private void UserBlogs()
+    {
+        Navigation.NavigateTo("userblogs");
+    }
+
+    private void ProfileSettings()
+    {
+        Navigation.NavigateTo("authentication/profile");
+    }
+
 }

@@ -2,7 +2,7 @@
 using Blogr.Shared;
 using System.ComponentModel.DataAnnotations;
 
-namespace Blogr.Data
+namespace Blogr.Server.Models
 {
     public class Blog
     {

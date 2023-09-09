@@ -4,7 +4,6 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Blogr.Shared;
 using System.Security.Claims;
-using Blogr.Data;
 using System;
 using System.Text.Json;
 using Microsoft.EntityFrameworkCore;

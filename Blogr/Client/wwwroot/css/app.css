@@ -108,7 +108,7 @@ a, .btn-link {
     border-radius: 50%;
     width: 45px;
 }
-#category-button {
+.btn {
     -webkit-border-radius: 28px;
     -moz-border-radius: 28px;
     border-radius: 28px;

@@ -1,5 +1,5 @@
 ﻿using Blogr.Client.Pages;
-using Blogr.Data;
+using Blogr.Server.Data;
 using Blogr.Server.Data;
 using Blogr.Server.Models;
 using Blogr.Shared;

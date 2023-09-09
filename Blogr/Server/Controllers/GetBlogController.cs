@@ -1,11 +1,11 @@
-﻿using Blogr.Data;
-using Blogr.Server.Data;
+﻿using Blogr.Server.Data;
 using Blogr.Server.Models;
 using Blogr.Shared;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System.Security.Claims;
+
 
 namespace Blogr.Server.Controllers
 {

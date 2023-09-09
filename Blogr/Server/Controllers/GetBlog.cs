@@ -1,5 +1,4 @@
-﻿using Blogr.Data;
-using Blogr.Server.Models;
+﻿using Blogr.Server.Models;
 using Blogr.Shared;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
